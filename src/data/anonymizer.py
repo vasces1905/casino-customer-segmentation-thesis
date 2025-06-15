@@ -65,6 +65,8 @@ class AcademicDataAnonymizer:
             "Varna": "Eastern Bulgaria",
             "Burgas": "Eastern Bulgaria",
             # Add more mappings as needed
+            # I am already working on this issue. All liste will be provided
+            # from IT Department. 
         }
         return location_mapping.get(location, "Bulgaria")
     

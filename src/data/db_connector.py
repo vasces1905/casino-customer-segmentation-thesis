@@ -9,10 +9,24 @@ Ethics Approval: 10351-12382
 Academic use only - No commercial distribution
 """
 
+""" 
+Technical Explanation & What are included
+- Connects to PostgreSQL (with psycopg2)
+- It logs every connection academically: writes to access_log table
+- There is a test_connection() function to see if it can connect to the database
+   Note AUDIT_SCHEMA.access_log table needs to be defined under schema/
+   
+*** AcademicDBConnector
+- get_connection(): Opens the connection → performs the operation → closes and logs
+- _log_access(): Writes a record to the academic_audit.access_log table as CONNECTION_ESTABLISHED
+- test_connection(): Tests the connection (SELECT 1)
+   Note: The AUDIT_SCHEMA.access_log table must be defined under schema/.
+"""
+
 import logging
 from datetime import datetime
-from typing import Optional, Dict, Any
-import psycopg2
+from typing import Optional, Dict, Any 
+import psycopg2  # Connects to PostgreSQL
 from psycopg2.extras import RealDictCursor
 from contextlib import contextmanager
 

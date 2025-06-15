@@ -1,5 +1,11 @@
-from src.data.compatibility_demo import SyntheticToRealMapper
+import sys
+import os
 import pandas as pd
+
+# Ensure src/ is on sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+from data.compatibility_layer import SyntheticToRealMapper # type: ignore
 
 def demo_mapper():
     mapper = SyntheticToRealMapper()
@@ -17,12 +23,10 @@ def demo_mapper():
     segment_name = mapper.map_segment_name(segment_id)
     print(f"Segment {segment_id} maps to: {segment_name}")
 
-    # Example 3: Validate synthetic to real mapping
+    # Example 3: Validate mapping
     synthetic_df = pd.DataFrame(columns=["customer_id", "avg_bet", "zone_diversity", "unknown_feature"])
-    validation_result = mapper.validate_mapping(synthetic_df, pd.DataFrame())
-    print("Validation result:")
-    for feature, is_mapped in validation_result.items():
-        print(f"  {feature}: {'Mapped' if is_mapped else 'No mapping found'}")
+    result = mapper.validate_mapping(synthetic_df, pd.DataFrame())
+    print("Mapping validation result:", result)
 
 if __name__ == "__main__":
     demo_mapper()

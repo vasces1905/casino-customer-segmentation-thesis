@@ -27,7 +27,7 @@ class CasinoFeatureEngineer:
     Original implementation of casino-specific feature engineering.
     
     Academic Note: This class represents a novel contribution to casino
-    customer analytics by combining domain knowledge with ML best practices.
+    customer analytics by combining domain knowledge with AI-ML best practices.
     """
     
     def __init__(self):

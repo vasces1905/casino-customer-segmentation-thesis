@@ -17,13 +17,13 @@ import pandas as pd
 
 class SyntheticToRealMapper:
     """
-    Maps features between synthetic proof-of-concept and real casino data.
+    Maps features between synthetic proof-of-concept (casino-1) and real casino data (casino-2).
     Ensures thesis continuity and reproducibility.
     """
     
     # Feature mapping from Casino-1 to Casino-2
     FEATURE_MAPPING = {
-        # Casino-1 (CSV)        → Casino-2 (PostgreSQL query)
+        # Casino-1 (CSV)        ---->  Casino-2 (PostgreSQL query)
         'customer_id':          'customer_id',  # Direct mapping
         'avg_bet':              """
             SELECT AVG(bet_amount) 

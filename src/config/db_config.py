@@ -9,6 +9,13 @@ Ethics Approval: 10351-12382
 Academic use only - No commercial distribution
 """
 
+""" 
+Technical Explanation & What are included
+- Holds the parameters used to connect to PostgreSQL.
+- Reads values from environment variables (.env).
+- Specifies the mapping of tables and audit schema.
+"""
+
 import os
 from typing import Dict
 
@@ -21,11 +28,11 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD", "")  # Will be set via .env
 }
 
-# Academic audit schema
+# Academic audit schema - Schema to write access logs
 AUDIT_SCHEMA = "academic_audit"
 MAIN_SCHEMA = "casino_data"
 
-# Table name mapping (for compatibility layer)
+# Table name mapping (for compatibility layer) - Real system equivalents of Casino-1 (simulation) table names
 TABLE_MAPPING = {
     "customers": "customer_demographics",
     "sessions": "player_sessions", 
