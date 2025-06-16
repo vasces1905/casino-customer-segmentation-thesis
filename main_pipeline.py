@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 class CasinoPipeline:
     """
     Main pipeline orchestrator for thesis project.
-    Handles data flow from DB to trained models.
+    Handles data flows from DB to trained models.
     """
     
     def __init__(self, mode: str = "synthetic"):
