@@ -77,6 +77,29 @@ class SyntheticToRealMapper:
             FROM player_sessions
             WHERE customer_id = %s
         """
+        'visit_frequency': """
+    SELECT COUNT(*) 
+    FROM customer_visits 
+    WHERE customer_id = %s 
+    AND entry_time >= CURRENT_DATE - INTERVAL '30 days'
+""",
+
+'cash_flow_pattern': """
+    SELECT 
+        SUM(CASE WHEN transaction_type = 'CASH_IN' THEN amount ELSE 0 END) as total_cash_in,
+        SUM(CASE WHEN transaction_type = 'CASH_OUT' THEN amount ELSE 0 END) as total_cash_out
+    FROM tito_transactions
+    WHERE customer_id = %s
+""",
+
+'peak_hour_preference': """
+    SELECT EXTRACT(HOUR FROM entry_time) as hour, COUNT(*) as visits
+    FROM customer_visits
+    WHERE customer_id = %s
+    GROUP BY hour
+    ORDER BY visits DESC
+    LIMIT 1
+"""
     }
     
     # Segment mapping
