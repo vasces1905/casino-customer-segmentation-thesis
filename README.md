@@ -6,6 +6,10 @@
 > **Supervisor**: Dr. Moody Alam  
 > **Ethics Approval**: 10351-12382
 
+## Citation
+If you use this work in your research, please cite it as:
+Canlı, M.Y. (2025). *Casino Customer Segmentation: An AI-Powered Approach to Promotional Decision Making*. MSc Thesis, University of Bath.
+
 ## Abstract
 
 This research implements machine learning techniques for customer segmentation and promotional response prediction in physical casino environments. Using anonymized historical data from Imperial Palace Hotel Casino (Bulgaria), we develop a novel framework that bridges synthetic proof-of-concept models with production-ready systems, ensuring both academic rigor and practical applicability.
