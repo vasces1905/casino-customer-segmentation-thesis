@@ -110,7 +110,7 @@ class CasinoFeatureEngineer:
             # Time-based patterns
             customer_data['hour_of_day'] = customer_data['start_time'].dt.hour
             customer_data['day_of_week'] = customer_data['start_time'].dt.dayofweek
-            
+           
             behavioral_features = {
                 'customer_id': customer_id,
                 
@@ -126,13 +126,17 @@ class CasinoFeatureEngineer:
                 
                 # Engagement patterns
                 'sessions_per_visit_day': customer_data.groupby(customer_data['start_time'].dt.date).size().mean(),
-                'multi_game_player': (customer_data['game_type'].nunique() > 1).astype(int),
+                'multi_game_player': 1 if customer_data['game_type'].nunique() > 1 else 0,  # DÜZELTME
                 
-                # Risk indicators (original contribution)
-                'rapid_play_indicator': (session_durations < 30).mean(),  # Short sessions
-                'marathon_player': (session_durations > 180).any().astype(int),  # 3+ hour sessions
+                # Risk indicators
+                'rapid_play_indicator': (session_durations < 30).mean(),
+                'marathon_player': 1 if (session_durations > 180).any() else 0,  # DÜZELTME
                 'loss_chasing_score': self._calculate_loss_chasing_score(customer_data)
             }
+            
+            
+            
+            
             
             features = pd.concat([features, pd.DataFrame([behavioral_features])], ignore_index=True)
         

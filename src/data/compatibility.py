@@ -14,7 +14,6 @@ This module bridges Casino-1 (synthetic CSV) and Casino-2 (real DB) data formats
 from typing import Dict, List, Optional
 import pandas as pd
 
-
 class SyntheticToRealMapper:
     """
     Maps features between synthetic proof-of-concept (casino-1) and real casino data (casino-2).
