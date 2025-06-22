@@ -29,3 +29,17 @@ This research implements machine learning techniques for customer segmentation a
 4. **Academic-Compliant Architecture**: Demonstrating enterprise patterns in academic context
 
 ## Project Structure
+
+
+## Version History
+## Version History
+- dfc1e55 (2025-06-22): Merge branch 'main' of https://github.com/vasces1905/casino-customer-segmentation-thesis
+- 34bf68a (2025-06-22): [UPDATE] Add multi-mode pipeline support and update documentation
+- e470ef7 (2025-06-16): [FEAT] Implement main ML pipeline orchestrator
+- fab2bd5 (2025-06-16): [FEAT] Implement FastAPI endpoints for ML inference
+- f409285 (2025-06-15): Update README.md
+- 356d5ec (2025-06-15): [FEAT] Implement ML models with academic standards
+- 58fd4d8 (2025-06-14): [DOCS] Add reference to compatibility demo in README
+- 8bbf326 (2025-06-14): [TEST] Add compatibility layer demo script
+- f35f8dd (2025-06-12): [FEAT] Implement novel feature engineering for casino analytics
+- e221e10 (2025-06-12): [FEAT] Implement academic-compliant data layer
