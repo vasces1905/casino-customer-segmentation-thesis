@@ -5,26 +5,15 @@
 > **Student**: Muhammed Yavuzhan CANLI  
 > **Supervisor**: Dr. Moody Alam  
 > **Ethics Approval**: 10351-12382
+> **Compliance: GDPR Article 26 (Data fully anonymized and non-commercial)
 
 ## Citation
 If you use this work in your research, please cite it as:
 Canlı, M.Y. (2025). *Casino Customer Segmentation: An AI-Powered Approach to Promotional Decision Making*. MSc Thesis, University of Bath.
 
-## Version History
-
-### v0.2.0 (19 June 2025) - Current
-- Added batch data import script (`import_casino_batch_data.py`)
-- Multi-mode pipeline support (synthetic, batch, comparison)
-- Fixed feature engineering bugs
-- Updated main_pipeline.py with real data support
-
-### v0.1.0 (16 June 2025)
-- Initial academic project structure
-- Database schema design
-- Basic ML pipeline with synthetic data
-- API endpoints implementation
-
 ## Abstract
+
+This project is part of an MSc Dissertation at the University of Bath focused on customer behavior segmentation and AI-based promotional strategies in physical casino environments. The system integrates real-world slot machine data, anonymized CRM data, and machine learning pipelines to generate segmentation labels and personalized promotional decisions.
 
 This research implements machine learning techniques for customer segmentation and promotional response prediction in physical casino environments. Using anonymized historical data from Imperial Palace Hotel Casino (Bulgaria), we develop a novel framework that bridges synthetic proof-of-concept models with production-ready systems, ensuring both academic rigor and practical applicability.
 
@@ -42,18 +31,66 @@ This research implements machine learning techniques for customer segmentation a
 3. **Hybrid ML Pipeline**: Combining unsupervised (K-means) and supervised (Random Forest) learning
 4. **Academic-Compliant Architecture**: Demonstrating enterprise patterns in academic context
 
-## Recent Updates (19 June 2025)
-
-- **Batch Import Script**: Ready for Casino IT data (`scripts/import_casino_batch_data.py`)
-- **Pipeline Modes**: `--mode batch` for real data, `--mode comparison` for analysis
-- **Bug Fixes**: Feature engineering multi_game_player issue resolved
-
+## Key Modules
+- scripts/ – One-time data generators and transformation tools
+- schema/ – PostgreSQL schema and indexing setup
+- src/features/ – Feature engineering (behavioral and temporal)
+- src/models/ – Machine learning training (K-Means, Random Forest)
+- thesis_outputs/ – Visual outputs, tables, and validation sets
 
 ## Project Structure
-
-
+casino-customer-segmentation-thesis/
+├── academic/                    # Ethics docs, compliance materials
+├── data/                        # Raw and processed datasets
+├── schema/                      # SQL scripts for database setup
+├── scripts/                     # Data generation scripts
+│   ├── import_casino_batch_data.py
+│   ├── generate_demographics_from_valid_ids.py
+├── src/                         # ML pipeline code
+│   ├── features/
+│   ├── models/
+│   └── main_pipeline.py
+├── notebooks/                   # Jupyter analysis notebooks
+├── thesis_outputs/              # Figures, charts, exports
+├── docker/                      # Docker and container configs
+├── README.md                    # Project overview (this file)
+└── file_structure.txt           # Auto-generated file list
 
 ## Version History
+
+### v0.1.0 (16 June 2025)
+- **Initial academic project structure
+- **Database schema design
+- **Basic ML pipeline with synthetic data
+- **API endpoints implementation
+
+### v0.1.1 (19 Jun 2025)
+- **Batch import script for Casino IT data, multi-mode pipeline support, feature bug fixes
+
+### v0.2.0 (20 June 2025) 
+- **Added batch data import script (`import_casino_batch_data.py`)
+- **Multi-mode pipeline support (synthetic, batch, comparison)
+- **Fixed feature engineering bugs
+- **Updated main_pipeline.py with real data support
+
+### v0.2.1 (2025-06-25): 
+- **PostgreSQL migration
+- **schema integration, ethics config
+
+### v0.3.0 (7 July 2025)
+- **Cleaned and validated game_events with 2.7M+ records
+- **Extracted 38,319 valid player_id values using regex and NULL filters
+- **Created customer_demographics using Faker (GDPR compliant)
+- **Removed 275 malformed customer_id records from demographics
+
+### Recent Updates: v0.3.1 (8 July 2025)
+- **Confirmed one-to-one relationship across player_id ↔ customer_id
+- **Verified data year/month coverage: Jul 2021 to Mar 2024
+- **Ready for behavioral feature engineering (avg_bet, volatility, etc.)
+- **Real data validation complete
+- **pipeline ready
+
+### Auto Version History
 - 7f87912 (2025-06-22): [DOCS] Auto-update version history in README
 - 9d5f528 (2025-06-22): [DOCS] Auto-update version history in README
 - dfc1e55 (2025-06-22): Merge branch 'main' of https://github.com/vasces1905/casino-customer-segmentation-thesis
