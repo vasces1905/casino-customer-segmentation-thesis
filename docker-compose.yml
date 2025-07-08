@@ -1,0 +1,40 @@
+# BATH University Academic Thesis - PostgreSQL Service
+# Student: Muhammed Yavuzhan CANLI  
+# Ethics Approval: 10351-12382
+# Academic use only - No commercial distribution
+# Academic metadata (UK standards)
+# Health check
+# Proper volume naming
+# Ethics approval references
+
+# version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: casino_postgres_academic
+    environment:
+      POSTGRES_DB: casino_research
+      POSTGRES_USER: researcher
+      POSTGRES_PASSWORD: academic_password_2024
+      # Academic metadata
+      ACADEMIC_INSTITUTION: "University of Bath"
+      ACADEMIC_STUDENT: "Muhammed Yavuzhan CANLI"
+      ETHICS_APPROVAL: "10351-12382"
+    volumes:
+      # Auto-execute SQL schemas on startup
+      - ./schema:/docker-entrypoint-initdb.d:ro
+      # Persistent data storage
+      - pgdata_academic:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researcher -d casino_research"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  pgdata_academic:
+    driver: local

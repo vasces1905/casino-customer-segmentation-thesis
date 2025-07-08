@@ -4,32 +4,34 @@
 
 -- Customer demographics (fully anonymized)
 CREATE TABLE casino_data.customer_demographics (
-    customer_id VARCHAR(20) PRIMARY KEY, -- Already anonymized (CUST_XXXXXX) after taken from Casino DB
-    age_range VARCHAR(10), -- Generalized: '18-24', '25-34', etc.
+    customer_id VARCHAR(50) PRIMARY KEY, -- Already anonymized (CUST_XXXXXX) after taken from Casino DB
+    age_range VARCHAR(20), -- Generalized: '18-24', '25-34', etc.
     gender VARCHAR(10), -- M/F/Other
     region VARCHAR(50), -- Generalized location
-    registration_month VARCHAR(7), -- YYYY-MM only
+    registration_month VARCHAR(10), -- YYYY-MM only
     customer_segment INTEGER, -- From ML clustering
+    import_session_id UUID,  -- ← added new
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Player sessions (temporal noise added)
 CREATE TABLE casino_data.player_sessions (
     session_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     session_start TIMESTAMP, -- ±30 min noise added
     session_end TIMESTAMP,
     total_bet DECIMAL(10,2),
     total_win DECIMAL(10,2),
     game_type VARCHAR(50),
     machine_id VARCHAR(20),
+    import_session_id UUID,  -- ← added new
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Aggregated daily statistics (for performance)
 CREATE TABLE casino_data.daily_aggregates (
     aggregate_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     date DATE,
     total_sessions INTEGER,
     total_bet DECIMAL(10,2),
@@ -51,7 +53,7 @@ CREATE TABLE casino_data.casino_machines (
 -- Promotion history
 CREATE TABLE casino_data.promotion_history (
     promotion_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     promotion_type VARCHAR(50),
     offer_date DATE,
     response BOOLEAN,
@@ -62,7 +64,7 @@ CREATE TABLE casino_data.promotion_history (
 -- Feature store for ML
 CREATE TABLE casino_data.customer_features (
     feature_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     feature_version VARCHAR(10),
     total_wagered DECIMAL(12,2),
     avg_bet_per_session DECIMAL(10,2),
@@ -82,7 +84,7 @@ CREATE TABLE casino_data.customer_features (
 -- Customer visit tracking (entry/exit)
 CREATE TABLE casino_data.customer_visits (
     visit_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     entry_time TIMESTAMP, -- with ±30min noise
     exit_time TIMESTAMP,
     visit_duration_minutes INTEGER,
@@ -104,7 +106,7 @@ CREATE TABLE casino_data.floor_occupancy (
 -- TITO (Ticket-In-Ticket-Out) transactions
 CREATE TABLE casino_data.tito_transactions (
     transaction_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     transaction_type VARCHAR(20), -- 'CASH_IN', 'CASH_OUT', 'TRANSFER'
     amount DECIMAL(10,2),
     machine_id VARCHAR(20),
@@ -115,7 +117,7 @@ CREATE TABLE casino_data.tito_transactions (
 -- Live dealer game sessions (different from slots)
 CREATE TABLE casino_data.live_game_sessions (
     live_session_id BIGSERIAL PRIMARY KEY,
-    customer_id VARCHAR(20) REFERENCES casino_data.customer_demographics(customer_id),
+    customer_id VARCHAR(50) REFERENCES casino_data.customer_demographics(customer_id),
     game_type VARCHAR(50), -- 'Blackjack', 'Roulette', 'Poker'
     table_id VARCHAR(20),
     dealer_id VARCHAR(20), -- anonymized

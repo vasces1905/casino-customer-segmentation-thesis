@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Giriş/Çıkış dosya yolu
+input_file = "src/data/customer_demographics_2022.csv"
+output_file = "src/data/customer_demographics_2022_clean.csv"
+
+# Dosyayı oku
+df = pd.read_csv(input_file)
+
+# ID’leri standartlaştır
+def fix_id(cid):
+    try:
+        number = int(str(cid).replace("CUST_", "").strip())
+        return f"CUST_{str(number).zfill(6)}"
+    except:
+        return "CUST_000000"
+
+df['customer_id'] = df['customer_id'].apply(fix_id)
+
+# Yeni CSV’yi yaz
+df.to_csv(output_file, index=False)
+print(f"✅ Cleaned file saved to {output_file}")

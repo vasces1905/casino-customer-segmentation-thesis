@@ -39,3 +39,38 @@ TABLE_MAPPING = {
     "transactions": "player_transactions",
     "promotions": "promotion_history"
 }
+
+def get_db_config():
+    """
+    Returns DB connection config from environment.
+    Used by external scripts to connect safely.
+    """
+    return {
+        "host": DB_CONFIG["host"],
+        "port": DB_CONFIG["port"],
+        "database": DB_CONFIG["database"],
+        "user": DB_CONFIG["user"],
+        "password": DB_CONFIG["password"]
+    }
+
+import psycopg2
+
+def get_db_connection():
+    """
+    Establishes a PostgreSQL connection using values from DB_CONFIG.
+    Returns a psycopg2 connection object.
+
+    Usage:
+        with get_db_connection() as conn:
+            # do stuff
+    """
+    conn = psycopg2.connect(
+        dbname=DB_CONFIG["database"],
+        user=DB_CONFIG["user"],
+        password=DB_CONFIG["password"],
+        host=DB_CONFIG["host"],
+        port=DB_CONFIG["port"]
+    )
+    return conn
+
+    

@@ -41,6 +41,300 @@
       },
       "notes": "Academic thesis model - promotion response",
       "status": "active"
+    },
+    {
+      "model_id": "segmentation_20250702_102347",
+      "model_type": "segmentation",
+      "model_path": "models/segmentation_20250702_102347.pkl",
+      "registered_at": "2025-07-02T10:23:47.516865",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:23:46.777983",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.31590855748680646,
+        "davies_bouldin_score": 0.8855829029658887
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_20250702_102347",
+      "model_type": "promotion",
+      "model_path": "models/promotion_20250702_102347.pkl",
+      "registered_at": "2025-07-02T10:23:47.549821",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:23:47.467176",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "segmentation_20250702_103314",
+      "model_type": "segmentation",
+      "model_path": "models/segmentation_20250702_103314.pkl",
+      "registered_at": "2025-07-02T10:33:14.474801",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:33:13.525612",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.3159085574868029,
+        "davies_bouldin_score": 0.8855828993069457
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_20250702_103314",
+      "model_type": "promotion",
+      "model_path": "models/promotion_20250702_103314.pkl",
+      "registered_at": "2025-07-02T10:33:14.513324",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:33:14.410036",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "segmentation_20250702_103409",
+      "model_type": "segmentation",
+      "model_path": "models/segmentation_20250702_103409.pkl",
+      "registered_at": "2025-07-02T10:34:09.247913",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:34:08.328464",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.3159085574868026,
+        "davies_bouldin_score": 0.8855829029658894
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_20250702_103409",
+      "model_type": "promotion",
+      "model_path": "models/promotion_20250702_103409.pkl",
+      "registered_at": "2025-07-02T10:34:09.289888",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:34:09.188338",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "segmentation_20250702_103600",
+      "model_type": "segmentation",
+      "model_path": "models/segmentation_20250702_103600.pkl",
+      "registered_at": "2025-07-02T10:36:00.380653",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:35:59.392684",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.31590855748682123,
+        "davies_bouldin_score": 0.8855829029658464
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_20250702_103600",
+      "model_type": "promotion",
+      "model_path": "models/promotion_20250702_103600.pkl",
+      "registered_at": "2025-07-02T10:36:00.420320",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T10:36:00.331421",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "segmentation_20250702_112416",
+      "model_type": "segmentation",
+      "model_path": "models/segmentation_20250702_112416.pkl",
+      "registered_at": "2025-07-02T11:24:16.414571",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T11:24:15.483791",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.31590855748680563,
+        "davies_bouldin_score": 0.8855829029658636
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_20250702_112416",
+      "model_type": "promotion",
+      "model_path": "models/promotion_20250702_112416.pkl",
+      "registered_at": "2025-07-02T11:24:16.453720",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T11:24:16.362837",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "Academic thesis model - batch mode",
+      "status": "active"
+    },
+    {
+      "model_id": "customer_segmentation_20250702_114525",
+      "model_type": "customer_segmentation",
+      "model_path": "models/segmentation_academic_20250702_114525.pkl",
+      "registered_at": "2025-07-02T11:45:25.501406",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T11:45:24.416815",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.31590855748682306,
+        "davies_bouldin_score": 0.8855829029658464
+      },
+      "notes": "University of Bath thesis model - batch mode - Ethics: 10351-12382",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_response_20250702_114525",
+      "model_type": "promotion_response",
+      "model_path": "models/promotion_academic_20250702_114525.pkl",
+      "registered_at": "2025-07-02T11:45:25.538212",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T11:45:25.421989",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "University of Bath thesis model - batch mode - Ethics: 10351-12382",
+      "status": "active"
+    },
+    {
+      "model_id": "customer_segmentation_20250702_224623",
+      "model_type": "customer_segmentation",
+      "model_path": "models/segmentation_academic_20250702_224623.pkl",
+      "registered_at": "2025-07-02T22:46:23.800139",
+      "metrics": {
+        "model_type": "KMeans_Clustering",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Customer behavioral segmentation",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T22:46:22.851932",
+        "n_samples": 1000,
+        "n_features": 9,
+        "silhouette_score": 0.31590855748681296,
+        "davies_bouldin_score": 0.8855828993069563
+      },
+      "notes": "University of Bath thesis model - batch mode - Ethics: 10351-12382",
+      "status": "active"
+    },
+    {
+      "model_id": "promotion_response_20250702_224623",
+      "model_type": "promotion_response",
+      "model_path": "models/promotion_academic_20250702_224623.pkl",
+      "registered_at": "2025-07-02T22:46:23.845480",
+      "metrics": {
+        "model_type": "RandomForestClassifier",
+        "created_by": "Muhammed Yavuzhan CANLI",
+        "academic_purpose": "Promotional response prediction",
+        "ethics_ref": "10351-12382",
+        "fit_date": "2025-07-02T22:46:23.730699",
+        "n_samples": 1000,
+        "n_features": 18,
+        "cv_roc_auc": 0.9198395989974937,
+        "cv_std": 0.007786215179852598,
+        "class_distribution": {
+          "0": 525,
+          "1": 475
+        }
+      },
+      "notes": "University of Bath thesis model - batch mode - Ethics: 10351-12382",
+      "status": "active"
     }
   ],
   "created_at": "2025-06-16T23:01:53.703942",
