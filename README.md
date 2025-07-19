@@ -26,10 +26,12 @@ This research implements machine learning techniques for customer segmentation a
 
 ## Research Contributions
 
-1. **Novel Synthetic-to-Real Data Mapping Framework**: Bridging the gap between academic prototypes and production systems
-2. **Domain-Specific Feature Engineering**: Casino-specific temporal and behavioral features
-3. **Hybrid ML Pipeline**: Combining unsupervised (K-means) and supervised (Random Forest) learning
-4. **Academic-Compliant Architecture**: Demonstrating enterprise patterns in academic context
+- Novel Synthetic-to-Real Data Mapping Framework: Bridging the gap between academic prototypes and production systems
+- Domain-Specific Feature Engineering: Casino-specific temporal and behavioral features
+- Hybrid ML Pipeline: Combining unsupervised (K-means) and supervised (Random Forest) learning
+- Academic-Compliant Architecture: Demonstrating enterprise patterns in academic context
+- Segment Migration & Temporal Drift Analysis: Period-based segment change tracking and simulation-ready A/B evaluation - framework
+- GDPR-Compliant Promotion Targeting: Simulated and real-segment driven promotion assignment with ethical AI logic
 
 ## Key Modules
 - scripts/ – One-time data generators and transformation tools
@@ -83,12 +85,19 @@ casino-customer-segmentation-thesis/
 - **Created customer_demographics using Faker (GDPR compliant)
 - **Removed 275 malformed customer_id records from demographics
 
-### Recent Updates: v0.3.1 (8 July 2025)
+### v0.3.1 (8 July 2025)
 - **Confirmed one-to-one relationship across player_id ↔ customer_id
 - **Verified data year/month coverage: Jul 2021 to Mar 2024
 - **Ready for behavioral feature engineering (avg_bet, volatility, etc.)
 - **Real data validation complete
 - **pipeline ready
+
+### Recent Updates: v0.3.2 (19 July 2025)
+- Finalized 5-period segmentation views: 2022-H1 to 2024-H1
+- Created unified view: kmeans_export_all_periods for temporal drift analysis
+- View validation complete (35,974 customers, 100% coverage)
+- Added get_period_export_view() SQL helper for Python dynamic integration
+- Migration & promo impact analysis tools now ready
 
 ### Auto Version History
 - 7f87912 (2025-06-22): [DOCS] Auto-update version history in README
