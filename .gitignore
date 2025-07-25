@@ -1,5 +1,5 @@
-src/data/game_events_archive.sql
-src/data/backup/game_events_cleaned.csv
-
-echo "src/data/*.csv" >> .gitignore
-echo "src/data/*.sql" >> .gitignore
+*.csv
+*.sql
+src/data/
+src/data/**/*.csv
+src/data/**/*.sql
