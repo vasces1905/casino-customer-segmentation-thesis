@@ -1,0 +1,150 @@
+-- TEMPORAL MULTI-ALGORITHM ANALYSIS
+-- Compare algorithm performance across multiple periods
+
+-- ============================================================================
+-- ANALYSIS 1 ALGORITHM STABILITY ACROSS PERIODS
+-- ============================================================================
+SELECT 
+    'ALGORITHM_STABILITY' as analysis_type,
+    algorithm_name,
+    period_id,
+    COUNT() as total_customers,
+    COUNT(DISTINCT cluster_id) as unique_clusters,
+    COUNT(CASE WHEN is_outlier = true THEN 1 END) as outlier_count,
+    CAST(COUNT(CASE WHEN is_outlier = true THEN 1 END)  100.0  COUNT() AS NUMERIC(5,1)) as outlier_percentage,
+    
+    -- Compare with previous period (if available)
+    LAG(COUNT(CASE WHEN is_outlier = true THEN 1 END)) OVER (PARTITION BY algorithm_name ORDER BY period_id) as prev_outlier_count,
+    LAG(COUNT(DISTINCT cluster_id)) OVER (PARTITION BY algorithm_name ORDER BY period_id) as prev_cluster_count
+    
+FROM casino_data.multi_algorithm_segments
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2')
+GROUP BY algorithm_name, period_id
+ORDER BY algorithm_name, period_id;
+
+-- ============================================================================
+-- ANALYSIS 2 SEASONAL PATTERN DETECTION (H1 vs H2)
+-- ============================================================================
+WITH seasonal_analysis AS (
+    SELECT 
+        algorithm_name,
+        LEFT(period_id, 4) as year,
+        RIGHT(period_id, 2) as half,
+        COUNT() as customers,
+        COUNT(CASE WHEN is_outlier = true THEN 1 END) as outliers,
+        COUNT(DISTINCT cluster_id) as clusters
+    FROM casino_data.multi_algorithm_segments
+    WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2')
+    GROUP BY algorithm_name, LEFT(period_id, 4), RIGHT(period_id, 2)
+)
+SELECT 
+    'SEASONAL_PATTERNS' as analysis_type,
+    algorithm_name,
+    year,
+    
+    -- H1 metrics
+    MAX(CASE WHEN half = 'H1' THEN customers END) as h1_customers,
+    MAX(CASE WHEN half = 'H1' THEN outliers END) as h1_outliers,
+    MAX(CASE WHEN half = 'H1' THEN clusters END) as h1_clusters,
+    
+    -- H2 metrics  
+    MAX(CASE WHEN half = 'H2' THEN customers END) as h2_customers,
+    MAX(CASE WHEN half = 'H2' THEN outliers END) as h2_outliers,
+    MAX(CASE WHEN half = 'H2' THEN clusters END) as h2_clusters,
+    
+    -- Seasonal differences
+    MAX(CASE WHEN half = 'H2' THEN customers END) - MAX(CASE WHEN half = 'H1' THEN customers END) as customer_growth,
+    MAX(CASE WHEN half = 'H2' THEN outliers END) - MAX(CASE WHEN half = 'H1' THEN outliers END) as outlier_change
+    
+FROM seasonal_analysis
+GROUP BY algorithm_name, year
+ORDER BY algorithm_name, year;
+
+-- ============================================================================
+-- ANALYSIS 3 ALGORITHM PERFORMANCE EVOLUTION
+-- ============================================================================
+SELECT 
+    'PERFORMANCE_EVOLUTION' as analysis_type,
+    period_id,
+    algorithm_name,
+    CAST((algorithm_metadata-'silhouette_score')numeric AS NUMERIC(6,4)) as silhouette_score,
+    (algorithm_metadata-'n_clusters')integer as n_clusters,
+    (algorithm_metadata-'n_outliers')integer as n_outliers,
+    
+    -- Performance ranking within period
+    RANK() OVER (PARTITION BY period_id ORDER BY (algorithm_metadata-'silhouette_score')numeric DESC) as silhouette_rank,
+    
+    -- Performance change from previous period
+    LAG(CAST((algorithm_metadata-'silhouette_score')numeric AS NUMERIC(6,4))) OVER (PARTITION BY algorithm_name ORDER BY period_id) as prev_silhouette,
+    
+    CAST((algorithm_metadata-'silhouette_score')numeric AS NUMERIC(6,4)) - 
+    LAG(CAST((algorithm_metadata-'silhouette_score')numeric AS NUMERIC(6,4))) OVER (PARTITION BY algorithm_name ORDER BY period_id) as silhouette_change
+    
+FROM casino_data.multi_algorithm_segments
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2')
+GROUP BY period_id, algorithm_name, algorithm_metadata
+ORDER BY period_id, silhouette_score DESC;
+
+-- ============================================================================
+-- ANALYSIS 4 OUTLIER EVOLUTION (DBSCAN Focus)
+-- ============================================================================
+SELECT 
+    'DBSCAN_OUTLIER_EVOLUTION' as analysis_type,
+    period_id,
+    COUNT() as total_customers,
+    COUNT(CASE WHEN is_outlier = true THEN 1 END) as outlier_count,
+    CAST(COUNT(CASE WHEN is_outlier = true THEN 1 END)  100.0  COUNT() AS NUMERIC(5,1)) as outlier_percentage,
+    COUNT(DISTINCT cluster_id) as total_clusters,
+    COUNT(DISTINCT CASE WHEN is_outlier = false THEN cluster_id END) as valid_clusters,
+    
+    -- Change from previous period
+    LAG(COUNT(CASE WHEN is_outlier = true THEN 1 END)) OVER (ORDER BY period_id) as prev_outliers,
+    COUNT(CASE WHEN is_outlier = true THEN 1 END) - LAG(COUNT(CASE WHEN is_outlier = true THEN 1 END)) OVER (ORDER BY period_id) as outlier_change
+
+FROM casino_data.multi_algorithm_segments
+WHERE algorithm_name = 'dbscan'
+AND period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2')
+GROUP BY period_id
+ORDER BY period_id;
+
+-- ============================================================================
+-- ANALYSIS 5 ALGORITHM AGREEMENT CONSISTENCY OVER TIME
+-- ============================================================================
+WITH agreement_analysis AS (
+    SELECT 
+        k.period_id,
+        k.customer_id,
+        k.cluster_id as kmeans_cluster,
+        g.cluster_id as gaussian_cluster,
+        h.cluster_id as hierarchical_cluster,
+        d.cluster_id as dbscan_cluster,
+        d.is_outlier as dbscan_outlier
+    FROM casino_data.multi_algorithm_segments k
+    INNER JOIN casino_data.multi_algorithm_segments g 
+        ON k.customer_id = g.customer_id AND k.period_id = g.period_id AND g.algorithm_name = 'gaussian_mixture'
+    INNER JOIN casino_data.multi_algorithm_segments h 
+        ON k.customer_id = h.customer_id AND k.period_id = h.period_id AND h.algorithm_name = 'hierarchical'  
+    INNER JOIN casino_data.multi_algorithm_segments d 
+        ON k.customer_id = d.customer_id AND k.period_id = d.period_id AND d.algorithm_name = 'dbscan'
+    WHERE k.algorithm_name = 'kmeans'
+    AND k.period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2')
+)
+SELECT 
+    'AGREEMENT_CONSISTENCY' as analysis_type,
+    period_id,
+    
+    -- K-Means vs Gaussian Mixture agreement
+    COUNT(CASE WHEN kmeans_cluster = gaussian_cluster THEN 1 END) as kmeans_gaussian_agreement,
+    CAST(COUNT(CASE WHEN kmeans_cluster = gaussian_cluster THEN 1 END)  100.0  COUNT() AS NUMERIC(5,1)) as kmeans_gaussian_agreement_pct,
+    
+    -- K-Means vs Hierarchical agreement  
+    COUNT(CASE WHEN kmeans_cluster = hierarchical_cluster THEN 1 END) as kmeans_hierarchical_agreement,
+    CAST(COUNT(CASE WHEN kmeans_cluster = hierarchical_cluster THEN 1 END)  100.0  COUNT() AS NUMERIC(5,1)) as kmeans_hierarchical_agreement_pct,
+    
+    -- DBSCAN outlier impact
+    COUNT(CASE WHEN dbscan_outlier = true THEN 1 END) as dbscan_outliers,
+    COUNT(CASE WHEN dbscan_outlier = false AND kmeans_cluster = dbscan_cluster THEN 1 END) as kmeans_dbscan_agreement_non_outliers
+    
+FROM agreement_analysis
+GROUP BY period_id
+ORDER BY period_id;

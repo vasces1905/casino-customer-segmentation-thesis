@@ -1,0 +1,93 @@
+-- ============================================================================
+-- COMPREHENSIVE 6-PERIOD TEMPORAL ANALYSIS
+-- Complete customer behavior evolution across 2+ years
+-- ============================================================================
+
+-- ANALYSIS 1: COMPLETE PERIOD OVERVIEW
+-- ============================================================================
+SELECT 
+    'COMPLETE_DATASET_OVERVIEW' as analysis_type,
+    period_id,
+    COUNT(*) as total_customers,
+    COUNT(DISTINCT cluster_label) as unique_segments,
+    CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)) as overall_avg_session,
+    CAST(MIN(avg_session_from_metadata) AS NUMERIC(12,2)) as min_session,
+    CAST(MAX(avg_session_from_metadata) AS NUMERIC(12,2)) as max_session,
+    MIN(created_at)::date as processing_date
+FROM casino_data.kmeans_segments 
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2', '2024-H1')
+AND created_at >= '2025-07-21'  -- Recent processing only
+GROUP BY period_id
+ORDER BY period_id;
+
+-- ANALYSIS 2: SEGMENT EVOLUTION ACROSS ALL PERIODS
+-- ============================================================================
+SELECT 
+    'SEGMENT_EVOLUTION' as analysis_type,
+    period_id,
+    cluster_label,
+    COUNT(*) as customer_count,
+    CAST(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(PARTITION BY period_id) AS NUMERIC(5,1)) as percentage,
+    CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)) as avg_session_value
+FROM casino_data.kmeans_segments 
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2', '2024-H1')
+AND created_at >= '2025-07-21'
+GROUP BY period_id, cluster_label
+ORDER BY period_id, customer_count DESC;
+
+-- ANALYSIS 3: ANNUAL GROWTH ANALYSIS (H1 vs H1, H2 vs H2)
+-- ============================================================================
+-- H1 Comparison (2022-H1 vs 2023-H1 vs 2024-H1)
+SELECT 
+    'ANNUAL_H1_COMPARISON' as analysis_type,
+    period_id,
+    cluster_label,
+    COUNT(*) as customers,
+    CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)) as avg_session,
+    -- Growth calculation will be done in next query
+    LAG(COUNT(*), 1) OVER (PARTITION BY cluster_label ORDER BY period_id) as previous_period_customers
+FROM casino_data.kmeans_segments 
+WHERE period_id IN ('2022-H1', '2023-H1', '2024-H1')
+AND created_at >= '2025-07-21'
+GROUP BY period_id, cluster_label
+ORDER BY cluster_label, period_id;
+
+-- ANALYSIS 4: SEASONAL PATTERNS (H1 vs H2 within each year)
+-- ============================================================================
+SELECT 
+    'SEASONAL_PATTERNS' as analysis_type,
+    LEFT(period_id, 4) as year,
+    RIGHT(period_id, 2) as half,
+    COUNT(*) as total_customers,
+    COUNT(DISTINCT cluster_label) as segments,
+    CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)) as avg_session_value,
+    
+    -- Calculate seasonal boost (H2 vs H1 within same year)
+    CASE 
+        WHEN RIGHT(period_id, 2) = 'H2' THEN 
+            CAST(COUNT(*) * 100.0 / LAG(COUNT(*), 1) OVER (PARTITION BY LEFT(period_id, 4) ORDER BY period_id) - 100 AS NUMERIC(5,1))
+        ELSE NULL 
+    END as seasonal_growth_percentage
+FROM casino_data.kmeans_segments 
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2', '2024-H1')
+AND created_at >= '2025-07-21'
+GROUP BY period_id
+ORDER BY period_id;
+
+-- ANALYSIS 5: VALUE EVOLUTION BY SEGMENT TYPE
+-- ============================================================================
+SELECT 
+    'VALUE_EVOLUTION' as analysis_type,
+    cluster_label,
+    period_id,
+    COUNT(*) as customers,
+    CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)) as avg_session,
+    CAST(MIN(avg_session_from_metadata) AS NUMERIC(12,2)) as min_session,
+    CAST(MAX(avg_session_from_metadata) AS NUMERIC(12,2)) as max_session,
+    -- Calculate value progression
+    LAG(CAST(AVG(avg_session_from_metadata) AS NUMERIC(12,2)), 1) OVER (PARTITION BY cluster_label ORDER BY period_id) as previous_avg_session
+FROM casino_data.kmeans_segments 
+WHERE period_id IN ('2022-H1', '2022-H2', '2023-H1', '2023-H2', '2024-H1')
+AND created_at >= '2025-07-21'
+GROUP BY cluster_label, period_id
+ORDER BY cluster_label, period_id;

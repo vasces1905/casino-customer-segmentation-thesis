@@ -1,0 +1,173 @@
+-- 3D COMPREHENSIVE CUSTOMER ANALYSIS
+-- Join customer_features + kmeans_segments + demographics for complete picture
+
+-- ============================================================================
+-- ANALYSIS 1: COMPLETE CUSTOMER PROFILE (Sample 10 customers)
+-- ============================================================================
+WITH customer_complete_profile AS (
+    SELECT 
+        -- Customer Identity
+        cd.customer_id,
+        cd.age_range,
+        cd.gender,
+        cd.region,
+        cd.registration_month,
+        
+        -- Behavioral Features (from customer_features)
+        cf.total_bet,
+        cf.avg_bet,
+        cf.loss_rate,
+        cf.total_sessions,
+        cf.days_since_last_visit,
+        cf.session_duration_volatility,
+        cf.loss_chasing_score,
+        cf.sessions_last_30d,
+        cf.bet_trend_ratio,
+        
+        -- K-Means Results (from kmeans_segments)
+        ks.cluster_id,
+        ks.cluster_label,
+        ks.silhouette_score,
+        ks.avg_session_from_metadata as personal_avg_session,
+        
+        -- Segment Statistics (from segment_data JSON)
+        ks.segment_data->>'size' as segment_size,
+        ks.segment_data->>'percentage' as segment_percentage,
+        ks.segment_data->>'avg_total_wagered' as segment_avg_wagered,
+        ks.segment_data->>'avg_loss_rate' as segment_avg_loss_rate,
+        ks.segment_data->>'avg_session_value' as segment_avg_session,
+        ks.segment_data->>'high_risk_percentage' as segment_risk_percentage,
+        
+        -- Analysis Date
+        ks.created_at as analysis_date
+        
+    FROM casino_data.customer_demographics cd
+    LEFT JOIN casino_data.customer_features cf 
+        ON cd.customer_id = cf.customer_id 
+        AND cf.analysis_period = '2022-H1'
+    LEFT JOIN casino_data.kmeans_segments ks 
+        ON cd.customer_id = ks.customer_id 
+        AND ks.period_id = '2022-H1'
+        AND ks.created_at >= '2025-07-21 10:29:16'
+    WHERE ks.customer_id IS NOT NULL  -- Only customers with complete data
+)
+
+SELECT 
+    '=== CUSTOMER PROFILE SAMPLE ===' as analysis_section,
+    customer_id,
+    age_range,
+    gender,
+    region,
+    total_bet,
+    avg_bet,
+    loss_rate,
+    loss_chasing_score,
+    cluster_label,
+    personal_avg_session,
+    segment_avg_session::numeric,
+    CASE 
+        WHEN personal_avg_session > segment_avg_session::numeric * 1.5 THEN 'ABOVE_SEGMENT_AVG'
+        WHEN personal_avg_session < segment_avg_session::numeric * 0.5 THEN 'BELOW_SEGMENT_AVG'
+        ELSE 'WITHIN_SEGMENT_RANGE'
+    END as segment_fit_analysis
+FROM customer_complete_profile
+ORDER BY total_bet DESC
+LIMIT 10;
+
+-- ============================================================================
+-- ANALYSIS 2: SEGMENT VALIDATION (Sanity Check)
+-- ============================================================================
+SELECT 
+    '=== SEGMENT VALIDATION ===' as analysis_section,
+    cluster_label,
+    COUNT(*) as customer_count,
+    
+    -- Individual vs Segment Averages
+    AVG(total_bet) as individual_avg_bet,
+    AVG(segment_avg_wagered::numeric) as segment_definition_avg_bet,
+    
+    AVG(loss_rate) as individual_avg_loss_rate,  
+    AVG(segment_avg_loss_rate::numeric) as segment_definition_avg_loss_rate,
+    
+    AVG(loss_chasing_score) as individual_avg_loss_chasing,
+    AVG(segment_risk_percentage::numeric) as segment_definition_risk_percentage,
+    
+    -- Validation Check
+    CASE 
+        WHEN ABS(AVG(total_bet) - AVG(segment_avg_wagered::numeric)) / AVG(total_bet) < 0.2 
+        THEN 'CONSISTENT'
+        ELSE 'INCONSISTENT'
+    END as segment_consistency_check
+    
+FROM customer_complete_profile
+GROUP BY cluster_label
+ORDER BY customer_count DESC;
+
+-- ============================================================================
+-- ANALYSIS 3: MODEL ROBUSTNESS CHECK (Outlier Detection)
+-- ============================================================================
+WITH segment_stats AS (
+    SELECT 
+        cluster_label,
+        AVG(total_bet) as segment_avg_bet,
+        STDDEV(total_bet) as segment_stddev_bet,
+        AVG(loss_chasing_score) as segment_avg_loss_chasing,
+        STDDEV(loss_chasing_score) as segment_stddev_loss_chasing
+    FROM customer_complete_profile
+    GROUP BY cluster_label
+),
+outlier_analysis AS (
+    SELECT 
+        cp.customer_id,
+        cp.cluster_label,
+        cp.total_bet,
+        cp.loss_chasing_score,
+        ss.segment_avg_bet,
+        ss.segment_stddev_bet,
+        
+        -- Z-score analysis
+        ABS(cp.total_bet - ss.segment_avg_bet) / NULLIF(ss.segment_stddev_bet, 0) as bet_z_score,
+        ABS(cp.loss_chasing_score - ss.segment_avg_loss_chasing) / NULLIF(ss.segment_stddev_loss_chasing, 0) as loss_chasing_z_score,
+        
+        CASE 
+            WHEN ABS(cp.total_bet - ss.segment_avg_bet) / NULLIF(ss.segment_stddev_bet, 0) > 2 THEN 'OUTLIER'
+            WHEN ABS(cp.total_bet - ss.segment_avg_bet) / NULLIF(ss.segment_stddev_bet, 0) > 1.5 THEN 'BORDERLINE'
+            ELSE 'NORMAL'
+        END as outlier_status
+        
+    FROM customer_complete_profile cp
+    JOIN segment_stats ss ON cp.cluster_label = ss.cluster_label
+)
+
+SELECT 
+    '=== OUTLIER DETECTION ===' as analysis_section,
+    cluster_label,
+    outlier_status,
+    COUNT(*) as customer_count,
+    AVG(bet_z_score) as avg_bet_z_score,
+    AVG(loss_chasing_z_score) as avg_loss_chasing_z_score
+FROM outlier_analysis
+GROUP BY cluster_label, outlier_status
+ORDER BY cluster_label, outlier_status;
+
+-- ============================================================================
+-- ANALYSIS 4: DEEP DIVE - SPECIFIC CUSTOMER EXAMPLES
+-- ============================================================================
+SELECT 
+    '=== DEEP DIVE EXAMPLES ===' as analysis_section,
+    customer_id,
+    age_range || ' ' || gender || ' from ' || region as demographics,
+    cluster_label,
+    
+    -- Individual Metrics
+    total_bet as individual_total_bet,
+    loss_chasing_score as individual_loss_chasing,
+    total_sessions as individual_sessions,
+    
+    -- Segment Benchmarks  
+    segment_avg_wagered::numeric as segment_benchmark_bet,
+    segment_risk_percentage::numeric as segment_benchmark_risk,
+    
+    -- Deviation Analysis
+    ROUND((total_bet - segment_avg_wagered::numeric) / segment_avg_wagered::numeric * 100, 1) as bet_deviation_percent,
+    R

@@ -58,7 +58,7 @@ casino-customer-segmentation-thesis/
 ├── README.md                    # Project overview (this file)
 └── file_structure.txt           # Auto-generated file list
 
-## Version History
+## Version History ##
 
 ### v0.1.0 (16 June 2025)
 - **Initial academic project structure
@@ -69,7 +69,7 @@ casino-customer-segmentation-thesis/
 ### v0.1.1 (19 Jun 2025)
 - **Batch import script for Casino IT data, multi-mode pipeline support, feature bug fixes
 
-### v0.2.0 (20 June 2025) 
+### v0.2.0 (20 June 2025):
 - **Added batch data import script (`import_casino_batch_data.py`)
 - **Multi-mode pipeline support (synthetic, batch, comparison)
 - **Fixed feature engineering bugs
@@ -79,25 +79,43 @@ casino-customer-segmentation-thesis/
 - **PostgreSQL migration
 - **schema integration, ethics config
 
-### v0.3.0 (7 July 2025)
+### v0.3.0 (7 July 2025):
 - **Cleaned and validated game_events with 2.7M+ records
 - **Extracted 38,319 valid player_id values using regex and NULL filters
 - **Created customer_demographics using Faker (GDPR compliant)
 - **Removed 275 malformed customer_id records from demographics
 
-### v0.3.1 (8 July 2025)
+### v0.3.1 (8 July 2025):
 - **Confirmed one-to-one relationship across player_id ↔ customer_id
 - **Verified data year/month coverage: Jul 2021 to Mar 2024
 - **Ready for behavioral feature engineering (avg_bet, volatility, etc.)
 - **Real data validation complete
 - **pipeline ready
 
-### Recent Updates: v0.3.2 (19 July 2025)
-- Finalized 5-period segmentation views: 2022-H1 to 2024-H1
-- Created unified view: kmeans_export_all_periods for temporal drift analysis
-- View validation complete (35,974 customers, 100% coverage)
-- Added get_period_export_view() SQL helper for Python dynamic integration
-- Migration & promo impact analysis tools now ready
+### v0.3.2 (19 July 2025):
+- **Finalized 5-period segmentation views: 2022-H1 to 2024-H1
+- **Created unified view: kmeans_export_all_periods for temporal drift analysis
+- **View validation complete (35,974 customers, 100% coverage)
+- **Added get_period_export_view() SQL helper for Python dynamic integration
+- **Migration & promo impact analysis tools now ready
+
+### v0.4.0 (22 July 2025):
+- **K-Means segmentation finalized for 2022-H1 to 2023-H2
+- **Implemented DBSCAN, GMM, Hierarchical clustering for algorithm comparison
+- **Temporal silhouette analysis, outlier tracking, and agreement scoring added
+- **Segment evolution visualization and risk overlay integration ready
+- **Prepared hybrid KMeans+DBSCAN strategy for Random Forest integration phase
+- Multi-algorithm clustering finalized (KMeans, DBSCAN, GMM, Hierarchical)
+- Agreement matrices and temporal drift analysis completed
+- Segment collapse (Casual → Regular) confirmed by KMeans logic
+
+### Recent Updates: v0.4.1 (23 July 2025) – RF-Ready Release (Multi Segementation)
+- Capped outliers (€1.5M max bet), CV < 3.0 achieved
+- Clean re-segmentation for 4 periods using KMeans + DBSCAN
+- Feature normalization (log1p, winsorization, RobustScaler)
+- Training base: 27,879 customers, weighted per period
+- DBSCAN outliers included as auxiliary risk label
+
 
 ### Auto Version History
 - 7f87912 (2025-06-22): [DOCS] Auto-update version history in README
