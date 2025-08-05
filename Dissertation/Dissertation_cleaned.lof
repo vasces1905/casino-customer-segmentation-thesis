@@ -1,0 +1,28 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Project Overview: Modular Architecture Integrating Anonymised Data, Feature Engineering, and ML-Driven Promotional Decision-Making}}{7}{figure.1.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces PostgreSQL Schema Design for Casino-2 Analytical System}}{23}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces K-Means segmentation visualisation for Casino-1 dataset.}}{25}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Confusion Matrix Visualisation and Promo Response.}}{26}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Feature Importance Scores from Random Forest Model.}}{26}{figure.3.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Casino AI Pipeline: ML-Powered Customer Segmentation Framework. This figure summarises the modular end-to-end workflow, integrating unsupervised segmentation, rule-based label generation, SMOTE-enhanced supervised learning, and deployment-ready model serialization.}}{37}{figure.4.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Unified Dashboard View: Model Statistics, Predictions, and Evolution Indicators (2022--2023)}}{40}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Promotion distribution across analysis periods, grouped by predicted promotional categories.}}{41}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Business Priority Distribution Matrix by Predicted Promotion Category}}{43}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Business Priority Distribution Matrix by Predicted Promotion Category}}{44}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Predicted Promotion Distribution by Period}}{45}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Average Model Confidence Across Periods}}{45}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Confidence Score Distribution by Period}}{46}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Promotion distribution across customer segments. Left: Heatmap of within-segment percentages; Right: distribution by segment and promotion type.}}{47}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Accuracy Comparison Across Classifiers (RF, SVM, LR, DT)}}{48}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Model Accuracy with Simple Features}}{49}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces RF Performance with Engineered Features}}{49}{figure.5.11}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

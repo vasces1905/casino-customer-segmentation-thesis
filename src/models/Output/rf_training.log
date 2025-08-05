@@ -1,0 +1,92 @@
+2025-07-27 12:35:13,216 - INFO - Done! Loading clean segmentation data for 2022-H1...
+2025-07-27 12:35:14,166 - INFO - Done! Clean segmentation data loaded:
+2025-07-27 12:35:14,167 - INFO -    Period: 2022-H1
+2025-07-27 12:35:14,167 - INFO -    Customers: 2326
+2025-07-27 12:35:14,167 - INFO -    Max bet: €1,500,000
+2025-07-27 12:35:14,168 - INFO -    CV: 4.395
+2025-07-27 12:35:14,168 - INFO -    Segments: 4
+2025-07-27 12:35:14,199 - INFO - Done! Enhanced features created: 27 total columns
+2025-07-27 12:35:14,200 - INFO - Creating labels using strategy: promotion
+2025-07-27 12:35:14,200 - INFO - Creating probabilistic promotion labels (Academic approach)
+2025-07-27 12:35:14,246 - INFO - Probabilistic label distribution: {'NO_PROMOTION': 1377, 'MINIMAL_CONTACT': 732, 'STANDARD_PROMO': 83, 'INTERVENTION_NEEDED': 77, 'GROWTH_TARGET': 41, 'VIP_TREATMENT': 11, 'HIGH_VALUE_STANDARD': 3, 'MONITORED_RISK': 2}
+2025-07-27 12:35:14,247 - INFO - Label distribution: {'NO_PROMOTION': 1377, 'MINIMAL_CONTACT': 732, 'STANDARD_PROMO': 83, 'INTERVENTION_NEEDED': 77, 'GROWTH_TARGET': 41, 'VIP_TREATMENT': 11, 'HIGH_VALUE_STANDARD': 3, 'MONITORED_RISK': 2}
+2025-07-27 12:35:14,248 - INFO - Training RF model with 20 features
+2025-07-27 12:35:15,721 - INFO - Done! Model training completed:
+2025-07-27 12:35:15,722 - INFO -    Accuracy: 0.7103
+2025-07-27 12:35:15,722 - INFO -    CV Score: 0.7269 (±0.0393)
+2025-07-27 12:35:15,755 - WARNING - Could not calculate ROC AUC: Number of classes in y_true not equal to the number of columns in 'y_score'
+2025-07-27 12:35:15,822 - INFO - Done! Model saved:
+2025-07-27 12:35:15,823 - INFO -    Path: models/generic_rf/generic_rf_promotion_2022-H1_v1_20250727_1235.pkl
+2025-07-27 12:35:15,823 - INFO -    Version: v1
+2025-07-27 12:35:15,823 - INFO -    Performance: {'roc_auc': 'N/A', 'accuracy': 0.7103, 'cv_score_mean': np.float64(0.7269), 'cv_score_std': np.float64(0.0197)}
+2025-07-27 15:05:57,115 - INFO -    Period: 2022-H1
+2025-07-27 15:05:57,116 - INFO -    Customers: 2326
+2025-07-27 15:05:57,116 - INFO -    Max bet: €1,500,000
+2025-07-27 15:05:57,117 - INFO -    CV: 4.395
+2025-07-27 15:05:57,118 - INFO -    Segments: 4
+2025-07-27 15:05:57,190 - INFO - Label distribution: {'NO_PROMOTION': 2010, 'LOW_ENGAGEMENT': 116, 'STANDARD_PROMO': 77, 'INTERVENTION_NEEDED': 68, 'GROWTH_TARGET': 41, 'HIGH_VALUE_TIER': 14}
+2025-07-27 15:05:58,631 - INFO -    Accuracy: 0.8155
+2025-07-27 15:05:58,631 - INFO -    CV Score: 0.8296 (±0.0389)
+2025-07-27 15:05:58,742 - INFO -    Path: models/generic_rf/generic_rf_promotion_2022-H1_v1202507271236_20250727_1505.pkl
+2025-07-27 15:05:58,742 - INFO -    Version: v1202507271236
+2025-07-27 15:05:58,743 - INFO -    Performance: {'roc_auc_macro': np.float64(0.8713), 'accuracy': 0.8155, 'cv_score_mean': np.float64(0.8296), 'cv_score_std': np.float64(0.0194)}
+2025-07-27 15:45:00,602 - INFO - Done! Loading clean segmentation data for 2022-H2...
+2025-07-27 15:45:01,057 - INFO - Done! Clean segmentation data loaded:
+2025-07-27 15:45:01,058 - INFO -    Period: 2022-H2
+2025-07-27 15:45:01,058 - INFO -    Customers: 3806
+2025-07-27 15:45:01,058 - INFO -    Max bet: €1,500,000
+2025-07-27 15:45:01,059 - INFO -    CV: 4.096
+2025-07-27 15:45:01,059 - INFO -    Segments: 4
+2025-07-27 15:45:01,073 - INFO - Done! Enhanced features created: 27 total columns
+2025-07-27 15:45:01,074 - INFO - Creating labels using strategy: promotion
+2025-07-27 15:45:01,075 - INFO - Creating probabilistic promotion labels (Academic approach)
+2025-07-27 15:45:01,141 - INFO - Probabilistic label distribution: {'NO_PROMOTION': 2203, 'MINIMAL_CONTACT': 1152, 'STANDARD_PROMO': 173, 'INTERVENTION_NEEDED': 141, 'GROWTH_TARGET': 87, 'MONITORED_RISK': 22, 'VIP_TREATMENT': 22, 'HIGH_VALUE_STANDARD': 6}
+2025-07-27 15:45:01,142 - INFO - Label distribution: {'NO_PROMOTION': 2203, 'MINIMAL_CONTACT': 1152, 'STANDARD_PROMO': 173, 'INTERVENTION_NEEDED': 141, 'GROWTH_TARGET': 87, 'MONITORED_RISK': 22, 'VIP_TREATMENT': 22, 'HIGH_VALUE_STANDARD': 6}
+2025-07-27 15:45:01,143 - INFO - Training RF model with 20 features
+2025-07-27 15:45:03,761 - INFO - Done! Model training completed:
+2025-07-27 15:45:03,761 - INFO -    Accuracy: 0.7349
+2025-07-27 15:45:03,762 - INFO -    CV Score: 0.7007 (±0.0137)
+2025-07-27 15:45:03,936 - INFO - Done! Model saved:
+2025-07-27 15:45:03,936 - INFO -    Path: models/generic_rf/generic_rf_promotion_2022-H2_v1_20250727_1545.pkl
+2025-07-27 15:45:03,937 - INFO -    Version: v1
+2025-07-27 15:45:03,937 - INFO -    Performance: {'roc_auc_macro': np.float64(0.929), 'accuracy': 0.7349, 'cv_score_mean': np.float64(0.7007), 'cv_score_std': np.float64(0.0069)}
+2025-07-27 15:45:25,182 - INFO - Done! Loading clean segmentation data for 2023-H1...
+2025-07-27 15:45:25,871 - INFO - Done! Clean segmentation data loaded:
+2025-07-27 15:45:25,872 - INFO -    Period: 2023-H1
+2025-07-27 15:45:25,872 - INFO -    Customers: 6646
+2025-07-27 15:45:25,872 - INFO -    Max bet: €1,500,000
+2025-07-27 15:45:25,873 - INFO -    CV: 3.373
+2025-07-27 15:45:25,874 - INFO -    Segments: 3
+2025-07-27 15:45:25,892 - INFO - Done! Enhanced features created: 27 total columns
+2025-07-27 15:45:25,894 - INFO - Creating labels using strategy: promotion
+2025-07-27 15:45:25,895 - INFO - Creating probabilistic promotion labels (Academic approach)
+2025-07-27 15:45:26,059 - INFO - Probabilistic label distribution: {'NO_PROMOTION': 2546, 'GROWTH_TARGET': 1279, 'STANDARD_PROMO': 1184, 'MINIMAL_CONTACT': 1171, 'INTERVENTION_NEEDED': 327, 'VIP_TREATMENT': 80, 'MONITORED_RISK': 46, 'HIGH_VALUE_STANDARD': 13}
+2025-07-27 15:45:26,060 - INFO - Label distribution: {'NO_PROMOTION': 2546, 'GROWTH_TARGET': 1279, 'STANDARD_PROMO': 1184, 'MINIMAL_CONTACT': 1171, 'INTERVENTION_NEEDED': 327, 'VIP_TREATMENT': 80, 'MONITORED_RISK': 46, 'HIGH_VALUE_STANDARD': 13}
+2025-07-27 15:45:26,060 - INFO - Training RF model with 20 features
+2025-07-27 15:45:30,755 - INFO - Done! Model training completed:
+2025-07-27 15:45:30,756 - INFO -    Accuracy: 0.6677
+2025-07-27 15:45:30,756 - INFO -    CV Score: 0.6840 (±0.0205)
+2025-07-27 15:45:30,921 - INFO - Done! Model saved:
+2025-07-27 15:45:30,921 - INFO -    Path: models/generic_rf/generic_rf_promotion_2023-H1_v1_20250727_1545.pkl
+2025-07-27 15:45:30,921 - INFO -    Version: v1
+2025-07-27 15:45:30,922 - INFO -    Performance: {'roc_auc_macro': np.float64(0.9378), 'accuracy': 0.6677, 'cv_score_mean': np.float64(0.684), 'cv_score_std': np.float64(0.0103)}
+2025-07-27 15:57:59,573 - INFO - Done! Loading clean segmentation data for 2023-H2...
+2025-07-27 15:58:00,491 - INFO - Done! Clean segmentation data loaded:
+2025-07-27 15:58:00,491 - INFO -    Period: 2023-H2
+2025-07-27 15:58:00,491 - INFO -    Customers: 15101
+2025-07-27 15:58:00,491 - INFO -    Max bet: €1,500,000
+2025-07-27 15:58:00,492 - INFO -    CV: 2.303
+2025-07-27 15:58:00,493 - INFO -    Segments: 3
+2025-07-27 15:58:00,519 - INFO - Done! Enhanced features created: 27 total columns
+2025-07-27 15:58:00,527 - INFO - Creating labels using strategy: promotion
+2025-07-27 15:58:00,527 - INFO - Creating probabilistic promotion labels (Academic approach)
+2025-07-27 15:58:00,835 - INFO - Probabilistic label distribution: {'GROWTH_TARGET': 3888, 'NO_PROMOTION': 3664, 'STANDARD_PROMO': 3645, 'MINIMAL_CONTACT': 2305, 'VIP_TREATMENT': 805, 'INTERVENTION_NEEDED': 593, 'HIGH_VALUE_STANDARD': 136, 'MONITORED_RISK': 65}
+2025-07-27 15:58:00,838 - INFO - Label distribution: {'GROWTH_TARGET': 3888, 'NO_PROMOTION': 3664, 'STANDARD_PROMO': 3645, 'MINIMAL_CONTACT': 2305, 'VIP_TREATMENT': 805, 'INTERVENTION_NEEDED': 593, 'HIGH_VALUE_STANDARD': 136, 'MONITORED_RISK': 65}
+2025-07-27 15:58:00,838 - INFO - Training RF model with 20 features
+2025-07-27 15:58:12,311 - INFO - Done! Model training completed:
+2025-07-27 15:58:12,311 - INFO -    Accuracy: 0.6736
+2025-07-27 15:58:12,311 - INFO -    CV Score: 0.6681 (±0.0071)
+2025-07-27 15:58:12,699 - INFO - Done! Model saved:
+2025-07-27 15:58:12,699 - INFO -    Path: models/generic_rf/generic_rf_promotion_2023-H2_v1_20250727_1558.pkl
+2025-07-27 15:58:12,699 - INFO -    Version: v1
+2025-07-27 15:58:12,699 - INFO -    Performance: {'roc_auc_macro': np.float64(0.9383), 'accuracy': 0.6736, 'cv_score_mean': np.float64(0.6681), 'cv_score_std': np.float64(0.0035)}

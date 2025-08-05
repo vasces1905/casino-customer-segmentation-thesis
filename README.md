@@ -109,12 +109,24 @@ casino-customer-segmentation-thesis/
 - Agreement matrices and temporal drift analysis completed
 - Segment collapse (Casual → Regular) confirmed by KMeans logic
 
-### Recent Updates: v0.4.1 (23 July 2025) – RF-Ready Release (Multi Segementation)
-- Capped outliers (€1.5M max bet), CV < 3.0 achieved
-- Clean re-segmentation for 4 periods using KMeans + DBSCAN
-- Feature normalization (log1p, winsorization, RobustScaler)
-- Training base: 27,879 customers, weighted per period
-- DBSCAN outliers included as auxiliary risk label
+###  v0.4.1 (23 July 2025) – RF-Ready Release (Multi Segementation)
+- **Capped outliers (€1.5M max bet), CV < 3.0 achieved
+- **Clean re-segmentation for 4 periods using KMeans + DBSCAN
+- **Feature normalization (log1p, winsorization, RobustScaler)
+- **Training base: 27,879 customers, weighted per period
+- **DBSCAN outliers included as auxiliary risk label
+
+### Recent Updates: v0.5.0 (5 August 2025): Full Evaluation & Thesis Documentation Finalized
+- Completed Chapter 5: Results and Evaluation (Sections 5.1–5.6)
+- Segment-based promotion distributions integrated (visual + LaTeX format)
+- Temporal promotion trends and model confidence visualized
+- Model comparison implemented (RF vs LR/SVM/DT) with engineered vs non-engineered features
+- Rule-based decision matrix extracted from RF model predictions
+- Country-based and age-gender promotional response analysis included
+- Feature-based customer risk profiling completed using volatility, loss chasing, and behavioral signals
+- Added Appendix references and improved bibliography compliance
+- Finalized Casino-2 AI pipeline (PostgreSQL + SMOTE + RF) with LaTeX-compliant diagrams
+- Bibliography fully matched with Literature Review and model chapters
 
 
 ### Auto Version History

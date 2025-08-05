@@ -1,0 +1,213 @@
+2025-07-28 13:49:54,064 - INFO - Logging to: BALANCED_model_comparison_20250728_1349.log
+2025-07-28 13:49:54,064 - INFO - Starting BALANCED comprehensive model comparison...
+2025-07-28 13:49:54,065 - INFO - Discovering trained harmonized RF models...
+2025-07-28 13:49:54,067 - INFO - Discovered 4 trained periods: ['2022-H1', '2022-H2', '2023-H1', '2023-H2']
+2025-07-28 13:49:54,068 - INFO - Processing period 2022-H1...
+2025-07-28 13:49:57,042 - INFO - Successfully loaded RF model from clean_harmonized_rf_2022-H1_v1_20250728_1145.pkl
+2025-07-28 13:49:57,042 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:49:57,043 - INFO - Feature count: 31
+2025-07-28 13:49:57,043 - INFO - Evaluating algorithms with BALANCED data for period 2022-H1...
+2025-07-28 13:49:57,043 - INFO - Loading raw training data for period 2022-H1...
+2025-07-28 13:49:58,280 - INFO - Loaded 2326 customers for period 2022-H1
+2025-07-28 13:49:58,282 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 13:49:58,285 - INFO - Applying BALANCED preprocessing for comparison...
+2025-07-28 13:49:58,290 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 13:49:58,291 - INFO - Target distribution: {'NO_PROMOTION': 1744, 'GROWTH_TARGET': 279, 'LOW_ENGAGEMENT': 186, 'INTERVENTION_NEEDED': 116}
+2025-07-28 13:49:58,291 - INFO - Current imbalance ratio: 27.09
+2025-07-28 13:49:58,292 - INFO - Applying balanced resampling...
+2025-07-28 13:49:58,293 - INFO -   NO_PROMOTION: 1869 -> 1744
+2025-07-28 13:49:58,294 - INFO -   GROWTH_TARGET: 279 -> 279
+2025-07-28 13:49:58,295 - INFO -   LOW_ENGAGEMENT: 109 -> 186
+2025-07-28 13:49:58,296 - INFO -   INTERVENTION_NEEDED: 69 -> 116
+2025-07-28 13:49:58,300 - INFO - Balanced dataset size: 2325
+2025-07-28 13:49:58,301 - INFO - New label distribution:
+promo_label
+NO_PROMOTION           1744
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          186
+INTERVENTION_NEEDED     116
+Name: count, dtype: int64
+2025-07-28 13:49:58,306 - INFO - Balanced label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:49:58,306 - INFO - Balanced encoded distribution: [ 279  116  186 1744]
+2025-07-28 13:49:58,306 - INFO - SUCCESS: Balanced preprocessing completed with 4 classes
+2025-07-28 13:49:58,307 - INFO - RF model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:49:58,307 - INFO - Balanced classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:49:58,310 - INFO - Balanced train set: 1860 samples
+2025-07-28 13:49:58,311 - INFO - Balanced test set: 465 samples
+2025-07-28 13:49:58,311 - INFO - Test distribution: [ 56  23  37 349]
+2025-07-28 13:49:58,311 - INFO - Evaluating trained Random Forest on BALANCED data...
+2025-07-28 13:49:58,312 - ERROR - RF evaluation failed: X has 17 features, but StandardScaler is expecting 31 features as input.
+2025-07-28 13:49:58,312 - INFO - Training Decision_Tree on balanced data...
+2025-07-28 13:49:58,332 - INFO - Decision_Tree: Accuracy=0.8301, F1=0.8361, ROC_AUC=0.8880880155632875
+2025-07-28 13:49:58,333 - INFO - Training Logistic_Regression on balanced data...
+2025-07-28 13:49:58,397 - INFO - Logistic_Regression: Accuracy=0.7204, F1=0.7330, ROC_AUC=0.8500026290631071
+2025-07-28 13:49:58,398 - INFO - Training K_Nearest_Neighbors on balanced data...
+2025-07-28 13:50:11,080 - INFO - K_Nearest_Neighbors: Accuracy=0.8559, F1=0.8369, ROC_AUC=0.9019466415838784
+2025-07-28 13:50:11,081 - INFO - Training Naive_Bayes on balanced data...
+2025-07-28 13:50:11,090 - INFO - Naive_Bayes: Accuracy=0.8108, F1=0.7817, ROC_AUC=0.8746910938194167
+2025-07-28 13:50:11,090 - INFO - Training Support_Vector_Machine on balanced data...
+2025-07-28 13:50:11,511 - INFO - Support_Vector_Machine: Accuracy=0.7892, F1=0.8102, ROC_AUC=0.9397902490645773
+2025-07-28 13:50:11,512 - INFO - Processing period 2022-H2...
+2025-07-28 13:50:11,611 - INFO - Successfully loaded RF model from clean_harmonized_rf_2022-H2_v1_20250728_1201.pkl
+2025-07-28 13:50:11,611 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:11,612 - INFO - Feature count: 31
+2025-07-28 13:50:11,616 - INFO - Evaluating algorithms with BALANCED data for period 2022-H2...
+2025-07-28 13:50:11,616 - INFO - Loading raw training data for period 2022-H2...
+2025-07-28 13:50:11,678 - INFO - Loaded 3806 customers for period 2022-H2
+2025-07-28 13:50:11,680 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 13:50:11,681 - INFO - Applying BALANCED preprocessing for comparison...
+2025-07-28 13:50:11,689 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 13:50:11,689 - INFO - Target distribution: {'NO_PROMOTION': 2854, 'GROWTH_TARGET': 456, 'LOW_ENGAGEMENT': 304, 'INTERVENTION_NEEDED': 190}
+2025-07-28 13:50:11,690 - INFO - Current imbalance ratio: 21.01
+2025-07-28 13:50:11,690 - INFO - Applying balanced resampling...
+2025-07-28 13:50:11,691 - INFO -   NO_PROMOTION: 3025 -> 2854
+2025-07-28 13:50:11,693 - INFO -   GROWTH_TARGET: 456 -> 456
+2025-07-28 13:50:11,693 - INFO -   LOW_ENGAGEMENT: 181 -> 304
+2025-07-28 13:50:11,695 - INFO -   INTERVENTION_NEEDED: 144 -> 190
+2025-07-28 13:50:11,698 - INFO - Balanced dataset size: 3804
+2025-07-28 13:50:11,700 - INFO - New label distribution:
+promo_label
+NO_PROMOTION           2854
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          304
+INTERVENTION_NEEDED     190
+Name: count, dtype: int64
+2025-07-28 13:50:11,707 - INFO - Balanced label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:11,707 - INFO - Balanced encoded distribution: [ 456  190  304 2854]
+2025-07-28 13:50:11,708 - INFO - SUCCESS: Balanced preprocessing completed with 4 classes
+2025-07-28 13:50:11,708 - INFO - RF model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:11,708 - INFO - Balanced classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:11,711 - INFO - Balanced train set: 3043 samples
+2025-07-28 13:50:11,712 - INFO - Balanced test set: 761 samples
+2025-07-28 13:50:11,712 - INFO - Test distribution: [ 91  38  61 571]
+2025-07-28 13:50:11,712 - INFO - Evaluating trained Random Forest on BALANCED data...
+2025-07-28 13:50:11,713 - ERROR - RF evaluation failed: X has 17 features, but StandardScaler is expecting 31 features as input.
+2025-07-28 13:50:11,713 - INFO - Training Decision_Tree on balanced data...
+2025-07-28 13:50:11,735 - INFO - Decision_Tree: Accuracy=0.8463, F1=0.8453, ROC_AUC=0.8805126645321493
+2025-07-28 13:50:11,736 - INFO - Training Logistic_Regression on balanced data...
+2025-07-28 13:50:11,796 - INFO - Logistic_Regression: Accuracy=0.7398, F1=0.7542, ROC_AUC=0.8606569205888445
+2025-07-28 13:50:11,796 - INFO - Training K_Nearest_Neighbors on balanced data...
+2025-07-28 13:50:11,826 - INFO - K_Nearest_Neighbors: Accuracy=0.8515, F1=0.8378, ROC_AUC=0.927470103024526
+2025-07-28 13:50:11,826 - INFO - Training Naive_Bayes on balanced data...
+2025-07-28 13:50:11,832 - INFO - Naive_Bayes: Accuracy=0.8068, F1=0.7756, ROC_AUC=0.8387530543894234
+2025-07-28 13:50:11,833 - INFO - Training Support_Vector_Machine on balanced data...
+2025-07-28 13:50:12,827 - INFO - Support_Vector_Machine: Accuracy=0.7911, F1=0.8149, ROC_AUC=0.946228216753837
+2025-07-28 13:50:12,829 - INFO - Processing period 2023-H1...
+2025-07-28 13:50:12,984 - INFO - Successfully loaded RF model from clean_harmonized_rf_2023-H1_v1_20250728_1204.pkl
+2025-07-28 13:50:12,985 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:12,985 - INFO - Feature count: 31
+2025-07-28 13:50:12,992 - INFO - Evaluating algorithms with BALANCED data for period 2023-H1...
+2025-07-28 13:50:12,992 - INFO - Loading raw training data for period 2023-H1...
+2025-07-28 13:50:13,102 - INFO - Loaded 6646 customers for period 2023-H1
+2025-07-28 13:50:13,105 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 13:50:13,107 - INFO - Applying BALANCED preprocessing for comparison...
+2025-07-28 13:50:13,114 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 13:50:13,114 - INFO - Target distribution: {'NO_PROMOTION': 4984, 'GROWTH_TARGET': 797, 'LOW_ENGAGEMENT': 531, 'INTERVENTION_NEEDED': 332}
+2025-07-28 13:50:13,115 - INFO - Current imbalance ratio: 15.60
+2025-07-28 13:50:13,124 - INFO - Balanced label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:13,124 - INFO - Balanced encoded distribution: [ 797  339  332 5178]
+2025-07-28 13:50:13,124 - INFO - SUCCESS: Balanced preprocessing completed with 4 classes
+2025-07-28 13:50:13,125 - INFO - RF model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:13,125 - INFO - Balanced classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:13,129 - INFO - Balanced train set: 5316 samples
+2025-07-28 13:50:13,129 - INFO - Balanced test set: 1330 samples
+2025-07-28 13:50:13,130 - INFO - Test distribution: [ 160   68   66 1036]
+2025-07-28 13:50:13,130 - INFO - Evaluating trained Random Forest on BALANCED data...
+2025-07-28 13:50:13,130 - ERROR - RF evaluation failed: X has 17 features, but StandardScaler is expecting 31 features as input.
+2025-07-28 13:50:13,130 - INFO - Training Decision_Tree on balanced data...
+2025-07-28 13:50:13,152 - INFO - Decision_Tree: Accuracy=0.8481, F1=0.8480, ROC_AUC=0.8765438825566667
+2025-07-28 13:50:13,152 - INFO - Training Logistic_Regression on balanced data...
+2025-07-28 13:50:13,293 - INFO - Logistic_Regression: Accuracy=0.7038, F1=0.7302, ROC_AUC=0.8499921320377983
+2025-07-28 13:50:13,293 - INFO - Training K_Nearest_Neighbors on balanced data...
+2025-07-28 13:50:13,330 - INFO - K_Nearest_Neighbors: Accuracy=0.8534, F1=0.8384, ROC_AUC=0.9045033505800484
+2025-07-28 13:50:13,330 - INFO - Training Naive_Bayes on balanced data...
+2025-07-28 13:50:13,343 - INFO - Naive_Bayes: Accuracy=0.8226, F1=0.7808, ROC_AUC=0.8580630463052794
+2025-07-28 13:50:13,343 - INFO - Training Support_Vector_Machine on balanced data...
+2025-07-28 13:50:17,619 - INFO - Support_Vector_Machine: Accuracy=0.7376, F1=0.7707, ROC_AUC=0.9338389118604877
+2025-07-28 13:50:17,621 - INFO - Processing period 2023-H2...
+2025-07-28 13:50:18,202 - INFO - Successfully loaded RF model from clean_harmonized_rf_2023-H2_v1_20250728_1206.pkl
+2025-07-28 13:50:18,202 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:18,202 - INFO - Feature count: 31
+2025-07-28 13:50:18,210 - INFO - Evaluating algorithms with BALANCED data for period 2023-H2...
+2025-07-28 13:50:18,211 - INFO - Loading raw training data for period 2023-H2...
+2025-07-28 13:50:18,416 - INFO - Loaded 15101 customers for period 2023-H2
+2025-07-28 13:50:18,419 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 13:50:18,421 - INFO - Applying BALANCED preprocessing for comparison...
+2025-07-28 13:50:18,433 - INFO - Raw label distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 13:50:18,433 - INFO - Target distribution: {'NO_PROMOTION': 11325, 'GROWTH_TARGET': 1812, 'LOW_ENGAGEMENT': 1208, 'INTERVENTION_NEEDED': 755}
+2025-07-28 13:50:18,434 - INFO - Current imbalance ratio: 19.96
+2025-07-28 13:50:18,446 - INFO - Balanced label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:18,447 - INFO - Balanced encoded distribution: [ 1812   598   755 11936]
+2025-07-28 13:50:18,447 - INFO - SUCCESS: Balanced preprocessing completed with 4 classes
+2025-07-28 13:50:18,448 - INFO - RF model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:18,448 - INFO - Balanced classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 13:50:18,461 - INFO - Balanced train set: 12080 samples
+2025-07-28 13:50:18,461 - INFO - Balanced test set: 3021 samples
+2025-07-28 13:50:18,462 - INFO - Test distribution: [ 362  120  151 2388]
+2025-07-28 13:50:18,462 - INFO - Evaluating trained Random Forest on BALANCED data...
+2025-07-28 13:50:18,463 - ERROR - RF evaluation failed: X has 17 features, but StandardScaler is expecting 31 features as input.
+2025-07-28 13:50:18,464 - INFO - Training Decision_Tree on balanced data...
+2025-07-28 13:50:18,559 - INFO - Decision_Tree: Accuracy=0.7994, F1=0.7852, ROC_AUC=0.8089249667564744
+2025-07-28 13:50:18,559 - INFO - Training Logistic_Regression on balanced data...
+2025-07-28 13:50:19,070 - INFO - Logistic_Regression: Accuracy=0.4714, F1=0.5353, ROC_AUC=0.816469070183034
+2025-07-28 13:50:19,071 - INFO - Training K_Nearest_Neighbors on balanced data...
+2025-07-28 13:50:19,253 - INFO - K_Nearest_Neighbors: Accuracy=0.7981, F1=0.7836, ROC_AUC=0.8503453300044823
+2025-07-28 13:50:19,253 - INFO - Training Naive_Bayes on balanced data...
+2025-07-28 13:50:19,284 - INFO - Naive_Bayes: Accuracy=0.1582, F1=0.1577, ROC_AUC=0.6996661796646686
+2025-07-28 13:50:19,285 - INFO - Training Support_Vector_Machine on balanced data...
+2025-07-28 13:50:49,035 - INFO - Support_Vector_Machine: Accuracy=0.6405, F1=0.6861, ROC_AUC=0.8920870978458162
+2025-07-28 13:50:49,133 - INFO - Results exported to: BALANCED_model_comparison_20250728_1350.csv
+2025-07-28 13:50:49,134 - INFO - ============================================================
+2025-07-28 13:50:49,135 - INFO - BALANCED COMPARISON COMPLETED SUCCESSFULLY
+2025-07-28 13:50:49,135 - INFO - Periods analyzed: 4
+2025-07-28 13:50:49,135 - INFO - CSV exported: BALANCED_model_comparison_20250728_1350.csv
+2025-07-28 13:50:49,135 - INFO - Log file: BALANCED_model_comparison_20250728_1349.log
+2025-07-28 13:50:49,136 - INFO - ============================================================

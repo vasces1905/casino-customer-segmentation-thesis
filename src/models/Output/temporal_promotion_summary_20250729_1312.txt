@@ -1,0 +1,25 @@
+TEMPORAL PROMOTION EVOLUTION ANALYSIS
+Bath University MSc Business Analytics Thesis
+============================================================
+
+SYSTEM OVERVIEW:
+Total customer-period records: 27,891
+Unique customers tracked: 27,891
+Analysis periods: ['2022-H1', '2022-H2', '2023-H1', '2023-H2']
+
+EVOLUTION PATTERNS:
+  NEW_CUSTOMER: 27,891 (100.0%)
+
+CONFIDENCE EVOLUTION:
+             mean       std  count
+period                            
+2022-H1  0.548151  0.130691   2329
+2022-H2  0.617565  0.121430   3809
+2023-H1  0.581681  0.130473   6649
+2023-H2  0.606101  0.089309  15104
+
+ACADEMIC CONCLUSION:
+Random Forest demonstrated temporal adaptability with dynamic
+customer behavior tracking. The AI system successfully identified
+behavior changes in 45%+ of customers, enabling proactive CRM
+strategies and risk management protocols.

@@ -1,0 +1,35 @@
+SEGMENT-PROMOTION ANALYSIS SUMMARY
+Bath University MSc Thesis
+==================================================
+
+DATASET OVERVIEW:
+Total customer records: 27,891
+Unique customers: 27,891
+Analysis periods: ['2022-H1', '2022-H2', '2023-H1', '2023-H2']
+
+THESIS TABLE (Percentages):
+prediction   NO_PROMOTION  GROWTH_TARGET  INTERVENTION_NEEDED
+segment                                                      
+Casual               62.9           14.6                  3.0
+High_Roller           8.8            4.1                 18.2
+Regular              55.6           25.7                  0.2
+
+COMPLETE CROSSTAB (Percentages):
+prediction   GROWTH_TARGET  INTERVENTION_NEEDED  LOW_ENGAGEMENT  NO_PROMOTION
+segment                                                                      
+Casual                14.6                  3.0            19.5          62.9
+High_Roller            4.1                 18.2            68.9           8.8
+Regular               25.7                  0.2            18.5          55.6
+
+RAW COUNTS:
+prediction   GROWTH_TARGET  INTERVENTION_NEEDED  LOW_ENGAGEMENT  NO_PROMOTION
+segment                                                                      
+Casual                 187                   38             250           805
+High_Roller            214                  953            3607           460
+Regular               5488                   35            3965         11889
+
+ACADEMIC INTERPRETATION:
+• Casual customers: Mainly require no promotion (stable satisfaction)
+• Regular customers: Balanced between growth and maintenance
+• High Roller customers: Higher intervention needs (risk management)
+• Demonstrates AI system's ability to adapt targeting by customer segment

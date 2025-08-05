@@ -1,0 +1,17 @@
+2025-07-28 00:23:34 | clean_harmonized_rf_2022-H2_v1_20250728_0023.pkl | 2022-H2 | Accuracy: 0.7874 | CV: 0.7947±0.0236 | ROC_AUC: 0.9552053982018702 | Harmonized: True
+2025-07-28 00:25:20 | clean_harmonized_rf_2022-H2_v1_20250728_0025.pkl | 2022-H2 | Accuracy: 0.7874 | CV: 0.7947±0.0236 | ROC_AUC: 0.9552053982018702 | Harmonized: True
+2025-07-28 00:27:30 | clean_harmonized_rf_2023-H1_v1_20250728_0027.pkl | 2023-H1 | Accuracy: 0.7466 | CV: 0.7538±0.0135 | ROC_AUC: 0.9448235077018117 | Harmonized: True
+2025-07-28 00:28:42 | clean_harmonized_rf_2023-H2_v1_20250728_0028.pkl | 2023-H2 | Accuracy: 0.6438 | CV: 0.6520±0.0048 | ROC_AUC: 0.900648910456266 | Harmonized: True
+2025-07-28 01:08:46 | clean_harmonized_rf_2022-H1_v1_20250728_0108.pkl | 2022-H1 | Accuracy: 0.7854 | CV: 0.7785±0.0086 | ROC_AUC: 0.9581256034129353 | Harmonized: True
+2025-07-28 01:48:36 | clean_harmonized_rf_2022-H1_v1_20250728_0148.pkl | 2022-H1 | Accuracy: 0.7854 | CV: 0.7785±0.0086 | ROC_AUC: 0.9581256034129353 | Harmonized: True
+2025-07-28 01:48:54 | clean_harmonized_rf_2022-H2_v1_20250728_0148.pkl | 2022-H2 | Accuracy: 0.7874 | CV: 0.7947±0.0236 | ROC_AUC: 0.9552053982018702 | Harmonized: True
+2025-07-28 01:49:13 | clean_harmonized_rf_2023-H1_v1_20250728_0149.pkl | 2023-H1 | Accuracy: 0.7466 | CV: 0.7538±0.0135 | ROC_AUC: 0.9448235077018117 | Harmonized: True
+2025-07-28 01:49:27 | clean_harmonized_rf_2023-H2_v1_20250728_0149.pkl | 2023-H2 | Accuracy: 0.6438 | CV: 0.6520±0.0048 | ROC_AUC: 0.900648910456266 | Harmonized: True
+2025-07-28 02:13:50 | clean_harmonized_rf_2022-H1_v1_20250728_0213.pkl | 2022-H1 | Accuracy: 0.7763 | CV: 0.8134+/-0.0279 | ROC_AUC: 0.9491236824528974 | Harmonized: True
+2025-07-28 02:14:10 | clean_harmonized_rf_2022-H2_v1_20250728_0214.pkl | 2022-H2 | Accuracy: 0.8003 | CV: 0.8022+/-0.0218 | ROC_AUC: 0.9649314089654625 | Harmonized: True
+2025-07-28 02:14:37 | clean_harmonized_rf_2023-H1_v1_20250728_0214.pkl | 2023-H1 | Accuracy: 0.7466 | CV: 0.7538+/-0.0135 | ROC_AUC: 0.9448235077018117 | Harmonized: True
+2025-07-28 02:14:51 | clean_harmonized_rf_2023-H2_v1_20250728_0214.pkl | 2023-H2 | Accuracy: 0.6438 | CV: 0.6520+/-0.0048 | ROC_AUC: 0.900648910456266 | Harmonized: True
+2025-07-28 11:45:45 | clean_harmonized_rf_2022-H1_v1_20250728_1145.pkl | 2022-H1 | Accuracy: 0.9612 | CV: 0.9525+/-0.0034 | ROC_AUC: 0.9978242633951977 | OOB: 0.9573578595317725 | Balanced: True | Version: balanced_v1
+2025-07-28 12:01:10 | clean_harmonized_rf_2022-H2_v1_20250728_1201.pkl | 2022-H2 | Accuracy: 0.9591 | CV: 0.9522+/-0.0033 | ROC_AUC: 0.9975471848462081 | OOB: 0.9554752066115703 | Balanced: True | Version: balanced_v1
+2025-07-28 12:04:58 | clean_harmonized_rf_2023-H1_v1_20250728_1204.pkl | 2023-H1 | Accuracy: 0.9558 | CV: 0.9517+/-0.0039 | ROC_AUC: 0.9960788112507232 | OOB: 0.9543122699016235 | Balanced: True | Version: balanced_v1
+2025-07-28 12:06:35 | clean_harmonized_rf_2023-H2_v1_20250728_1206.pkl | 2023-H2 | Accuracy: 0.9360 | CV: 0.9322+/-0.0031 | ROC_AUC: 0.9924038172511098 | OOB: 0.938133263516167 | Balanced: True | Version: balanced_v1
