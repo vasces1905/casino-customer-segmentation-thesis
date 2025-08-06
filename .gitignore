@@ -1,5 +1,10 @@
 *.csv
 *.sql
+*.pkl
 src/data/
 src/data/**/*.csv
 src/data/**/*.sql
+src/models/models/**/*.pkl
+
+
+
