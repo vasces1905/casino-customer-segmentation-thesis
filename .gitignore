@@ -1,9 +1,33 @@
 *.csv
 *.sql
 *.pkl
+*.joblib
+*.model
+
+# Directories
 src/data/
 src/data/**/*.csv
 src/data/**/*.sql
 src/models/models/
 **/zz_delete/
 
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+EOF
+3. Kontrol et:
+bashcat .gitignore
+4. Git'e ekle:
+bashgit add .gitignore
+git status
+Sebep: Echo komutu binary karakterler eklemiş. cat ile düzgün dosya oluşturduk.
+Şimdi düzgün görünüyor mu?RetryClaude can make mistakes. Please double-check responses.
