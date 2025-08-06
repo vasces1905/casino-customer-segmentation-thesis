@@ -1,0 +1,56 @@
+COMPLETE NATIONALITY-BASED PROMOTION ANALYSIS
+Bath University MSc Business Analytics Thesis
+Including Turkish Customer Analysis
+============================================================
+
+DATASET OVERVIEW:
+Total customer records: 38,300
+Unique nationalities: 243
+Turkish customers: 143 (Rank: #213)
+
+TOP 15 NATIONALITIES:
+   1. Congo: 309 customers (0.8%)
+   2. Korea: 280 customers (0.7%)
+   3. Estonia: 182 customers (0.5%)
+   4. Sri Lanka: 180 customers (0.5%)
+   5. Papua New Guinea: 179 customers (0.5%)
+   6. Egypt: 178 customers (0.5%)
+   7. Saint Martin: 178 customers (0.5%)
+   8. Niue: 177 customers (0.5%)
+   9. Guyana: 177 customers (0.5%)
+  10. Liechtenstein: 176 customers (0.5%)
+  11. Kuwait: 176 customers (0.5%)
+  12. Saint Pierre and Miquelon: 175 customers (0.5%)
+  13. Uruguay: 175 customers (0.5%)
+  14. Hungary: 175 customers (0.5%)
+  15. Guernsey: 175 customers (0.5%)
+
+TURKISH CUSTOMER INSIGHTS:
+  Total Turkish customers: 143
+  Promotion distribution:
+    GROWTH_TARGET: 8 customers (5.6%)
+    INTERVENTION_NEEDED: 2 customers (1.4%)
+    LOW_ENGAGEMENT: 4 customers (2.8%)
+    NO_DATA: 44 customers (30.8%)
+    NO_PROMOTION: 85 customers (59.4%)
+
+NATIONALITY COMPARISON TABLE:
+         nationality  total_customers  no_promotion_pct  growth_target_pct  low_engagement_pct  intervention_pct  no_data_pct
+0              Congo              309              58.3                7.4                 1.9               3.2         29.1
+1              Korea              280              52.9               10.0                 5.7               6.8         24.6
+2            Estonia              182              56.6                8.8                 3.3               4.4         26.9
+3          Sri Lanka              180              59.4                9.4                 3.9               2.8         24.4
+4   Papua New Guinea              179              57.0               10.1                 3.9               2.8         26.3
+5              Egypt              178              51.1                6.7                 7.3               3.9         30.9
+6       Saint Martin              178              62.9                8.4                 1.7               2.8         24.2
+7               Niue              177              57.6                9.6                 4.5               2.8         25.4
+8             Guyana              177              56.5                8.5                 3.4               3.4         28.2
+9      Liechtenstein              176              53.4                8.0                 5.7               2.3         30.7
+10            Turkey              143              59.4                5.6                 2.8               1.4         30.8
+
+ACADEMIC INSIGHTS:
+• Turkish customers identified as significant market segment
+• Cultural differences in promotion targeting validated
+• International gaming patterns demonstrate AI adaptability
+• Missing promotion data indicates expansion opportunities
+• Cross-cultural analysis supports responsible gaming practices

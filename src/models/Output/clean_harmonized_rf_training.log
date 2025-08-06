@@ -1,0 +1,1381 @@
+2025-07-28 00:01:28,362 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:01:28,362 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:01:28,426 - INFO - Database connection established
+2025-07-28 00:01:28,426 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:01:28,516 - ERROR - Data loading failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-28 00:01:28,517 - ERROR - Training failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-28 00:04:44,006 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:04:44,007 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:04:44,062 - INFO - Database connection established
+2025-07-28 00:04:44,062 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:04:44,144 - ERROR - Data loading failed: (psycopg2.errors.UndefinedTable) relation "customer_features" does not exist
+LINE 2:     SELECT * FROM customer_features 
+                          ^
+
+[SQL: 
+    SELECT * FROM customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:04:44,144 - ERROR - Training failed: (psycopg2.errors.UndefinedTable) relation "customer_features" does not exist
+LINE 2:     SELECT * FROM customer_features 
+                          ^
+
+[SQL: 
+    SELECT * FROM customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:11:46,735 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:11:46,736 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:11:46,807 - INFO - Database connection established
+2025-07-28 00:11:46,808 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:11:46,898 - ERROR - Data loading failed: (psycopg2.errors.UndefinedTable) relation "customer_features" does not exist
+LINE 2:     SELECT * FROM customer_features 
+                          ^
+
+[SQL: 
+    SELECT * FROM customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:11:46,898 - ERROR - Training failed: (psycopg2.errors.UndefinedTable) relation "customer_features" does not exist
+LINE 2:     SELECT * FROM customer_features 
+                          ^
+
+[SQL: 
+    SELECT * FROM customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:12:47,592 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:12:47,592 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:12:47,650 - INFO - Database connection established
+2025-07-28 00:12:47,650 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:12:47,720 - ERROR - Data loading failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-28 00:12:47,720 - ERROR - Training failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-28 00:15:08,972 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:15:08,972 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:15:09,035 - INFO - Database connection established
+2025-07-28 00:15:09,035 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:15:09,124 - ERROR - Data loading failed: (psycopg2.errors.UndefinedColumn) column "period" does not exist
+LINE 3:     WHERE period = '2022-H2'
+                  ^
+
+[SQL: 
+    SELECT * FROM casino_data.customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:15:09,124 - ERROR - Training failed: (psycopg2.errors.UndefinedColumn) column "period" does not exist
+LINE 3:     WHERE period = '2022-H2'
+                  ^
+
+[SQL: 
+    SELECT * FROM casino_data.customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:18:05,697 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:18:05,698 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:18:05,762 - INFO - Database connection established
+2025-07-28 00:18:05,762 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:18:05,862 - ERROR - Data loading failed: (psycopg2.errors.UndefinedColumn) column "period" does not exist
+LINE 3:     WHERE period = '2022-H2'
+                  ^
+
+[SQL: 
+    SELECT * FROM casino_data.customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:18:05,862 - ERROR - Training failed: (psycopg2.errors.UndefinedColumn) column "period" does not exist
+LINE 3:     WHERE period = '2022-H2'
+                  ^
+
+[SQL: 
+    SELECT * FROM casino_data.customer_features 
+    WHERE period = '2022-H2'
+    ORDER BY customer_id
+    ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-07-28 00:23:32,565 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:23:32,566 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:23:32,633 - INFO - Database connection established
+2025-07-28 00:23:32,633 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:23:32,816 - INFO - Features loaded: 3809 rows
+2025-07-28 00:23:32,816 - INFO - Labels loaded: 3806 rows
+2025-07-28 00:23:32,818 - INFO - Combined dataset: 3806 rows
+2025-07-28 00:23:32,819 - INFO - Feature matrix shape: (3806, 22)
+2025-07-28 00:23:32,820 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 00:23:32,821 - INFO - Starting data preprocessing...
+2025-07-28 00:23:32,826 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 00:23:32,827 - INFO - Encoded label distribution: [ 456  144  181 3025]
+2025-07-28 00:23:32,829 - INFO - Train set: 3044 samples
+2025-07-28 00:23:32,829 - INFO - Test set: 762 samples
+2025-07-28 00:23:32,830 - INFO - Training Random Forest model...
+2025-07-28 00:23:32,831 - INFO - Class weights: {np.int64(0): np.float64(2.084931506849315), np.int64(1): np.float64(6.6173913043478265), np.int64(2): np.float64(5.248275862068965), np.int64(3): np.float64(0.3145928069450186)}
+2025-07-28 00:23:34,247 - INFO - Model Performance:
+2025-07-28 00:23:34,247 - INFO -   Accuracy: 0.7874
+2025-07-28 00:23:34,248 - INFO -   CV Mean: 0.7947 ± 0.0236
+2025-07-28 00:23:34,248 - INFO -   ROC AUC: 0.9552
+2025-07-28 00:23:34,248 - INFO - 
+Classification Report:
+2025-07-28 00:23:34,252 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.35      0.81      0.49        91
+           1       0.79      0.90      0.84        29
+           2       0.83      0.81      0.82        36
+           3       0.98      0.78      0.87       606
+
+    accuracy                           0.79       762
+   macro avg       0.74      0.82      0.75       762
+weighted avg       0.89      0.79      0.82       762
+
+2025-07-28 00:23:34,291 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0023.pkl
+2025-07-28 00:23:34,299 - INFO - Model registry updated: model_registry.log
+2025-07-28 00:23:34,310 - ERROR - Training failed: [WinError 1314] A required privilege is not held by the client: 'clean_harmonized_rf_2022-H2_v1_20250728_0023.pkl' -> 'models\\generic_rf\\LATEST.pkl'
+2025-07-28 00:25:19,203 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 00:25:19,204 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:25:19,269 - INFO - Database connection established
+2025-07-28 00:25:19,269 - INFO - Loading data for period: 2022-H2
+2025-07-28 00:25:19,466 - INFO - Features loaded: 3809 rows
+2025-07-28 00:25:19,466 - INFO - Labels loaded: 3806 rows
+2025-07-28 00:25:19,469 - INFO - Combined dataset: 3806 rows
+2025-07-28 00:25:19,470 - INFO - Feature matrix shape: (3806, 22)
+2025-07-28 00:25:19,471 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 00:25:19,471 - INFO - Starting data preprocessing...
+2025-07-28 00:25:19,479 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 00:25:19,479 - INFO - Encoded label distribution: [ 456  144  181 3025]
+2025-07-28 00:25:19,481 - INFO - Train set: 3044 samples
+2025-07-28 00:25:19,481 - INFO - Test set: 762 samples
+2025-07-28 00:25:19,481 - INFO - Training Random Forest model...
+2025-07-28 00:25:19,482 - INFO - Class weights: {np.int64(0): np.float64(2.084931506849315), np.int64(1): np.float64(6.6173913043478265), np.int64(2): np.float64(5.248275862068965), np.int64(3): np.float64(0.3145928069450186)}
+2025-07-28 00:25:20,951 - INFO - Model Performance:
+2025-07-28 00:25:20,951 - INFO -   Accuracy: 0.7874
+2025-07-28 00:25:20,952 - INFO -   CV Mean: 0.7947 ± 0.0236
+2025-07-28 00:25:20,952 - INFO -   ROC AUC: 0.9552
+2025-07-28 00:25:20,952 - INFO - 
+Classification Report:
+2025-07-28 00:25:20,956 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.35      0.81      0.49        91
+           1       0.79      0.90      0.84        29
+           2       0.83      0.81      0.82        36
+           3       0.98      0.78      0.87       606
+
+    accuracy                           0.79       762
+   macro avg       0.74      0.82      0.75       762
+weighted avg       0.89      0.79      0.82       762
+
+2025-07-28 00:25:20,997 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0025.pkl
+2025-07-28 00:25:21,008 - INFO - Model registry updated: model_registry.log
+2025-07-28 00:25:21,042 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H2_v1_20250728_0025.pkl
+2025-07-28 00:25:21,081 - INFO - 
+Top 10 Feature Importances for 2022-H2:
+2025-07-28 00:25:21,086 - INFO -                     feature  importance
+         loss_chasing_score    0.207366
+                  loss_rate    0.146587
+                  total_win    0.091241
+                    avg_win    0.086089
+                  total_bet    0.075064
+                    bet_std    0.069798
+                    avg_bet    0.063539
+               total_events    0.056277
+             bet_volatility    0.038405
+session_duration_volatility    0.034478
+2025-07-28 00:25:21,104 - INFO - Feature importance saved: feature_importance_2022-H2.csv
+2025-07-28 00:25:21,121 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0025.pkl
+2025-07-28 00:25:21,121 - INFO - Accuracy: 0.7874
+2025-07-28 00:25:21,121 - INFO - CV Score: 0.7947 ± 0.0236
+2025-07-28 00:25:21,122 - INFO - ROC AUC: 0.9552
+2025-07-28 00:27:28,464 - INFO - Starting harmonized RF training for period: 2023-H1
+2025-07-28 00:27:28,464 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:27:28,539 - INFO - Database connection established
+2025-07-28 00:27:28,539 - INFO - Loading data for period: 2023-H1
+2025-07-28 00:27:28,752 - INFO - Features loaded: 6649 rows
+2025-07-28 00:27:28,752 - INFO - Labels loaded: 6646 rows
+2025-07-28 00:27:28,754 - INFO - Combined dataset: 6646 rows
+2025-07-28 00:27:28,756 - INFO - Feature matrix shape: (6646, 22)
+2025-07-28 00:27:28,757 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 00:27:28,757 - INFO - Starting data preprocessing...
+2025-07-28 00:27:28,768 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 00:27:28,768 - INFO - Encoded label distribution: [ 797  339  332 5178]
+2025-07-28 00:27:28,771 - INFO - Train set: 5316 samples
+2025-07-28 00:27:28,771 - INFO - Test set: 1330 samples
+2025-07-28 00:27:28,771 - INFO - Training Random Forest model...
+2025-07-28 00:27:28,772 - INFO - Class weights: {np.int64(0): np.float64(2.086342229199372), np.int64(1): np.float64(4.904059040590406), np.int64(2): np.float64(4.996240601503759), np.int64(3): np.float64(0.3208594881699662)}
+2025-07-28 00:27:30,566 - INFO - Model Performance:
+2025-07-28 00:27:30,566 - INFO -   Accuracy: 0.7466
+2025-07-28 00:27:30,566 - INFO -   CV Mean: 0.7538 ± 0.0135
+2025-07-28 00:27:30,567 - INFO -   ROC AUC: 0.9448
+2025-07-28 00:27:30,567 - INFO - 
+Classification Report:
+2025-07-28 00:27:30,571 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.30      0.78      0.43       160
+           1       0.88      0.99      0.93        68
+           2       0.74      0.94      0.83        66
+           3       0.98      0.71      0.83      1036
+
+    accuracy                           0.75      1330
+   macro avg       0.72      0.85      0.75      1330
+weighted avg       0.88      0.75      0.78      1330
+
+2025-07-28 00:27:30,613 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0027.pkl
+2025-07-28 00:27:30,622 - INFO - Model registry updated: model_registry.log
+2025-07-28 00:27:30,668 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H1_v1_20250728_0027.pkl
+2025-07-28 00:27:30,700 - INFO - 
+Top 10 Feature Importances for 2023-H1:
+2025-07-28 00:27:30,705 - INFO -            feature  importance
+loss_chasing_score    0.239131
+         loss_rate    0.148164
+           avg_win    0.079856
+         total_bet    0.073631
+         total_win    0.065737
+           bet_std    0.061979
+           avg_bet    0.055284
+      total_events    0.052931
+weekend_preference    0.038390
+    bet_volatility    0.036511
+2025-07-28 00:27:30,719 - INFO - Feature importance saved: feature_importance_2023-H1.csv
+2025-07-28 00:27:30,733 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0027.pkl
+2025-07-28 00:27:30,733 - INFO - Accuracy: 0.7466
+2025-07-28 00:27:30,733 - INFO - CV Score: 0.7538 ± 0.0135
+2025-07-28 00:27:30,734 - INFO - ROC AUC: 0.9448
+2025-07-28 00:28:37,262 - INFO - Starting harmonized RF training for period: 2023-H2
+2025-07-28 00:28:37,262 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 00:28:37,347 - INFO - Database connection established
+2025-07-28 00:28:37,348 - INFO - Loading data for period: 2023-H2
+2025-07-28 00:28:37,720 - INFO - Features loaded: 15104 rows
+2025-07-28 00:28:37,720 - INFO - Labels loaded: 15101 rows
+2025-07-28 00:28:37,724 - INFO - Combined dataset: 15101 rows
+2025-07-28 00:28:37,727 - INFO - Feature matrix shape: (15101, 22)
+2025-07-28 00:28:37,730 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 00:28:37,732 - INFO - Starting data preprocessing...
+2025-07-28 00:28:37,751 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 00:28:37,752 - INFO - Encoded label distribution: [ 1812   598   755 11936]
+2025-07-28 00:28:37,759 - INFO - Train set: 12080 samples
+2025-07-28 00:28:37,760 - INFO - Test set: 3021 samples
+2025-07-28 00:28:37,760 - INFO - Training Random Forest model...
+2025-07-28 00:28:37,762 - INFO - Class weights: {np.int64(0): np.float64(2.0827586206896553), np.int64(1): np.float64(6.317991631799163), np.int64(2): np.float64(5.0), np.int64(3): np.float64(0.31629660661918724)}
+2025-07-28 00:28:42,332 - INFO - Model Performance:
+2025-07-28 00:28:42,332 - INFO -   Accuracy: 0.6438
+2025-07-28 00:28:42,333 - INFO -   CV Mean: 0.6520 ± 0.0048
+2025-07-28 00:28:42,333 - INFO -   ROC AUC: 0.9006
+2025-07-28 00:28:42,333 - INFO - 
+Classification Report:
+2025-07-28 00:28:42,348 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.25      0.81      0.39       362
+           1       0.77      1.00      0.87       120
+           2       0.47      0.74      0.57       151
+           3       0.97      0.60      0.74      2388
+
+    accuracy                           0.64      3021
+   macro avg       0.62      0.78      0.64      3021
+weighted avg       0.85      0.64      0.69      3021
+
+2025-07-28 00:28:42,414 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0028.pkl
+2025-07-28 00:28:42,442 - INFO - Model registry updated: model_registry.log
+2025-07-28 00:28:42,480 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H2_v1_20250728_0028.pkl
+2025-07-28 00:28:42,530 - INFO - 
+Top 10 Feature Importances for 2023-H2:
+2025-07-28 00:28:42,537 - INFO -            feature  importance
+loss_chasing_score    0.231607
+         loss_rate    0.162195
+           avg_win    0.082647
+           bet_std    0.063922
+         total_bet    0.061908
+      total_events    0.059382
+         total_win    0.058482
+ sessions_last_30d    0.038410
+           avg_bet    0.038082
+    total_sessions    0.037807
+2025-07-28 00:28:42,554 - INFO - Feature importance saved: feature_importance_2023-H2.csv
+2025-07-28 00:28:42,570 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0028.pkl
+2025-07-28 00:28:42,570 - INFO - Accuracy: 0.6438
+2025-07-28 00:28:42,571 - INFO - CV Score: 0.6520 ± 0.0048
+2025-07-28 00:28:42,571 - INFO - ROC AUC: 0.9006
+2025-07-28 01:08:44,751 - INFO - Starting harmonized RF training for period: 2022-H1
+2025-07-28 01:08:44,751 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 01:08:44,819 - INFO - Database connection established
+2025-07-28 01:08:44,819 - INFO - Loading data for period: 2022-H1
+2025-07-28 01:08:44,963 - INFO - Features loaded: 2329 rows
+2025-07-28 01:08:44,963 - INFO - Labels loaded: 2326 rows
+2025-07-28 01:08:44,965 - INFO - Combined dataset: 2326 rows
+2025-07-28 01:08:44,966 - INFO - Feature matrix shape: (2326, 22)
+2025-07-28 01:08:44,967 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 01:08:44,967 - INFO - Starting data preprocessing...
+2025-07-28 01:08:44,972 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 01:08:44,972 - INFO - Encoded label distribution: [ 279   69  109 1869]
+2025-07-28 01:08:44,974 - INFO - Train set: 1860 samples
+2025-07-28 01:08:44,974 - INFO - Test set: 466 samples
+2025-07-28 01:08:44,974 - INFO - Training Random Forest model...
+2025-07-28 01:08:44,976 - INFO - Class weights: {np.int64(0): np.float64(2.085201793721973), np.int64(1): np.float64(8.454545454545455), np.int64(2): np.float64(5.344827586206897), np.int64(3): np.float64(0.3110367892976589)}
+2025-07-28 01:08:46,190 - INFO - Model Performance:
+2025-07-28 01:08:46,190 - INFO -   Accuracy: 0.7854
+2025-07-28 01:08:46,190 - INFO -   CV Mean: 0.7785 ± 0.0086
+2025-07-28 01:08:46,190 - INFO -   ROC AUC: 0.9581
+2025-07-28 01:08:46,190 - INFO - 
+Classification Report:
+2025-07-28 01:08:46,193 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.34      0.77      0.48        56
+           1       0.70      1.00      0.82        14
+           2       0.77      0.91      0.83        22
+           3       0.98      0.77      0.86       374
+
+    accuracy                           0.79       466
+   macro avg       0.70      0.86      0.75       466
+weighted avg       0.88      0.79      0.81       466
+
+2025-07-28 01:08:46,225 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0108.pkl
+2025-07-28 01:08:46,233 - INFO - Model registry updated: model_registry.log
+2025-07-28 01:08:46,267 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H1_v1_20250728_0108.pkl
+2025-07-28 01:08:46,288 - INFO - 
+Top 10 Feature Importances for 2022-H1:
+2025-07-28 01:08:46,294 - INFO -                     feature  importance
+         loss_chasing_score    0.219184
+                  loss_rate    0.138107
+                  total_win    0.096178
+                    avg_win    0.086057
+                  total_bet    0.084960
+                    avg_bet    0.073795
+                    bet_std    0.066316
+                   avg_loss    0.044189
+session_duration_volatility    0.038321
+             bet_volatility    0.036141
+2025-07-28 01:08:46,312 - INFO - Feature importance saved: feature_importance_2022-H1.csv
+2025-07-28 01:08:46,336 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0108.pkl
+2025-07-28 01:08:46,337 - INFO - Accuracy: 0.7854
+2025-07-28 01:08:46,337 - INFO - CV Score: 0.7785 ± 0.0086
+2025-07-28 01:08:46,337 - INFO - ROC AUC: 0.9581
+2025-07-28 01:48:35,056 - INFO - Starting harmonized RF training for period: 2022-H1
+2025-07-28 01:48:35,056 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 01:48:35,199 - INFO - Database connection established
+2025-07-28 01:48:35,199 - INFO - Loading data for period: 2022-H1
+2025-07-28 01:48:35,365 - INFO - Features loaded: 2329 rows
+2025-07-28 01:48:35,365 - INFO - Labels loaded: 2326 rows
+2025-07-28 01:48:35,367 - INFO - Combined dataset: 2326 rows
+2025-07-28 01:48:35,369 - INFO - Feature matrix shape: (2326, 22)
+2025-07-28 01:48:35,370 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 01:48:35,370 - INFO - Starting data preprocessing...
+2025-07-28 01:48:35,377 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 01:48:35,378 - INFO - Encoded label distribution: [ 279   69  109 1869]
+2025-07-28 01:48:35,380 - INFO - Train set: 1860 samples
+2025-07-28 01:48:35,381 - INFO - Test set: 466 samples
+2025-07-28 01:48:35,381 - INFO - Training Random Forest model...
+2025-07-28 01:48:35,384 - INFO - Class weights: {np.int64(0): np.float64(2.085201793721973), np.int64(1): np.float64(8.454545454545455), np.int64(2): np.float64(5.344827586206897), np.int64(3): np.float64(0.3110367892976589)}
+2025-07-28 01:48:36,672 - INFO - Model Performance:
+2025-07-28 01:48:36,672 - INFO -   Accuracy: 0.7854
+2025-07-28 01:48:36,673 - INFO -   CV Mean: 0.7785 ± 0.0086
+2025-07-28 01:48:36,673 - INFO -   ROC AUC: 0.9581
+2025-07-28 01:48:36,673 - INFO - 
+Classification Report:
+2025-07-28 01:48:36,676 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.34      0.77      0.48        56
+           1       0.70      1.00      0.82        14
+           2       0.77      0.91      0.83        22
+           3       0.98      0.77      0.86       374
+
+    accuracy                           0.79       466
+   macro avg       0.70      0.86      0.75       466
+weighted avg       0.88      0.79      0.81       466
+
+2025-07-28 01:48:36,708 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0148.pkl
+2025-07-28 01:48:36,716 - INFO - Model registry updated: model_registry.log
+2025-07-28 01:48:36,745 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H1_v1_20250728_0148.pkl
+2025-07-28 01:48:36,765 - INFO - 
+Top 10 Feature Importances for 2022-H1:
+2025-07-28 01:48:36,769 - INFO -                     feature  importance
+         loss_chasing_score    0.219184
+                  loss_rate    0.138107
+                  total_win    0.096178
+                    avg_win    0.086057
+                  total_bet    0.084960
+                    avg_bet    0.073795
+                    bet_std    0.066316
+                   avg_loss    0.044189
+session_duration_volatility    0.038321
+             bet_volatility    0.036141
+2025-07-28 01:48:36,781 - INFO - Feature importance saved: feature_importance_2022-H1.csv
+2025-07-28 01:48:36,795 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0148.pkl
+2025-07-28 01:48:36,795 - INFO - Accuracy: 0.7854
+2025-07-28 01:48:36,795 - INFO - CV Score: 0.7785 ± 0.0086
+2025-07-28 01:48:36,795 - INFO - ROC AUC: 0.9581
+2025-07-28 01:48:52,533 - INFO - Starting harmonized RF training for period: 2022-H2
+2025-07-28 01:48:52,534 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 01:48:52,612 - INFO - Database connection established
+2025-07-28 01:48:52,612 - INFO - Loading data for period: 2022-H2
+2025-07-28 01:48:52,797 - INFO - Features loaded: 3809 rows
+2025-07-28 01:48:52,797 - INFO - Labels loaded: 3806 rows
+2025-07-28 01:48:52,799 - INFO - Combined dataset: 3806 rows
+2025-07-28 01:48:52,800 - INFO - Feature matrix shape: (3806, 22)
+2025-07-28 01:48:52,801 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 01:48:52,802 - INFO - Starting data preprocessing...
+2025-07-28 01:48:52,810 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 01:48:52,810 - INFO - Encoded label distribution: [ 456  144  181 3025]
+2025-07-28 01:48:52,812 - INFO - Train set: 3044 samples
+2025-07-28 01:48:52,813 - INFO - Test set: 762 samples
+2025-07-28 01:48:52,813 - INFO - Training Random Forest model...
+2025-07-28 01:48:52,814 - INFO - Class weights: {np.int64(0): np.float64(2.084931506849315), np.int64(1): np.float64(6.6173913043478265), np.int64(2): np.float64(5.248275862068965), np.int64(3): np.float64(0.3145928069450186)}
+2025-07-28 01:48:54,135 - INFO - Model Performance:
+2025-07-28 01:48:54,136 - INFO -   Accuracy: 0.7874
+2025-07-28 01:48:54,136 - INFO -   CV Mean: 0.7947 ± 0.0236
+2025-07-28 01:48:54,136 - INFO -   ROC AUC: 0.9552
+2025-07-28 01:48:54,136 - INFO - 
+Classification Report:
+2025-07-28 01:48:54,139 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.35      0.81      0.49        91
+           1       0.79      0.90      0.84        29
+           2       0.83      0.81      0.82        36
+           3       0.98      0.78      0.87       606
+
+    accuracy                           0.79       762
+   macro avg       0.74      0.82      0.75       762
+weighted avg       0.89      0.79      0.82       762
+
+2025-07-28 01:48:54,168 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0148.pkl
+2025-07-28 01:48:54,175 - INFO - Model registry updated: model_registry.log
+2025-07-28 01:48:54,207 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H2_v1_20250728_0148.pkl
+2025-07-28 01:48:54,235 - INFO - 
+Top 10 Feature Importances for 2022-H2:
+2025-07-28 01:48:54,239 - INFO -                     feature  importance
+         loss_chasing_score    0.207366
+                  loss_rate    0.146587
+                  total_win    0.091241
+                    avg_win    0.086089
+                  total_bet    0.075064
+                    bet_std    0.069798
+                    avg_bet    0.063539
+               total_events    0.056277
+             bet_volatility    0.038405
+session_duration_volatility    0.034478
+2025-07-28 01:48:54,252 - INFO - Feature importance saved: feature_importance_2022-H2.csv
+2025-07-28 01:48:54,261 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0148.pkl
+2025-07-28 01:48:54,261 - INFO - Accuracy: 0.7874
+2025-07-28 01:48:54,261 - INFO - CV Score: 0.7947 ± 0.0236
+2025-07-28 01:48:54,261 - INFO - ROC AUC: 0.9552
+2025-07-28 01:49:11,613 - INFO - Starting harmonized RF training for period: 2023-H1
+2025-07-28 01:49:11,614 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 01:49:11,686 - INFO - Database connection established
+2025-07-28 01:49:11,686 - INFO - Loading data for period: 2023-H1
+2025-07-28 01:49:11,863 - INFO - Features loaded: 6649 rows
+2025-07-28 01:49:11,863 - INFO - Labels loaded: 6646 rows
+2025-07-28 01:49:11,865 - INFO - Combined dataset: 6646 rows
+2025-07-28 01:49:11,867 - INFO - Feature matrix shape: (6646, 22)
+2025-07-28 01:49:11,868 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 01:49:11,868 - INFO - Starting data preprocessing...
+2025-07-28 01:49:11,879 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 01:49:11,880 - INFO - Encoded label distribution: [ 797  339  332 5178]
+2025-07-28 01:49:11,883 - INFO - Train set: 5316 samples
+2025-07-28 01:49:11,883 - INFO - Test set: 1330 samples
+2025-07-28 01:49:11,883 - INFO - Training Random Forest model...
+2025-07-28 01:49:11,885 - INFO - Class weights: {np.int64(0): np.float64(2.086342229199372), np.int64(1): np.float64(4.904059040590406), np.int64(2): np.float64(4.996240601503759), np.int64(3): np.float64(0.3208594881699662)}
+2025-07-28 01:49:13,351 - INFO - Model Performance:
+2025-07-28 01:49:13,351 - INFO -   Accuracy: 0.7466
+2025-07-28 01:49:13,351 - INFO -   CV Mean: 0.7538 ± 0.0135
+2025-07-28 01:49:13,351 - INFO -   ROC AUC: 0.9448
+2025-07-28 01:49:13,351 - INFO - 
+Classification Report:
+2025-07-28 01:49:13,357 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.30      0.78      0.43       160
+           1       0.88      0.99      0.93        68
+           2       0.74      0.94      0.83        66
+           3       0.98      0.71      0.83      1036
+
+    accuracy                           0.75      1330
+   macro avg       0.72      0.85      0.75      1330
+weighted avg       0.88      0.75      0.78      1330
+
+2025-07-28 01:49:13,388 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0149.pkl
+2025-07-28 01:49:13,395 - INFO - Model registry updated: model_registry.log
+2025-07-28 01:49:13,423 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H1_v1_20250728_0149.pkl
+2025-07-28 01:49:13,453 - INFO - 
+Top 10 Feature Importances for 2023-H1:
+2025-07-28 01:49:13,456 - INFO -            feature  importance
+loss_chasing_score    0.239131
+         loss_rate    0.148164
+           avg_win    0.079856
+         total_bet    0.073631
+         total_win    0.065737
+           bet_std    0.061979
+           avg_bet    0.055284
+      total_events    0.052931
+weekend_preference    0.038390
+    bet_volatility    0.036511
+2025-07-28 01:49:13,467 - INFO - Feature importance saved: feature_importance_2023-H1.csv
+2025-07-28 01:49:13,476 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0149.pkl
+2025-07-28 01:49:13,476 - INFO - Accuracy: 0.7466
+2025-07-28 01:49:13,476 - INFO - CV Score: 0.7538 ± 0.0135
+2025-07-28 01:49:13,476 - INFO - ROC AUC: 0.9448
+2025-07-28 01:49:24,608 - INFO - Starting harmonized RF training for period: 2023-H2
+2025-07-28 01:49:24,608 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 01:49:24,665 - INFO - Database connection established
+2025-07-28 01:49:24,666 - INFO - Loading data for period: 2023-H2
+2025-07-28 01:49:24,928 - INFO - Features loaded: 15104 rows
+2025-07-28 01:49:24,928 - INFO - Labels loaded: 15101 rows
+2025-07-28 01:49:24,932 - INFO - Combined dataset: 15101 rows
+2025-07-28 01:49:24,934 - INFO - Feature matrix shape: (15101, 22)
+2025-07-28 01:49:24,936 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 01:49:24,936 - INFO - Starting data preprocessing...
+2025-07-28 01:49:24,952 - INFO - Label classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 01:49:24,952 - INFO - Encoded label distribution: [ 1812   598   755 11936]
+2025-07-28 01:49:24,957 - INFO - Train set: 12080 samples
+2025-07-28 01:49:24,958 - INFO - Test set: 3021 samples
+2025-07-28 01:49:24,958 - INFO - Training Random Forest model...
+2025-07-28 01:49:24,960 - INFO - Class weights: {np.int64(0): np.float64(2.0827586206896553), np.int64(1): np.float64(6.317991631799163), np.int64(2): np.float64(5.0), np.int64(3): np.float64(0.31629660661918724)}
+2025-07-28 01:49:27,625 - INFO - Model Performance:
+2025-07-28 01:49:27,626 - INFO -   Accuracy: 0.6438
+2025-07-28 01:49:27,626 - INFO -   CV Mean: 0.6520 ± 0.0048
+2025-07-28 01:49:27,627 - INFO -   ROC AUC: 0.9006
+2025-07-28 01:49:27,627 - INFO - 
+Classification Report:
+2025-07-28 01:49:27,633 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.25      0.81      0.39       362
+           1       0.77      1.00      0.87       120
+           2       0.47      0.74      0.57       151
+           3       0.97      0.60      0.74      2388
+
+    accuracy                           0.64      3021
+   macro avg       0.62      0.78      0.64      3021
+weighted avg       0.85      0.64      0.69      3021
+
+2025-07-28 01:49:27,695 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0149.pkl
+2025-07-28 01:49:27,704 - INFO - Model registry updated: model_registry.log
+2025-07-28 01:49:27,742 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H2_v1_20250728_0149.pkl
+2025-07-28 01:49:27,780 - INFO - 
+Top 10 Feature Importances for 2023-H2:
+2025-07-28 01:49:27,785 - INFO -            feature  importance
+loss_chasing_score    0.231607
+         loss_rate    0.162195
+           avg_win    0.082647
+           bet_std    0.063922
+         total_bet    0.061908
+      total_events    0.059382
+         total_win    0.058482
+ sessions_last_30d    0.038410
+           avg_bet    0.038082
+    total_sessions    0.037807
+2025-07-28 01:49:27,801 - INFO - Feature importance saved: feature_importance_2023-H2.csv
+2025-07-28 01:49:27,812 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0149.pkl
+2025-07-28 01:49:27,812 - INFO - Accuracy: 0.6438
+2025-07-28 01:49:27,812 - INFO - CV Score: 0.6520 ± 0.0048
+2025-07-28 01:49:27,812 - INFO - ROC AUC: 0.9006
+2025-07-28 02:13:48,853 - INFO - Starting FIXED harmonized RF training for period: 2022-H1
+2025-07-28 02:13:48,854 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 02:13:48,931 - INFO - Database connection established
+2025-07-28 02:13:48,932 - INFO - Loading data for period: 2022-H1
+2025-07-28 02:13:49,076 - INFO - Features loaded: 2329 rows
+2025-07-28 02:13:49,076 - INFO - Labels loaded: 2326 rows
+2025-07-28 02:13:49,078 - INFO - Combined dataset: 2326 rows
+2025-07-28 02:13:49,079 - INFO - Feature matrix shape: (2326, 22)
+2025-07-28 02:13:49,080 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 02:13:49,081 - INFO - Starting FIXED balanced data preprocessing...
+2025-07-28 02:13:49,084 - INFO - Current label distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 02:13:49,085 - INFO - Target distribution: {'NO_PROMOTION': 1744, 'GROWTH_TARGET': 279, 'LOW_ENGAGEMENT': 186, 'INTERVENTION_NEEDED': 116}
+2025-07-28 02:13:49,085 - INFO - Current imbalance ratio: 27.09
+2025-07-28 02:13:49,086 - INFO - Applying balanced resampling...
+2025-07-28 02:13:49,086 - INFO -   NO_PROMOTION: 1869 -> 1744
+2025-07-28 02:13:49,087 - INFO -   GROWTH_TARGET: 279 -> 279
+2025-07-28 02:13:49,088 - INFO -   LOW_ENGAGEMENT: 109 -> 186
+2025-07-28 02:13:49,088 - INFO -   INTERVENTION_NEEDED: 69 -> 116
+2025-07-28 02:13:49,089 - INFO - Balanced dataset size: 2325
+2025-07-28 02:13:49,091 - INFO - New label distribution:
+promo_label
+NO_PROMOTION           1744
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          186
+INTERVENTION_NEEDED     116
+Name: count, dtype: int64
+2025-07-28 02:13:49,096 - INFO - Label classes after encoding: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:13:49,096 - INFO - Encoded label distribution: [ 279  116  186 1744]
+2025-07-28 02:13:49,096 - INFO - SUCCESS: Preprocessing completed with 4 balanced classes
+2025-07-28 02:13:49,098 - INFO - Train set: 1860 samples
+2025-07-28 02:13:49,098 - INFO - Test set: 465 samples
+2025-07-28 02:13:49,099 - INFO - Training Random Forest model...
+2025-07-28 02:13:49,100 - INFO - Class weights: {np.int64(0): np.float64(2.085201793721973), np.int64(1): np.float64(5.0), np.int64(2): np.float64(3.120805369127517), np.int64(3): np.float64(0.3333333333333333)}
+2025-07-28 02:13:50,306 - INFO - Model Performance:
+2025-07-28 02:13:50,306 - INFO -   Accuracy: 0.7763
+2025-07-28 02:13:50,307 - INFO -   CV Mean: 0.8134 +/- 0.0279
+2025-07-28 02:13:50,307 - INFO -   ROC AUC: 0.9491
+2025-07-28 02:13:50,307 - INFO - 
+Classification Report:
+2025-07-28 02:13:50,310 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.34      0.73      0.46        56
+           1       0.72      0.91      0.81        23
+           2       0.82      0.86      0.84        37
+           3       0.97      0.77      0.86       349
+
+    accuracy                           0.78       465
+   macro avg       0.71      0.82      0.74       465
+weighted avg       0.87      0.78      0.80       465
+
+2025-07-28 02:13:50,342 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0213.pkl
+2025-07-28 02:13:50,349 - INFO - Model registry updated: model_registry.log
+2025-07-28 02:13:50,373 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H1_v1_20250728_0213.pkl
+2025-07-28 02:13:50,402 - INFO - 
+Top 10 Feature Importances for 2022-H1:
+2025-07-28 02:13:50,407 - INFO -                     feature  importance
+         loss_chasing_score    0.211888
+                  loss_rate    0.143957
+                  total_bet    0.092105
+                  total_win    0.091431
+                    avg_win    0.088754
+                    avg_bet    0.080065
+                    bet_std    0.055941
+                   avg_loss    0.045505
+session_duration_volatility    0.035901
+               total_events    0.028692
+2025-07-28 02:13:50,420 - INFO - Feature importance saved: feature_importance_2022-H1.csv
+2025-07-28 02:13:50,420 - INFO - SUCCESS: Training completed successfully!
+2025-07-28 02:13:50,420 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_0213.pkl
+2025-07-28 02:13:50,421 - INFO - Accuracy: 0.7763
+2025-07-28 02:13:50,421 - INFO - CV Score: 0.8134 +/- 0.0279
+2025-07-28 02:13:50,421 - INFO - ROC AUC: 0.9491
+2025-07-28 02:14:08,898 - INFO - Starting FIXED harmonized RF training for period: 2022-H2
+2025-07-28 02:14:08,899 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 02:14:08,982 - INFO - Database connection established
+2025-07-28 02:14:08,982 - INFO - Loading data for period: 2022-H2
+2025-07-28 02:14:09,148 - INFO - Features loaded: 3809 rows
+2025-07-28 02:14:09,149 - INFO - Labels loaded: 3806 rows
+2025-07-28 02:14:09,151 - INFO - Combined dataset: 3806 rows
+2025-07-28 02:14:09,153 - INFO - Feature matrix shape: (3806, 22)
+2025-07-28 02:14:09,154 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 02:14:09,155 - INFO - Starting FIXED balanced data preprocessing...
+2025-07-28 02:14:09,159 - INFO - Current label distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 02:14:09,159 - INFO - Target distribution: {'NO_PROMOTION': 2854, 'GROWTH_TARGET': 456, 'LOW_ENGAGEMENT': 304, 'INTERVENTION_NEEDED': 190}
+2025-07-28 02:14:09,159 - INFO - Current imbalance ratio: 21.01
+2025-07-28 02:14:09,160 - INFO - Applying balanced resampling...
+2025-07-28 02:14:09,160 - INFO -   NO_PROMOTION: 3025 -> 2854
+2025-07-28 02:14:09,161 - INFO -   GROWTH_TARGET: 456 -> 456
+2025-07-28 02:14:09,162 - INFO -   LOW_ENGAGEMENT: 181 -> 304
+2025-07-28 02:14:09,163 - INFO -   INTERVENTION_NEEDED: 144 -> 190
+2025-07-28 02:14:09,166 - INFO - Balanced dataset size: 3804
+2025-07-28 02:14:09,167 - INFO - New label distribution:
+promo_label
+NO_PROMOTION           2854
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          304
+INTERVENTION_NEEDED     190
+Name: count, dtype: int64
+2025-07-28 02:14:09,170 - INFO - Label classes after encoding: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:14:09,171 - INFO - Encoded label distribution: [ 456  190  304 2854]
+2025-07-28 02:14:09,171 - INFO - SUCCESS: Preprocessing completed with 4 balanced classes
+2025-07-28 02:14:09,174 - INFO - Train set: 3043 samples
+2025-07-28 02:14:09,174 - INFO - Test set: 761 samples
+2025-07-28 02:14:09,174 - INFO - Training Random Forest model...
+2025-07-28 02:14:09,175 - INFO - Class weights: {np.int64(0): np.float64(2.084246575342466), np.int64(1): np.float64(5.004934210526316), np.int64(2): np.float64(3.130658436213992), np.int64(3): np.float64(0.33322382829610164)}
+2025-07-28 02:14:10,578 - INFO - Model Performance:
+2025-07-28 02:14:10,578 - INFO -   Accuracy: 0.8003
+2025-07-28 02:14:10,578 - INFO -   CV Mean: 0.8022 +/- 0.0218
+2025-07-28 02:14:10,578 - INFO -   ROC AUC: 0.9649
+2025-07-28 02:14:10,579 - INFO - 
+Classification Report:
+2025-07-28 02:14:10,582 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.37      0.79      0.50        91
+           1       0.81      1.00      0.89        38
+           2       0.86      0.93      0.90        61
+           3       0.98      0.77      0.86       571
+
+    accuracy                           0.80       761
+   macro avg       0.75      0.87      0.79       761
+weighted avg       0.89      0.80      0.83       761
+
+2025-07-28 02:14:10,614 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:10,623 - INFO - Model registry updated: model_registry.log
+2025-07-28 02:14:10,663 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:10,694 - INFO - 
+Top 10 Feature Importances for 2022-H2:
+2025-07-28 02:14:10,698 - INFO -                     feature  importance
+         loss_chasing_score    0.212302
+                  loss_rate    0.131348
+                    avg_win    0.092680
+                  total_win    0.088809
+                  total_bet    0.082944
+                    bet_std    0.070456
+                    avg_bet    0.069474
+               total_events    0.045512
+session_duration_volatility    0.035786
+                   avg_loss    0.032913
+2025-07-28 02:14:10,711 - INFO - Feature importance saved: feature_importance_2022-H2.csv
+2025-07-28 02:14:10,711 - INFO - SUCCESS: Training completed successfully!
+2025-07-28 02:14:10,711 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:10,712 - INFO - Accuracy: 0.8003
+2025-07-28 02:14:10,713 - INFO - CV Score: 0.8022 +/- 0.0218
+2025-07-28 02:14:10,714 - INFO - ROC AUC: 0.9649
+2025-07-28 02:14:35,970 - INFO - Starting FIXED harmonized RF training for period: 2023-H1
+2025-07-28 02:14:35,971 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 02:14:36,036 - INFO - Database connection established
+2025-07-28 02:14:36,036 - INFO - Loading data for period: 2023-H1
+2025-07-28 02:14:36,217 - INFO - Features loaded: 6649 rows
+2025-07-28 02:14:36,218 - INFO - Labels loaded: 6646 rows
+2025-07-28 02:14:36,220 - INFO - Combined dataset: 6646 rows
+2025-07-28 02:14:36,222 - INFO - Feature matrix shape: (6646, 22)
+2025-07-28 02:14:36,223 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 02:14:36,223 - INFO - Starting FIXED balanced data preprocessing...
+2025-07-28 02:14:36,229 - INFO - Current label distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 02:14:36,230 - INFO - Target distribution: {'NO_PROMOTION': 4984, 'GROWTH_TARGET': 797, 'LOW_ENGAGEMENT': 531, 'INTERVENTION_NEEDED': 332}
+2025-07-28 02:14:36,230 - INFO - Current imbalance ratio: 15.60
+2025-07-28 02:14:36,235 - INFO - Label classes after encoding: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:14:36,236 - INFO - Encoded label distribution: [ 797  339  332 5178]
+2025-07-28 02:14:36,236 - INFO - SUCCESS: Preprocessing completed with 4 balanced classes
+2025-07-28 02:14:36,238 - INFO - Train set: 5316 samples
+2025-07-28 02:14:36,239 - INFO - Test set: 1330 samples
+2025-07-28 02:14:36,239 - INFO - Training Random Forest model...
+2025-07-28 02:14:36,240 - INFO - Class weights: {np.int64(0): np.float64(2.086342229199372), np.int64(1): np.float64(4.904059040590406), np.int64(2): np.float64(4.996240601503759), np.int64(3): np.float64(0.3208594881699662)}
+2025-07-28 02:14:37,720 - INFO - Model Performance:
+2025-07-28 02:14:37,720 - INFO -   Accuracy: 0.7466
+2025-07-28 02:14:37,721 - INFO -   CV Mean: 0.7538 +/- 0.0135
+2025-07-28 02:14:37,721 - INFO -   ROC AUC: 0.9448
+2025-07-28 02:14:37,721 - INFO - 
+Classification Report:
+2025-07-28 02:14:37,724 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.30      0.78      0.43       160
+           1       0.88      0.99      0.93        68
+           2       0.74      0.94      0.83        66
+           3       0.98      0.71      0.83      1036
+
+    accuracy                           0.75      1330
+   macro avg       0.72      0.85      0.75      1330
+weighted avg       0.88      0.75      0.78      1330
+
+2025-07-28 02:14:37,759 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0214.pkl
+2025-07-28 02:14:37,769 - INFO - Model registry updated: model_registry.log
+2025-07-28 02:14:37,808 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H1_v1_20250728_0214.pkl
+2025-07-28 02:14:37,841 - INFO - 
+Top 10 Feature Importances for 2023-H1:
+2025-07-28 02:14:37,848 - INFO -            feature  importance
+loss_chasing_score    0.239131
+         loss_rate    0.148164
+           avg_win    0.079856
+         total_bet    0.073631
+         total_win    0.065737
+           bet_std    0.061979
+           avg_bet    0.055284
+      total_events    0.052931
+weekend_preference    0.038390
+    bet_volatility    0.036511
+2025-07-28 02:14:37,865 - INFO - Feature importance saved: feature_importance_2023-H1.csv
+2025-07-28 02:14:37,866 - INFO - SUCCESS: Training completed successfully!
+2025-07-28 02:14:37,867 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_0214.pkl
+2025-07-28 02:14:37,867 - INFO - Accuracy: 0.7466
+2025-07-28 02:14:37,868 - INFO - CV Score: 0.7538 +/- 0.0135
+2025-07-28 02:14:37,868 - INFO - ROC AUC: 0.9448
+2025-07-28 02:14:47,724 - INFO - Starting FIXED harmonized RF training for period: 2023-H2
+2025-07-28 02:14:47,724 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 02:14:47,782 - INFO - Database connection established
+2025-07-28 02:14:47,783 - INFO - Loading data for period: 2023-H2
+2025-07-28 02:14:48,041 - INFO - Features loaded: 15104 rows
+2025-07-28 02:14:48,042 - INFO - Labels loaded: 15101 rows
+2025-07-28 02:14:48,045 - INFO - Combined dataset: 15101 rows
+2025-07-28 02:14:48,047 - INFO - Feature matrix shape: (15101, 22)
+2025-07-28 02:14:48,050 - INFO - Target distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 02:14:48,051 - INFO - Starting FIXED balanced data preprocessing...
+2025-07-28 02:14:48,059 - INFO - Current label distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 02:14:48,060 - INFO - Target distribution: {'NO_PROMOTION': 11325, 'GROWTH_TARGET': 1812, 'LOW_ENGAGEMENT': 1208, 'INTERVENTION_NEEDED': 755}
+2025-07-28 02:14:48,060 - INFO - Current imbalance ratio: 19.96
+2025-07-28 02:14:48,070 - INFO - Label classes after encoding: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:14:48,070 - INFO - Encoded label distribution: [ 1812   598   755 11936]
+2025-07-28 02:14:48,070 - INFO - SUCCESS: Preprocessing completed with 4 balanced classes
+2025-07-28 02:14:48,075 - INFO - Train set: 12080 samples
+2025-07-28 02:14:48,075 - INFO - Test set: 3021 samples
+2025-07-28 02:14:48,075 - INFO - Training Random Forest model...
+2025-07-28 02:14:48,076 - INFO - Class weights: {np.int64(0): np.float64(2.0827586206896553), np.int64(1): np.float64(6.317991631799163), np.int64(2): np.float64(5.0), np.int64(3): np.float64(0.31629660661918724)}
+2025-07-28 02:14:50,916 - INFO - Model Performance:
+2025-07-28 02:14:50,917 - INFO -   Accuracy: 0.6438
+2025-07-28 02:14:50,917 - INFO -   CV Mean: 0.6520 +/- 0.0048
+2025-07-28 02:14:50,917 - INFO -   ROC AUC: 0.9006
+2025-07-28 02:14:50,918 - INFO - 
+Classification Report:
+2025-07-28 02:14:50,924 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.25      0.81      0.39       362
+           1       0.77      1.00      0.87       120
+           2       0.47      0.74      0.57       151
+           3       0.97      0.60      0.74      2388
+
+    accuracy                           0.64      3021
+   macro avg       0.62      0.78      0.64      3021
+weighted avg       0.85      0.64      0.69      3021
+
+2025-07-28 02:14:51,012 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:51,022 - INFO - Model registry updated: model_registry.log
+2025-07-28 02:14:51,058 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:51,112 - INFO - 
+Top 10 Feature Importances for 2023-H2:
+2025-07-28 02:14:51,117 - INFO -            feature  importance
+loss_chasing_score    0.231607
+         loss_rate    0.162195
+           avg_win    0.082647
+           bet_std    0.063922
+         total_bet    0.061908
+      total_events    0.059382
+         total_win    0.058482
+ sessions_last_30d    0.038410
+           avg_bet    0.038082
+    total_sessions    0.037807
+2025-07-28 02:14:51,131 - INFO - Feature importance saved: feature_importance_2023-H2.csv
+2025-07-28 02:14:51,133 - INFO - SUCCESS: Training completed successfully!
+2025-07-28 02:14:51,133 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_0214.pkl
+2025-07-28 02:14:51,133 - INFO - Accuracy: 0.6438
+2025-07-28 02:14:51,134 - INFO - CV Score: 0.6520 +/- 0.0048
+2025-07-28 02:14:51,134 - INFO - ROC AUC: 0.9006
+2025-07-28 11:45:33,097 - INFO - ================================================================================
+2025-07-28 11:45:33,107 - INFO - UNIVERSITY OF BATH - BALANCED RANDOM FOREST TRAINING
+2025-07-28 11:45:33,107 - INFO - ================================================================================
+2025-07-28 11:45:33,107 - INFO - Starting BALANCED RF training for period: 2022-H1
+2025-07-28 11:45:33,107 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 11:45:33,108 - INFO - Class imbalance fix: ENABLED
+2025-07-28 11:45:33,232 - INFO - Database connection established
+2025-07-28 11:45:33,232 - INFO - Loading data for period: 2022-H1
+2025-07-28 11:45:33,474 - INFO - Combined dataset loaded: 2326 rows, 36 columns
+2025-07-28 11:45:33,476 - INFO - Feature matrix shape: (2326, 31)
+2025-07-28 11:45:33,476 - INFO - Numeric features selected: 31
+2025-07-28 11:45:33,477 - INFO - Original target distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 11:45:33,478 - INFO - CRITICAL: Class imbalance ratio: 27.1:1
+2025-07-28 11:45:33,479 - WARNING - SEVERE CLASS IMBALANCE DETECTED - Will apply advanced balancing
+2025-07-28 11:45:33,479 - INFO - Starting advanced preprocessing with class balancing...
+2025-07-28 11:45:33,483 - INFO - Missing values handled - Shape: (2326, 31)
+2025-07-28 11:45:33,483 - INFO - ============================================================
+2025-07-28 11:45:33,483 - INFO - APPLYING ADVANCED CLASS BALANCING FIX
+2025-07-28 11:45:33,484 - INFO - ============================================================
+2025-07-28 11:45:33,484 - INFO - BEFORE balancing - Distribution: {'INTERVENTION_NEEDED': 69, 'NO_PROMOTION': 1869, 'GROWTH_TARGET': 279, 'LOW_ENGAGEMENT': 109}
+2025-07-28 11:45:33,484 - INFO - BEFORE balancing - Imbalance ratio: 27.1:1
+2025-07-28 11:45:37,039 - INFO - AFTER balancing - Distribution: {'GROWTH_TARGET': 1869, 'INTERVENTION_NEEDED': 1869, 'LOW_ENGAGEMENT': 1869, 'NO_PROMOTION': 1869}
+2025-07-28 11:45:37,039 - INFO - AFTER balancing - Imbalance ratio: 1.0:1
+2025-07-28 11:45:37,039 - INFO - SUCCESS: Reduced imbalance from 27.1:1 to 1.0:1
+2025-07-28 11:45:37,040 - INFO - ============================================================
+2025-07-28 11:45:37,045 - INFO - Features standardized - Shape: (7476, 31)
+2025-07-28 11:45:37,047 - INFO - Label encoding completed:
+2025-07-28 11:45:37,047 - INFO -   Classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 11:45:37,048 - INFO -   Encoded distribution: Counter({np.int64(0): 1869, np.int64(1): 1869, np.int64(2): 1869, np.int64(3): 1869})
+2025-07-28 11:45:37,048 - INFO - SUCCESS: 4 classes ready for multi-class learning
+2025-07-28 11:45:37,052 - INFO - Train set: 5980 samples
+2025-07-28 11:45:37,052 - INFO - Test set: 1496 samples
+2025-07-28 11:45:37,053 - INFO - Train class distribution: Counter({np.int64(1): 1495, np.int64(2): 1495, np.int64(0): 1495, np.int64(3): 1495})
+2025-07-28 11:45:37,054 - INFO - Test class distribution: Counter({np.int64(0): 374, np.int64(3): 374, np.int64(1): 374, np.int64(2): 374})
+2025-07-28 11:45:37,054 - INFO - Training balanced Random Forest model...
+2025-07-28 11:45:37,056 - INFO - RF Class weights: {np.int64(0): np.float64(1.0), np.int64(1): np.float64(1.0), np.int64(2): np.float64(1.0), np.int64(3): np.float64(1.0)}
+2025-07-28 11:45:37,056 - INFO - Balanced Random Forest model created
+2025-07-28 11:45:38,417 - INFO - ============================================================
+2025-07-28 11:45:38,417 - INFO - PREDICTION DIVERSITY VALIDATION
+2025-07-28 11:45:38,417 - INFO - ============================================================
+2025-07-28 11:45:38,418 - INFO - Test set classes: 4
+2025-07-28 11:45:38,418 - INFO - Predicted classes: 4
+2025-07-28 11:45:38,418 - INFO - 
+PREDICTION DISTRIBUTION:
+2025-07-28 11:45:38,418 - INFO -   Class 0: 399 samples (26.7%)
+2025-07-28 11:45:38,418 - INFO -   Class 1: 378 samples (25.3%)
+2025-07-28 11:45:38,418 - INFO -   Class 2: 374 samples (25.0%)
+2025-07-28 11:45:38,419 - INFO -   Class 3: 345 samples (23.1%)
+2025-07-28 11:45:38,419 - INFO - 
+TEST SET DISTRIBUTION:
+2025-07-28 11:45:38,419 - INFO -   Class 0: 374 samples (25.0%)
+2025-07-28 11:45:38,419 - INFO -   Class 1: 374 samples (25.0%)
+2025-07-28 11:45:38,419 - INFO -   Class 2: 374 samples (25.0%)
+2025-07-28 11:45:38,419 - INFO -   Class 3: 374 samples (25.0%)
+2025-07-28 11:45:38,452 - INFO - ============================================================
+2025-07-28 11:45:45,463 - INFO - Model Performance:
+2025-07-28 11:45:45,463 - INFO -   Accuracy: 0.9612
+2025-07-28 11:45:45,464 - INFO -   CV Mean: 0.9525 +/- 0.0034
+2025-07-28 11:45:45,464 - INFO -   OOB Score: 0.9574
+2025-07-28 11:45:45,464 - INFO -   ROC AUC: 0.9978
+2025-07-28 11:45:45,464 - INFO - 
+Classification Report:
+2025-07-28 11:45:45,468 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.90      0.96      0.93       374
+           1       0.99      1.00      0.99       374
+           2       0.99      0.99      0.99       374
+           3       0.97      0.89      0.93       374
+
+    accuracy                           0.96      1496
+   macro avg       0.96      0.96      0.96      1496
+weighted avg       0.96      0.96      0.96      1496
+
+2025-07-28 11:45:45,554 - INFO - Balanced model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_1145.pkl
+2025-07-28 11:45:45,564 - INFO - Model registry updated: model_registry.log
+2025-07-28 11:45:45,616 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H1_v1_20250728_1145.pkl
+2025-07-28 11:45:45,658 - INFO - 
+Top 10 Feature Importances for 2022-H1:
+2025-07-28 11:45:45,666 - INFO -               feature  importance
+   loss_chasing_score    0.171417
+            loss_rate    0.114788
+   log_bet_volatility    0.088908
+bet_volatility_robust    0.077439
+     total_bet_robust    0.052011
+   total_bet_original    0.051266
+        log_total_bet    0.048514
+     avg_bet_original    0.046614
+            total_win    0.046087
+       avg_bet_robust    0.041195
+2025-07-28 11:45:45,689 - INFO - Feature importance saved: feature_importance_2022-H1_balanced.csv
+2025-07-28 11:45:45,689 - INFO - ================================================================================
+2025-07-28 11:45:45,689 - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-07-28 11:45:45,689 - INFO - ================================================================================
+2025-07-28 11:45:45,689 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H1_v1_20250728_1145.pkl
+2025-07-28 11:45:45,690 - INFO - Accuracy: 0.9612
+2025-07-28 11:45:45,690 - INFO - CV Score: 0.9525 +/- 0.0034
+2025-07-28 11:45:45,690 - INFO - ROC AUC: 0.9978
+2025-07-28 11:45:45,690 - INFO - OOB Score: 0.9574
+2025-07-28 12:00:50,236 - INFO - ================================================================================
+2025-07-28 12:00:50,237 - INFO - UNIVERSITY OF BATH - BALANCED RANDOM FOREST TRAINING
+2025-07-28 12:00:50,239 - INFO - ================================================================================
+2025-07-28 12:00:50,240 - INFO - Starting BALANCED RF training for period: 2022-H2
+2025-07-28 12:00:50,240 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 12:00:50,241 - INFO - Class imbalance fix: ENABLED
+2025-07-28 12:00:50,381 - INFO - Database connection established
+2025-07-28 12:00:50,423 - INFO - Loading data for period: 2022-H2
+2025-07-28 12:00:50,934 - INFO - Combined dataset loaded: 3806 rows, 36 columns
+2025-07-28 12:00:50,936 - INFO - Feature matrix shape: (3806, 31)
+2025-07-28 12:00:50,936 - INFO - Numeric features selected: 31
+2025-07-28 12:00:50,963 - INFO - Original target distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 12:00:50,966 - INFO - CRITICAL: Class imbalance ratio: 21.0:1
+2025-07-28 12:00:50,966 - WARNING - SEVERE CLASS IMBALANCE DETECTED - Will apply advanced balancing
+2025-07-28 12:00:50,966 - INFO - Starting advanced preprocessing with class balancing...
+2025-07-28 12:00:50,973 - INFO - Missing values handled - Shape: (3806, 31)
+2025-07-28 12:00:50,973 - INFO - ============================================================
+2025-07-28 12:00:50,973 - INFO - APPLYING ADVANCED CLASS BALANCING FIX
+2025-07-28 12:00:50,973 - INFO - ============================================================
+2025-07-28 12:00:50,974 - INFO - BEFORE balancing - Distribution: {'NO_PROMOTION': 3025, 'GROWTH_TARGET': 456, 'LOW_ENGAGEMENT': 181, 'INTERVENTION_NEEDED': 144}
+2025-07-28 12:00:50,974 - INFO - BEFORE balancing - Imbalance ratio: 21.0:1
+2025-07-28 12:00:55,147 - INFO - AFTER balancing - Distribution: {'GROWTH_TARGET': 3025, 'INTERVENTION_NEEDED': 3025, 'LOW_ENGAGEMENT': 3025, 'NO_PROMOTION': 3025}
+2025-07-28 12:00:55,148 - INFO - AFTER balancing - Imbalance ratio: 1.0:1
+2025-07-28 12:00:55,148 - INFO - SUCCESS: Reduced imbalance from 21.0:1 to 1.0:1
+2025-07-28 12:00:55,148 - INFO - ============================================================
+2025-07-28 12:00:55,152 - INFO - Features standardized - Shape: (12100, 31)
+2025-07-28 12:00:55,154 - INFO - Label encoding completed:
+2025-07-28 12:00:55,154 - INFO -   Classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 12:00:55,156 - INFO -   Encoded distribution: Counter({np.int64(0): 3025, np.int64(1): 3025, np.int64(2): 3025, np.int64(3): 3025})
+2025-07-28 12:00:55,156 - INFO - SUCCESS: 4 classes ready for multi-class learning
+2025-07-28 12:00:55,162 - INFO - Train set: 9680 samples
+2025-07-28 12:00:55,162 - INFO - Test set: 2420 samples
+2025-07-28 12:00:55,163 - INFO - Train class distribution: Counter({np.int64(2): 2420, np.int64(1): 2420, np.int64(0): 2420, np.int64(3): 2420})
+2025-07-28 12:00:55,163 - INFO - Test class distribution: Counter({np.int64(1): 605, np.int64(0): 605, np.int64(2): 605, np.int64(3): 605})
+2025-07-28 12:00:55,163 - INFO - Training balanced Random Forest model...
+2025-07-28 12:00:55,165 - INFO - RF Class weights: {np.int64(0): np.float64(1.0), np.int64(1): np.float64(1.0), np.int64(2): np.float64(1.0), np.int64(3): np.float64(1.0)}
+2025-07-28 12:00:55,165 - INFO - Balanced Random Forest model created
+2025-07-28 12:00:57,101 - INFO - ============================================================
+2025-07-28 12:00:57,101 - INFO - PREDICTION DIVERSITY VALIDATION
+2025-07-28 12:00:57,102 - INFO - ============================================================
+2025-07-28 12:00:57,103 - INFO - Test set classes: 4
+2025-07-28 12:00:57,103 - INFO - Predicted classes: 4
+2025-07-28 12:00:57,103 - INFO - 
+PREDICTION DISTRIBUTION:
+2025-07-28 12:00:57,104 - INFO -   Class 0: 647 samples (26.7%)
+2025-07-28 12:00:57,104 - INFO -   Class 1: 611 samples (25.2%)
+2025-07-28 12:00:57,104 - INFO -   Class 2: 606 samples (25.0%)
+2025-07-28 12:00:57,105 - INFO -   Class 3: 556 samples (23.0%)
+2025-07-28 12:00:57,105 - INFO - 
+TEST SET DISTRIBUTION:
+2025-07-28 12:00:57,105 - INFO -   Class 0: 605 samples (25.0%)
+2025-07-28 12:00:57,105 - INFO -   Class 1: 605 samples (25.0%)
+2025-07-28 12:00:57,106 - INFO -   Class 2: 605 samples (25.0%)
+2025-07-28 12:00:57,106 - INFO -   Class 3: 605 samples (25.0%)
+2025-07-28 12:00:57,127 - INFO - ============================================================
+2025-07-28 12:01:10,249 - INFO - Model Performance:
+2025-07-28 12:01:10,249 - INFO -   Accuracy: 0.9591
+2025-07-28 12:01:10,249 - INFO -   CV Mean: 0.9522 +/- 0.0033
+2025-07-28 12:01:10,250 - INFO -   OOB Score: 0.9555
+2025-07-28 12:01:10,250 - INFO -   ROC AUC: 0.9975
+2025-07-28 12:01:10,250 - INFO - 
+Classification Report:
+2025-07-28 12:01:10,261 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.89      0.96      0.92       605
+           1       0.99      1.00      1.00       605
+           2       0.99      0.99      0.99       605
+           3       0.97      0.89      0.93       605
+
+    accuracy                           0.96      2420
+   macro avg       0.96      0.96      0.96      2420
+weighted avg       0.96      0.96      0.96      2420
+
+2025-07-28 12:01:10,427 - INFO - Balanced model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_1201.pkl
+2025-07-28 12:01:10,436 - INFO - Model registry updated: model_registry.log
+2025-07-28 12:01:10,482 - INFO - LATEST.pkl copied: clean_harmonized_rf_2022-H2_v1_20250728_1201.pkl
+2025-07-28 12:01:10,543 - INFO - 
+Top 10 Feature Importances for 2022-H2:
+2025-07-28 12:01:10,548 - INFO -               feature  importance
+   loss_chasing_score    0.173017
+            loss_rate    0.117037
+   log_bet_volatility    0.089320
+bet_volatility_robust    0.076128
+        log_total_bet    0.049832
+   total_bet_original    0.049159
+     total_bet_robust    0.046796
+            total_win    0.046253
+     avg_bet_original    0.043841
+       avg_bet_robust    0.042331
+2025-07-28 12:01:10,562 - INFO - Feature importance saved: feature_importance_2022-H2_balanced.csv
+2025-07-28 12:01:10,563 - INFO - ================================================================================
+2025-07-28 12:01:10,563 - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-07-28 12:01:10,564 - INFO - ================================================================================
+2025-07-28 12:01:10,564 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2022-H2_v1_20250728_1201.pkl
+2025-07-28 12:01:10,564 - INFO - Accuracy: 0.9591
+2025-07-28 12:01:10,565 - INFO - CV Score: 0.9522 +/- 0.0033
+2025-07-28 12:01:10,565 - INFO - ROC AUC: 0.9975
+2025-07-28 12:01:10,565 - INFO - OOB Score: 0.9555
+2025-07-28 12:04:26,734 - INFO - ================================================================================
+2025-07-28 12:04:26,734 - INFO - UNIVERSITY OF BATH - BALANCED RANDOM FOREST TRAINING
+2025-07-28 12:04:26,734 - INFO - ================================================================================
+2025-07-28 12:04:26,735 - INFO - Starting BALANCED RF training for period: 2023-H1
+2025-07-28 12:04:26,735 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 12:04:26,735 - INFO - Class imbalance fix: ENABLED
+2025-07-28 12:04:26,902 - INFO - Database connection established
+2025-07-28 12:04:26,903 - INFO - Loading data for period: 2023-H1
+2025-07-28 12:04:27,288 - INFO - Combined dataset loaded: 6646 rows, 36 columns
+2025-07-28 12:04:27,292 - INFO - Feature matrix shape: (6646, 31)
+2025-07-28 12:04:27,292 - INFO - Numeric features selected: 31
+2025-07-28 12:04:27,294 - INFO - Original target distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 12:04:27,295 - INFO - CRITICAL: Class imbalance ratio: 15.6:1
+2025-07-28 12:04:27,295 - WARNING - SEVERE CLASS IMBALANCE DETECTED - Will apply advanced balancing
+2025-07-28 12:04:27,295 - INFO - Starting advanced preprocessing with class balancing...
+2025-07-28 12:04:27,310 - INFO - Missing values handled - Shape: (6646, 31)
+2025-07-28 12:04:27,311 - INFO - ============================================================
+2025-07-28 12:04:27,311 - INFO - APPLYING ADVANCED CLASS BALANCING FIX
+2025-07-28 12:04:27,312 - INFO - ============================================================
+2025-07-28 12:04:27,314 - INFO - BEFORE balancing - Distribution: {'NO_PROMOTION': 5178, 'GROWTH_TARGET': 797, 'INTERVENTION_NEEDED': 339, 'LOW_ENGAGEMENT': 332}
+2025-07-28 12:04:27,314 - INFO - BEFORE balancing - Imbalance ratio: 15.6:1
+2025-07-28 12:04:32,741 - INFO - AFTER balancing - Distribution: {'GROWTH_TARGET': 5178, 'INTERVENTION_NEEDED': 5178, 'LOW_ENGAGEMENT': 5178, 'NO_PROMOTION': 5178}
+2025-07-28 12:04:32,741 - INFO - AFTER balancing - Imbalance ratio: 1.0:1
+2025-07-28 12:04:32,742 - INFO - SUCCESS: Reduced imbalance from 15.6:1 to 1.0:1
+2025-07-28 12:04:32,742 - INFO - ============================================================
+2025-07-28 12:04:32,751 - INFO - Features standardized - Shape: (20712, 31)
+2025-07-28 12:04:32,754 - INFO - Label encoding completed:
+2025-07-28 12:04:32,754 - INFO -   Classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 12:04:32,757 - INFO -   Encoded distribution: Counter({np.int64(0): 5178, np.int64(1): 5178, np.int64(2): 5178, np.int64(3): 5178})
+2025-07-28 12:04:32,757 - INFO - SUCCESS: 4 classes ready for multi-class learning
+2025-07-28 12:04:32,769 - INFO - Train set: 16569 samples
+2025-07-28 12:04:32,769 - INFO - Test set: 4143 samples
+2025-07-28 12:04:32,771 - INFO - Train class distribution: Counter({np.int64(1): 4143, np.int64(2): 4142, np.int64(3): 4142, np.int64(0): 4142})
+2025-07-28 12:04:32,772 - INFO - Test class distribution: Counter({np.int64(0): 1036, np.int64(2): 1036, np.int64(3): 1036, np.int64(1): 1035})
+2025-07-28 12:04:32,772 - INFO - Training balanced Random Forest model...
+2025-07-28 12:04:32,776 - INFO - RF Class weights: {np.int64(0): np.float64(1.0000603573153066), np.int64(1): np.float64(0.9998189717595944), np.int64(2): np.float64(1.0000603573153066), np.int64(3): np.float64(1.0000603573153066)}
+2025-07-28 12:04:32,777 - INFO - Balanced Random Forest model created
+2025-07-28 12:04:37,867 - INFO - ============================================================
+2025-07-28 12:04:37,867 - INFO - PREDICTION DIVERSITY VALIDATION
+2025-07-28 12:04:37,867 - INFO - ============================================================
+2025-07-28 12:04:37,869 - INFO - Test set classes: 4
+2025-07-28 12:04:37,869 - INFO - Predicted classes: 4
+2025-07-28 12:04:37,869 - INFO - 
+PREDICTION DISTRIBUTION:
+2025-07-28 12:04:37,869 - INFO -   Class 0: 1095 samples (26.4%)
+2025-07-28 12:04:37,870 - INFO -   Class 1: 1052 samples (25.4%)
+2025-07-28 12:04:37,870 - INFO -   Class 2: 1041 samples (25.1%)
+2025-07-28 12:04:37,870 - INFO -   Class 3: 955 samples (23.1%)
+2025-07-28 12:04:37,870 - INFO - 
+TEST SET DISTRIBUTION:
+2025-07-28 12:04:37,871 - INFO -   Class 0: 1036 samples (25.0%)
+2025-07-28 12:04:37,871 - INFO -   Class 1: 1035 samples (25.0%)
+2025-07-28 12:04:37,871 - INFO -   Class 2: 1036 samples (25.0%)
+2025-07-28 12:04:37,871 - INFO -   Class 3: 1036 samples (25.0%)
+2025-07-28 12:04:37,898 - INFO - ============================================================
+2025-07-28 12:04:58,305 - INFO - Model Performance:
+2025-07-28 12:04:58,305 - INFO -   Accuracy: 0.9558
+2025-07-28 12:04:58,306 - INFO -   CV Mean: 0.9517 +/- 0.0039
+2025-07-28 12:04:58,306 - INFO -   OOB Score: 0.9543
+2025-07-28 12:04:58,307 - INFO -   ROC AUC: 0.9961
+2025-07-28 12:04:58,307 - INFO - 
+Classification Report:
+2025-07-28 12:04:58,312 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.90      0.95      0.92      1036
+           1       0.98      1.00      0.99      1035
+           2       0.99      1.00      1.00      1036
+           3       0.95      0.88      0.91      1036
+
+    accuracy                           0.96      4143
+   macro avg       0.96      0.96      0.96      4143
+weighted avg       0.96      0.96      0.96      4143
+
+2025-07-28 12:04:58,502 - INFO - Balanced model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_1204.pkl
+2025-07-28 12:04:58,511 - INFO - Model registry updated: model_registry.log
+2025-07-28 12:04:58,570 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H1_v1_20250728_1204.pkl
+2025-07-28 12:04:58,658 - INFO - 
+Top 10 Feature Importances for 2023-H1:
+2025-07-28 12:04:58,667 - INFO -                 feature  importance
+     loss_chasing_score    0.181716
+              loss_rate    0.123595
+     log_bet_volatility    0.094305
+  bet_volatility_robust    0.084724
+          log_total_bet    0.043766
+       total_bet_robust    0.041129
+     total_bet_original    0.040548
+              total_win    0.037555
+total_sessions_original    0.037090
+       avg_bet_original    0.035181
+2025-07-28 12:04:58,685 - INFO - Feature importance saved: feature_importance_2023-H1_balanced.csv
+2025-07-28 12:04:58,685 - INFO - ================================================================================
+2025-07-28 12:04:58,686 - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-07-28 12:04:58,686 - INFO - ================================================================================
+2025-07-28 12:04:58,686 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H1_v1_20250728_1204.pkl
+2025-07-28 12:04:58,687 - INFO - Accuracy: 0.9558
+2025-07-28 12:04:58,687 - INFO - CV Score: 0.9517 +/- 0.0039
+2025-07-28 12:04:58,687 - INFO - ROC AUC: 0.9961
+2025-07-28 12:04:58,687 - INFO - OOB Score: 0.9543
+2025-07-28 12:05:25,368 - INFO - ================================================================================
+2025-07-28 12:05:25,368 - INFO - UNIVERSITY OF BATH - BALANCED RANDOM FOREST TRAINING
+2025-07-28 12:05:25,368 - INFO - ================================================================================
+2025-07-28 12:05:25,368 - INFO - Starting BALANCED RF training for period: 2023-H2
+2025-07-28 12:05:25,369 - INFO - Hyperparameter tuning: Disabled
+2025-07-28 12:05:25,369 - INFO - Class imbalance fix: ENABLED
+2025-07-28 12:05:25,428 - INFO - Database connection established
+2025-07-28 12:05:25,428 - INFO - Loading data for period: 2023-H2
+2025-07-28 12:05:25,676 - INFO - Combined dataset loaded: 15101 rows, 36 columns
+2025-07-28 12:05:25,681 - INFO - Feature matrix shape: (15101, 31)
+2025-07-28 12:05:25,681 - INFO - Numeric features selected: 31
+2025-07-28 12:05:25,683 - INFO - Original target distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 12:05:25,685 - INFO - CRITICAL: Class imbalance ratio: 20.0:1
+2025-07-28 12:05:25,685 - WARNING - SEVERE CLASS IMBALANCE DETECTED - Will apply advanced balancing
+2025-07-28 12:05:25,685 - INFO - Starting advanced preprocessing with class balancing...
+2025-07-28 12:05:25,697 - INFO - Missing values handled - Shape: (15101, 31)
+2025-07-28 12:05:25,698 - INFO - ============================================================
+2025-07-28 12:05:25,698 - INFO - APPLYING ADVANCED CLASS BALANCING FIX
+2025-07-28 12:05:25,698 - INFO - ============================================================
+2025-07-28 12:05:25,699 - INFO - BEFORE balancing - Distribution: {'GROWTH_TARGET': 1812, 'NO_PROMOTION': 11936, 'INTERVENTION_NEEDED': 598, 'LOW_ENGAGEMENT': 755}
+2025-07-28 12:05:25,700 - INFO - BEFORE balancing - Imbalance ratio: 20.0:1
+2025-07-28 12:05:28,504 - INFO - AFTER balancing - Distribution: {'GROWTH_TARGET': 11936, 'INTERVENTION_NEEDED': 11936, 'LOW_ENGAGEMENT': 11936, 'NO_PROMOTION': 11936}
+2025-07-28 12:05:28,504 - INFO - AFTER balancing - Imbalance ratio: 1.0:1
+2025-07-28 12:05:28,504 - INFO - SUCCESS: Reduced imbalance from 20.0:1 to 1.0:1
+2025-07-28 12:05:28,504 - INFO - ============================================================
+2025-07-28 12:05:28,523 - INFO - Features standardized - Shape: (47744, 31)
+2025-07-28 12:05:28,528 - INFO - Label encoding completed:
+2025-07-28 12:05:28,529 - INFO -   Classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 12:05:28,532 - INFO -   Encoded distribution: Counter({np.int64(0): 11936, np.int64(1): 11936, np.int64(2): 11936, np.int64(3): 11936})
+2025-07-28 12:05:28,532 - INFO - SUCCESS: 4 classes ready for multi-class learning
+2025-07-28 12:05:28,547 - INFO - Train set: 38195 samples
+2025-07-28 12:05:28,548 - INFO - Test set: 9549 samples
+2025-07-28 12:05:28,551 - INFO - Train class distribution: Counter({np.int64(1): 9549, np.int64(0): 9549, np.int64(3): 9549, np.int64(2): 9548})
+2025-07-28 12:05:28,552 - INFO - Test class distribution: Counter({np.int64(2): 2388, np.int64(3): 2387, np.int64(0): 2387, np.int64(1): 2387})
+2025-07-28 12:05:28,552 - INFO - Training balanced Random Forest model...
+2025-07-28 12:05:28,555 - INFO - RF Class weights: {np.int64(0): np.float64(0.9999738192480888), np.int64(1): np.float64(0.9999738192480888), np.int64(2): np.float64(1.0000785504817762), np.int64(3): np.float64(0.9999738192480888)}
+2025-07-28 12:05:28,556 - INFO - Balanced Random Forest model created
+2025-07-28 12:05:42,652 - INFO - ============================================================
+2025-07-28 12:05:42,652 - INFO - PREDICTION DIVERSITY VALIDATION
+2025-07-28 12:05:42,652 - INFO - ============================================================
+2025-07-28 12:05:42,655 - INFO - Test set classes: 4
+2025-07-28 12:05:42,655 - INFO - Predicted classes: 4
+2025-07-28 12:05:42,655 - INFO - 
+PREDICTION DISTRIBUTION:
+2025-07-28 12:05:42,655 - INFO -   Class 0: 2510 samples (26.3%)
+2025-07-28 12:05:42,656 - INFO -   Class 1: 2414 samples (25.3%)
+2025-07-28 12:05:42,656 - INFO -   Class 2: 2510 samples (26.3%)
+2025-07-28 12:05:42,656 - INFO -   Class 3: 2115 samples (22.1%)
+2025-07-28 12:05:42,656 - INFO - 
+TEST SET DISTRIBUTION:
+2025-07-28 12:05:42,656 - INFO -   Class 0: 2387 samples (25.0%)
+2025-07-28 12:05:42,656 - INFO -   Class 1: 2387 samples (25.0%)
+2025-07-28 12:05:42,657 - INFO -   Class 2: 2388 samples (25.0%)
+2025-07-28 12:05:42,657 - INFO -   Class 3: 2387 samples (25.0%)
+2025-07-28 12:05:42,672 - INFO - ============================================================
+2025-07-28 12:06:34,958 - INFO - Model Performance:
+2025-07-28 12:06:34,958 - INFO -   Accuracy: 0.9360
+2025-07-28 12:06:34,959 - INFO -   CV Mean: 0.9322 +/- 0.0031
+2025-07-28 12:06:34,959 - INFO -   OOB Score: 0.9381
+2025-07-28 12:06:34,959 - INFO -   ROC AUC: 0.9924
+2025-07-28 12:06:34,959 - INFO - 
+Classification Report:
+2025-07-28 12:06:34,965 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.88      0.93      0.90      2387
+           1       0.99      1.00      0.99      2387
+           2       0.95      1.00      0.97      2388
+           3       0.93      0.82      0.87      2387
+
+    accuracy                           0.94      9549
+   macro avg       0.94      0.94      0.94      9549
+weighted avg       0.94      0.94      0.94      9549
+
+2025-07-28 12:06:35,138 - INFO - Balanced model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_1206.pkl
+2025-07-28 12:06:35,147 - INFO - Model registry updated: model_registry.log
+2025-07-28 12:06:35,248 - INFO - LATEST.pkl copied: clean_harmonized_rf_2023-H2_v1_20250728_1206.pkl
+2025-07-28 12:06:35,307 - INFO - 
+Top 10 Feature Importances for 2023-H2:
+2025-07-28 12:06:35,311 - INFO -                 feature  importance
+     loss_chasing_score    0.155476
+              loss_rate    0.130797
+     log_bet_volatility    0.074800
+  bet_volatility_robust    0.073663
+total_sessions_original    0.051552
+     log_total_sessions    0.048790
+      sessions_last_30d    0.044436
+          log_total_bet    0.044217
+       total_bet_robust    0.040437
+     total_bet_original    0.039607
+2025-07-28 12:06:35,325 - INFO - Feature importance saved: feature_importance_2023-H2_balanced.csv
+2025-07-28 12:06:35,326 - INFO - ================================================================================
+2025-07-28 12:06:35,326 - INFO - TRAINING COMPLETED SUCCESSFULLY!
+2025-07-28 12:06:35,326 - INFO - ================================================================================
+2025-07-28 12:06:35,326 - INFO - Model saved: models\generic_rf\clean_harmonized_rf_2023-H2_v1_20250728_1206.pkl
+2025-07-28 12:06:35,326 - INFO - Accuracy: 0.9360
+2025-07-28 12:06:35,326 - INFO - CV Score: 0.9322 +/- 0.0031
+2025-07-28 12:06:35,326 - INFO - ROC AUC: 0.9924
+2025-07-28 12:06:35,326 - INFO - OOB Score: 0.9381

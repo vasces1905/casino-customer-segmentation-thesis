@@ -1,0 +1,135 @@
+2025-07-28 02:17:08,749 - INFO - Logging to: FINAL_model_comparison_20250728_0217.log
+2025-07-28 02:17:08,749 - INFO - Starting FINAL FIXED comprehensive model comparison...
+2025-07-28 02:17:08,750 - INFO - Discovering trained harmonized RF models...
+2025-07-28 02:17:08,751 - INFO - Discovered 4 trained periods: ['2022-H1', '2022-H2', '2023-H1', '2023-H2']
+2025-07-28 02:17:08,751 - INFO - Processing period 2022-H1...
+2025-07-28 02:17:08,927 - INFO - Successfully loaded RF model from clean_harmonized_rf_2022-H1_v1_20250728_0213.pkl
+2025-07-28 02:17:08,928 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:17:08,938 - INFO - Feature count: 22
+2025-07-28 02:17:08,938 - INFO - Evaluating algorithms for period 2022-H1...
+2025-07-28 02:17:08,939 - INFO - Loading EXACT training data for period 2022-H1...
+2025-07-28 02:17:09,448 - INFO - Loaded 2326 customers for period 2022-H1
+2025-07-28 02:17:09,449 - INFO - Label distribution:
+promo_label
+NO_PROMOTION           1869
+GROWTH_TARGET           279
+LOW_ENGAGEMENT          109
+INTERVENTION_NEEDED      69
+Name: count, dtype: int64
+2025-07-28 02:17:09,451 - INFO - Label encoding successful
+2025-07-28 02:17:09,452 - INFO - Unique labels in data: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:09,452 - INFO - Model expects: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:09,455 - INFO - Evaluating trained Random Forest...
+2025-07-28 02:17:09,575 - INFO - Random Forest: Accuracy=0.0858, F1=0.0544, ROC_AUC=0.909618078474775
+2025-07-28 02:17:09,576 - INFO - RF Prediction distribution: [  6  15 445]
+2025-07-28 02:17:09,576 - INFO - Actual test distribution: [ 56  14  22 374]
+2025-07-28 02:17:09,576 - INFO - Training Decision_Tree...
+2025-07-28 02:17:09,594 - INFO - Decision_Tree: Accuracy=0.8197, F1=0.8188, ROC_AUC=0.8569096649695493
+2025-07-28 02:17:09,594 - INFO - Training Logistic_Regression...
+2025-07-28 02:17:10,205 - INFO - Logistic_Regression: Accuracy=0.8112, F1=0.8238, ROC_AUC=0.9221654041809891
+2025-07-28 02:17:10,205 - INFO - Training K_Nearest_Neighbors...
+2025-07-28 02:17:13,474 - INFO - K_Nearest_Neighbors: Accuracy=0.8691, F1=0.8537, ROC_AUC=0.9053729686369665
+2025-07-28 02:17:13,474 - INFO - Training Naive_Bayes...
+2025-07-28 02:17:13,479 - INFO - Naive_Bayes: Accuracy=0.8197, F1=0.7836, ROC_AUC=0.8379658286663108
+2025-07-28 02:17:13,479 - INFO - Training Support_Vector_Machine...
+2025-07-28 02:17:14,196 - INFO - Support_Vector_Machine: Accuracy=0.8476, F1=0.7820, ROC_AUC=0.9281874992649519
+2025-07-28 02:17:14,197 - INFO - Processing period 2022-H2...
+2025-07-28 02:17:14,215 - INFO - Successfully loaded RF model from clean_harmonized_rf_2022-H2_v1_20250728_0214.pkl
+2025-07-28 02:17:14,215 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:17:14,215 - INFO - Feature count: 22
+2025-07-28 02:17:14,216 - INFO - Evaluating algorithms for period 2022-H2...
+2025-07-28 02:17:14,216 - INFO - Loading EXACT training data for period 2022-H2...
+2025-07-28 02:17:14,259 - INFO - Loaded 3806 customers for period 2022-H2
+2025-07-28 02:17:14,260 - INFO - Label distribution:
+promo_label
+NO_PROMOTION           3025
+GROWTH_TARGET           456
+LOW_ENGAGEMENT          181
+INTERVENTION_NEEDED     144
+Name: count, dtype: int64
+2025-07-28 02:17:14,263 - INFO - Label encoding successful
+2025-07-28 02:17:14,264 - INFO - Unique labels in data: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:14,264 - INFO - Model expects: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:14,269 - INFO - Evaluating trained Random Forest...
+2025-07-28 02:17:14,354 - INFO - Random Forest: Accuracy=0.0696, F1=0.0465, ROC_AUC=0.823768551223474
+2025-07-28 02:17:14,355 - INFO - RF Prediction distribution: [ 15   6 741]
+2025-07-28 02:17:14,355 - INFO - Actual test distribution: [ 91  29  36 606]
+2025-07-28 02:17:14,355 - INFO - Training Decision_Tree...
+2025-07-28 02:17:14,371 - INFO - Decision_Tree: Accuracy=0.8451, F1=0.8437, ROC_AUC=0.8718172667020736
+2025-07-28 02:17:14,371 - INFO - Training Logistic_Regression...
+2025-07-28 02:17:14,884 - INFO - Logistic_Regression: Accuracy=0.8281, F1=0.8381, ROC_AUC=0.9197925303857621
+2025-07-28 02:17:14,885 - INFO - Training K_Nearest_Neighbors...
+2025-07-28 02:17:14,907 - INFO - K_Nearest_Neighbors: Accuracy=0.8517, F1=0.8356, ROC_AUC=0.9165728321410376
+2025-07-28 02:17:14,907 - INFO - Training Naive_Bayes...
+2025-07-28 02:17:14,914 - INFO - Naive_Bayes: Accuracy=0.6260, F1=0.6689, ROC_AUC=0.8529344643204172
+2025-07-28 02:17:14,914 - INFO - Training Support_Vector_Machine...
+2025-07-28 02:17:17,480 - INFO - Support_Vector_Machine: Accuracy=0.8412, F1=0.7747, ROC_AUC=0.90950682909095
+2025-07-28 02:17:17,481 - INFO - Processing period 2023-H1...
+2025-07-28 02:17:17,514 - INFO - Successfully loaded RF model from clean_harmonized_rf_2023-H1_v1_20250728_0214.pkl
+2025-07-28 02:17:17,515 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:17:17,515 - INFO - Feature count: 22
+2025-07-28 02:17:17,517 - INFO - Evaluating algorithms for period 2023-H1...
+2025-07-28 02:17:17,517 - INFO - Loading EXACT training data for period 2023-H1...
+2025-07-28 02:17:17,638 - INFO - Loaded 6646 customers for period 2023-H1
+2025-07-28 02:17:17,640 - INFO - Label distribution:
+promo_label
+NO_PROMOTION           5178
+GROWTH_TARGET           797
+INTERVENTION_NEEDED     339
+LOW_ENGAGEMENT          332
+Name: count, dtype: int64
+2025-07-28 02:17:17,644 - INFO - Label encoding successful
+2025-07-28 02:17:17,644 - INFO - Unique labels in data: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:17,645 - INFO - Model expects: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:17,654 - INFO - Evaluating trained Random Forest...
+2025-07-28 02:17:17,774 - INFO - Random Forest: Accuracy=0.0602, F1=0.0273, ROC_AUC=0.8572970771373358
+2025-07-28 02:17:17,775 - INFO - RF Prediction distribution: [   8   16 1306]
+2025-07-28 02:17:17,775 - INFO - Actual test distribution: [ 160   68   66 1036]
+2025-07-28 02:17:17,775 - INFO - Training Decision_Tree...
+2025-07-28 02:17:17,819 - INFO - Decision_Tree: Accuracy=0.8429, F1=0.8427, ROC_AUC=0.8820869222558003
+2025-07-28 02:17:17,820 - INFO - Training Logistic_Regression...
+2025-07-28 02:17:18,922 - INFO - Logistic_Regression: Accuracy=0.7962, F1=0.8101, ROC_AUC=0.9050213069922166
+2025-07-28 02:17:18,922 - INFO - Training K_Nearest_Neighbors...
+2025-07-28 02:17:18,961 - INFO - K_Nearest_Neighbors: Accuracy=0.8519, F1=0.8380, ROC_AUC=0.9184530180818024
+2025-07-28 02:17:18,962 - INFO - Training Naive_Bayes...
+2025-07-28 02:17:18,974 - INFO - Naive_Bayes: Accuracy=0.4925, F1=0.5414, ROC_AUC=0.8571129731923668
+2025-07-28 02:17:18,974 - INFO - Training Support_Vector_Machine...
+2025-07-28 02:17:27,683 - INFO - Support_Vector_Machine: Accuracy=0.8316, F1=0.7595, ROC_AUC=0.9085035934941328
+2025-07-28 02:17:27,685 - INFO - Processing period 2023-H2...
+2025-07-28 02:17:27,724 - INFO - Successfully loaded RF model from clean_harmonized_rf_2023-H2_v1_20250728_0214.pkl
+2025-07-28 02:17:27,724 - INFO - Model classes: ['GROWTH_TARGET' 'INTERVENTION_NEEDED' 'LOW_ENGAGEMENT' 'NO_PROMOTION']
+2025-07-28 02:17:27,724 - INFO - Feature count: 22
+2025-07-28 02:17:27,726 - INFO - Evaluating algorithms for period 2023-H2...
+2025-07-28 02:17:27,726 - INFO - Loading EXACT training data for period 2023-H2...
+2025-07-28 02:17:27,944 - INFO - Loaded 15101 customers for period 2023-H2
+2025-07-28 02:17:27,947 - INFO - Label distribution:
+promo_label
+NO_PROMOTION           11936
+GROWTH_TARGET           1812
+LOW_ENGAGEMENT           755
+INTERVENTION_NEEDED      598
+Name: count, dtype: int64
+2025-07-28 02:17:27,953 - INFO - Label encoding successful
+2025-07-28 02:17:27,955 - INFO - Unique labels in data: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:27,955 - INFO - Model expects: ['GROWTH_TARGET', 'INTERVENTION_NEEDED', 'LOW_ENGAGEMENT', 'NO_PROMOTION']
+2025-07-28 02:17:27,968 - INFO - Evaluating trained Random Forest...
+2025-07-28 02:17:28,100 - INFO - Random Forest: Accuracy=0.2023, F1=0.1221, ROC_AUC=0.8355979792764714
+2025-07-28 02:17:28,100 - INFO - RF Prediction distribution: [1551  134 1271   65]
+2025-07-28 02:17:28,101 - INFO - Actual test distribution: [ 362  120  151 2388]
+2025-07-28 02:17:28,101 - INFO - Training Decision_Tree...
+2025-07-28 02:17:28,215 - INFO - Decision_Tree: Accuracy=0.7948, F1=0.7826, ROC_AUC=0.8093226540981405
+2025-07-28 02:17:28,216 - INFO - Training Logistic_Regression...
+2025-07-28 02:17:30,626 - INFO - Logistic_Regression: Accuracy=0.6875, F1=0.7207, ROC_AUC=0.8716707042433022
+2025-07-28 02:17:30,626 - INFO - Training K_Nearest_Neighbors...
+2025-07-28 02:17:30,781 - INFO - K_Nearest_Neighbors: Accuracy=0.8064, F1=0.7860, ROC_AUC=0.8578001279815464
+2025-07-28 02:17:30,781 - INFO - Training Naive_Bayes...
+2025-07-28 02:17:30,799 - INFO - Naive_Bayes: Accuracy=0.1920, F1=0.2095, ROC_AUC=0.7295859199395418
+2025-07-28 02:17:30,800 - INFO - Training Support_Vector_Machine...
+2025-07-28 02:18:17,059 - INFO - Support_Vector_Machine: Accuracy=0.7865, F1=0.7709, ROC_AUC=0.882133224373925
+2025-07-28 02:18:17,104 - INFO - Results exported to: FINAL_model_comparison_20250728_0218.csv
+2025-07-28 02:18:17,105 - INFO - ============================================================
+2025-07-28 02:18:17,105 - INFO - FINAL COMPARISON COMPLETED SUCCESSFULLY
+2025-07-28 02:18:17,105 - INFO - Periods analyzed: 4
+2025-07-28 02:18:17,105 - INFO - CSV exported: FINAL_model_comparison_20250728_0218.csv
+2025-07-28 02:18:17,106 - INFO - Log file: FINAL_model_comparison_20250728_0217.log
+2025-07-28 02:18:17,106 - INFO - ============================================================
