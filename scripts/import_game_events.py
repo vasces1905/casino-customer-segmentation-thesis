@@ -1,24 +1,24 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# CSV yolu ve chunk
+# CSV path and chunk size
 csv_path = "src/data/game_events_cleaned.csv"
 chunk_size = 10000
 
-# PostgreSQL bağlantısı (şifre, port vb. sana göre ayarlanmalı)
-engine = create_engine("postgresql+psycopg2://postgres:<şifre>@localhost:5432/casino_research")
+# PostgreSQL connection (password, port etc. should be configured accordingly)
+engine = create_engine("postgresql+psycopg2://postgres:<password>@localhost:5432/casino_research")
 
-# Tarih alanları için özel dönüştürücü
+# Special converter for date fields
 date_columns = ["ts", "gameing_day"]
 
-# Chunk işle
+# Process chunks
 for chunk in pd.read_csv(
     csv_path,
     chunksize=chunk_size,
     parse_dates=date_columns,
     na_values=["0000-00-00", "0000-00-00 00:00:00"]
 ):
-    # Tarih formatı geçersiz olanları NaT olarak set ediyoruz
+    # Set invalid date formats to NaT (Not a Time)
     for col in date_columns:
         chunk[col] = pd.to_datetime(chunk[col], errors='coerce')
 
@@ -31,4 +31,4 @@ for chunk in pd.read_csv(
         method='multi'
     )
 
-print("OK - Data has loaded successfully.")
+print("Game events data loading completed.")

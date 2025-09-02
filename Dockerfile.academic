@@ -1,0 +1,58 @@
+# Academic Dockerfile for Casino Customer Segmentation
+# University of Bath - MSc Computer Science Thesis
+# Student: Muhammed Yavuzhan CANLI
+# Ethics Approval: 10351-12382
+#
+# This Dockerfile creates a complete academic evaluation environment
+
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install Python dependencies
+COPY requirements-minimal.txt .
+RUN pip install --no-cache-dir -r requirements-minimal.txt
+
+# Install additional packages for demo
+RUN pip install --no-cache-dir \
+    matplotlib \
+    seaborn \
+    plotly
+
+# Copy application files
+COPY src/ ./src/
+COPY schema/ ./schema/
+COPY scripts/ ./scripts/
+COPY main_pipeline.py .
+COPY academic-demo.py .
+COPY .env.example .env
+
+# Create necessary directories
+RUN mkdir -p models data logs
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV DATABASE_URL=postgresql://researcher:academic_password_2024@postgres:5432/casino_research
+ENV ACADEMIC_MODE=true
+
+# Academic metadata
+LABEL maintainer="Muhammed Yavuzhan CANLI <mycc21@bath.ac.uk>"
+LABEL description="Casino Customer Segmentation - Academic Thesis Project"
+LABEL institution="University of Bath"
+LABEL ethics_approval="10351-12382"
+LABEL version="1.0-academic"
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python -c "import sys; sys.exit(0)"
+
+# Default command runs the academic demo
+CMD ["python", "academic-demo.py"]

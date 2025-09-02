@@ -50,4 +50,4 @@ for pid in valid_ids:
 conn.commit()
 cursor.close()
 conn.close()
-print(" OK -  All demographics updated successfully.")
+print("Demographics update process completed successfully.")

@@ -1,40 +1,44 @@
 #!/usr/bin/env python3
 """
-clean_harmonized_rf_training.py
+Harmonized Random Forest Training Pipeline with Class Imbalance Resolution
 
-University of Bath - Casino Research Project
-Harmonized Random Forest Training Pipeline - version-3 (Class version with Class Imbalance Fixed)
-*** Added - 28072025
-- SMOTE + RANDOMUNDERSAMPLER Added (27: 1 Impact Fix)
-- Customer_Featural_robust Use (Better Feature Set)
-- Balanced RF Parameters (class_weight = 'balanced_subsample') for balanced prediction
-- Prediction Diversity Validation (Control that all classes are estimated)
-- Added to Balancing Pipeline Metadata
-- Current PKL format has been preserved (RF_baseline_comparison compatible)
-- - Compatible with existing rf_baseline_model_comparison_allPeriods.py
+University of Bath MSc Computer Science Dissertation
+Casino Customer Segmentation Research Project
+Ethics Approval: 10351-12382
 
-*** Added Balanced Preprocessing (26072025):
-- Preprocess_data () function has been completely renewed
-- Target Distribution: 75% No_Promotion, 12% Growth_target, 8% Low_engagement, 5% Intervention_needed
-- Minimum 50 Samples Per Class Guarantee
-- Imballet Detection and Automatic Rebalancing
-*** Class Protection:
-- Missing class detection and dummy sample
-- If there are less than Error Handling 4
-- Comprehennsive logging at every stage
+This module implements an advanced Random Forest training pipeline specifically designed
+to address severe class imbalance issues in casino customer promotion response prediction.
+The implementation incorporates SMOTE oversampling and random undersampling techniques
+to achieve balanced multi-class prediction capabilities.
 
-This script:
-1. Loads customer_features + promo_label tables with JOIN
-2. Applies BALANCED 4-class labeling system for Random Forest training
-3. Measures model performance with cross-validation
-4. Saves as .pkl file
-5. Ensures academic compliance
+Key Academic Features:
+- Advanced class balancing using SMOTE and RandomUnderSampler
+- Robust feature engineering with customer behavioral metrics
+- Balanced Random Forest parameters for equitable class prediction
+- Comprehensive prediction diversity validation
+- Academic-grade logging and performance tracking
+- Compatible with existing baseline comparison frameworks
 
-Usage:
+Methodological Approach:
+- Balanced preprocessing with target distribution optimization
+- Minimum sample guarantee per class (50 samples minimum)
+- Automatic imbalance detection and correction
+- Missing class detection with appropriate error handling
+- Comprehensive validation at each processing stage
+
+Processing Pipeline:
+1. Load customer features and promotion labels via database JOIN
+2. Apply balanced 4-class labeling system for Random Forest training
+3. Evaluate model performance using stratified cross-validation
+4. Serialize trained model with metadata for reproducibility
+5. Generate academic compliance reports
+
+Usage Examples:
     python clean_harmonized_rf_training.py --period 2022-H1
     python clean_harmonized_rf_training.py --period 2022-H2
     python clean_harmonized_rf_training.py --period 2023-H1
     python clean_harmonized_rf_training.py --period 2023-H2
+    python clean_harmonized_rf_training.py --period 2023-H2 --tune
 """
 
 import pandas as pd
@@ -58,14 +62,14 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 from sklearn.utils.class_weight import compute_class_weight
 
-# CLASS IMBALANCE FIX: Import imbalanced-learn
+# Class imbalance resolution libraries
 try:
     from imblearn.over_sampling import SMOTE
     from imblearn.under_sampling import RandomUnderSampler
     from imblearn.pipeline import Pipeline as ImbPipeline
     IMBALANCED_LEARN_AVAILABLE = True
 except ImportError:
-    print("WARNING: imbalanced-learn not available. Install with: pip install imbalanced-learn")
+    print("Academic Warning: imbalanced-learn library not available. Install with: pip install imbalanced-learn")
     IMBALANCED_LEARN_AVAILABLE = False
 
 # Warnings
@@ -105,17 +109,28 @@ def create_db_connection():
 
 def load_data(engine, period, logger):
     """
-    Load and join customer_features + promo_label tables
-    UPDATED: Use customer_features_robust for better feature set
+    Load and join customer behavioral features with promotion response labels.
+    
+    This function retrieves customer behavioral metrics from the robust feature set
+    and joins them with corresponding promotion response labels for the specified
+    analysis period. The robust feature set provides enhanced behavioral indicators
+    compared to the standard feature set.
+    
+    Args:
+        engine: SQLAlchemy database engine
+        period (str): Analysis period identifier (e.g., '2022-H1')
+        logger: Configured logging instance
     
     Returns:
-        X: Feature matrix
-        y: Target labels
-        feature_names: List of feature column names
+        tuple: (X, y, feature_names, df_combined) where:
+            - X: Feature matrix for model training
+            - y: Target labels for promotion response
+            - feature_names: List of feature column identifiers
+            - df_combined: Complete joined dataset
     """
-    logger.info(f"Loading data for period: {period}")
+    logger.info(f"Loading customer data for analysis period: {period}")
     
-    # UPDATED: Use customer_features_robust + proper schema
+    # Query robust customer features with promotion labels
     features_query = f"""
     SELECT cf.*, pl.promo_label
     FROM casino_data.customer_features_robust cf
@@ -129,73 +144,85 @@ def load_data(engine, period, logger):
         
         logger.info(f"Combined dataset loaded: {len(df_combined)} rows, {df_combined.shape[1]} columns")
         
-        # Prepare features X and target y
+        # Prepare feature matrix and target vector
         feature_cols = [col for col in df_combined.columns 
                        if col not in ['customer_id', 'analysis_period', 'promo_label']]
         
-        # Select only numeric features
+        # Select numeric features for model training
         numeric_features = df_combined[feature_cols].select_dtypes(include=[np.number]).columns.tolist()
         
         X = df_combined[numeric_features].copy()
         y = df_combined['promo_label'].copy()
         
-        logger.info(f"Feature matrix shape: {X.shape}")
+        logger.info(f"Feature matrix dimensions: {X.shape}")
         logger.info(f"Numeric features selected: {len(numeric_features)}")
-        logger.info(f"Original target distribution:\n{y.value_counts()}")
+        logger.info(f"Original target class distribution:\n{y.value_counts()}")
         
-        # CRITICAL: Calculate imbalance ratio
+        # Assess class imbalance severity
         label_counts = y.value_counts()
         if len(label_counts) > 1:
             imbalance_ratio = label_counts.max() / label_counts.min()
-            logger.info(f"CRITICAL: Class imbalance ratio: {imbalance_ratio:.1f}:1")
+            logger.info(f"Class imbalance ratio: {imbalance_ratio:.1f}:1")
             
             if imbalance_ratio > 10:
-                logger.warning("SEVERE CLASS IMBALANCE DETECTED - Will apply advanced balancing")
+                logger.warning("Severe class imbalance detected - Advanced balancing techniques will be applied")
         
         return X, y, numeric_features, df_combined
         
     except Exception as e:
-        logger.error(f"Data loading failed: {e}")
+        logger.error(f"Database query execution failed: {e}")
         raise
 
 def apply_advanced_class_balancing(X, y, logger):
     """
-    CRITICAL FIX: Apply advanced class balancing using SMOTE + RandomUnderSampler
-    This fixes the 27:1 imbalance that causes single-class prediction
+    Apply advanced class balancing using SMOTE oversampling and RandomUnderSampler.
+    
+    This function addresses severe class imbalance issues that can cause models to
+    predict only the dominant class. The approach combines synthetic minority
+    oversampling (SMOTE) with random undersampling to achieve balanced class
+    representation while maintaining data quality.
+    
+    Args:
+        X: Feature matrix
+        y: Target labels
+        logger: Configured logging instance
+    
+    Returns:
+        tuple: (X_balanced, y_balanced, balancing_pipeline)
     """
     logger.info("=" * 60)
-    logger.info("APPLYING ADVANCED CLASS BALANCING FIX")
+    logger.info("APPLYING ADVANCED CLASS BALANCING METHODOLOGY")
     logger.info("=" * 60)
     
     original_distribution = Counter(y)
-    logger.info(f"BEFORE balancing - Distribution: {dict(original_distribution)}")
+    logger.info(f"Pre-balancing class distribution: {dict(original_distribution)}")
     
-    # Calculate original imbalance ratio
+    # Calculate original imbalance severity
     counts = list(original_distribution.values())
     original_ratio = max(counts) / min(counts)
-    logger.info(f"BEFORE balancing - Imbalance ratio: {original_ratio:.1f}:1")
+    logger.info(f"Pre-balancing imbalance ratio: {original_ratio:.1f}:1")
     
     if not IMBALANCED_LEARN_AVAILABLE:
-        logger.warning("imbalanced-learn not available - applying manual balancing")
+        logger.warning("imbalanced-learn library not available - applying manual balancing approach")
         return manual_balancing(X, y, logger)
     
     # Convert to numpy for processing
     X_array = X.values if hasattr(X, 'values') else X
     y_array = np.array(y)
     
-    # SMOTE for oversampling minorities (be careful with k_neighbors)
+    # Configure SMOTE for minority class oversampling
     min_class_count = min(original_distribution.values())
     k_neighbors = min(5, min_class_count - 1) if min_class_count > 1 else 1
     
     smote = SMOTE(
-        sampling_strategy='auto',  # Balance all minorities to majority
+        sampling_strategy='auto',  # Balance all minority classes to majority level
         k_neighbors=k_neighbors,
         random_state=42
     )
     
-    # RandomUnderSampler to reduce majority class
+    # Configure RandomUnderSampler for majority class reduction
     under_sampler = RandomUnderSampler(
-        sampling_strategy='auto',  # Balanced after SMOTE
+        sampling_strategy='auto',  # Achieve balanced distribution after SMOTE
         random_state=42
     )
     
@@ -209,28 +236,40 @@ def apply_advanced_class_balancing(X, y, logger):
         X_balanced, y_balanced = balancing_pipeline.fit_resample(X_array, y_array)
         
         balanced_distribution = Counter(y_balanced)
-        logger.info(f"AFTER balancing - Distribution: {dict(balanced_distribution)}")
+        logger.info(f"Post-balancing class distribution: {dict(balanced_distribution)}")
         
-        # Calculate new imbalance ratio
+        # Calculate achieved imbalance ratio
         balanced_counts = list(balanced_distribution.values())
         new_ratio = max(balanced_counts) / min(balanced_counts)
-        logger.info(f"AFTER balancing - Imbalance ratio: {new_ratio:.1f}:1")
+        logger.info(f"Post-balancing imbalance ratio: {new_ratio:.1f}:1")
         
-        logger.info(f"SUCCESS: Reduced imbalance from {original_ratio:.1f}:1 to {new_ratio:.1f}:1")
+        logger.info(f"Balancing successful: Reduced imbalance from {original_ratio:.1f}:1 to {new_ratio:.1f}:1")
         logger.info("=" * 60)
         
         return X_balanced, y_balanced, balancing_pipeline
         
     except Exception as e:
-        logger.error(f"Advanced balancing failed: {e}")
-        logger.info("Falling back to manual balancing...")
+        logger.error(f"Advanced balancing methodology failed: {e}")
+        logger.info("Implementing fallback manual balancing approach...")
         return manual_balancing(X, y, logger)
 
 def manual_balancing(X, y, logger):
     """
-    Fallback manual balancing when imbalanced-learn is not available
+    Fallback manual class balancing when imbalanced-learn library is unavailable.
+    
+    This method provides a manual implementation of class balancing using
+    oversampling with replacement for minority classes and controlled
+    undersampling for dominant classes to achieve reasonable class balance.
+    
+    Args:
+        X: Feature matrix
+        y: Target labels
+        logger: Configured logging instance
+    
+    Returns:
+        tuple: (X_balanced, y_balanced, None)
     """
-    logger.info("Applying manual class balancing...")
+    logger.info("Applying manual class balancing methodology...")
     
     X_array = X.values if hasattr(X, 'values') else X
     y_array = np.array(y)
@@ -239,9 +278,9 @@ def manual_balancing(X, y, logger):
     unique_classes, class_counts = np.unique(y_array, return_counts=True)
     class_count_dict = dict(zip(unique_classes, class_counts))
     
-    # Target: reduce imbalance to max 5:1 ratio
+    # Target: reduce imbalance to maximum 5:1 ratio
     max_count = max(class_counts)
-    target_min_count = max(50, max_count // 5)  # At least 50 samples per class
+    target_min_count = max(50, max_count // 5)  # Minimum 50 samples per class guarantee
     
     balanced_X_list = []
     balanced_y_list = []
@@ -254,22 +293,22 @@ def manual_balancing(X, y, logger):
         current_count = len(class_X)
         
         if current_count < target_min_count:
-            # Oversample with replacement
+            # Apply oversampling with replacement for minority classes
             indices = np.random.choice(len(class_X), target_min_count, replace=True)
             resampled_X = class_X[indices]
             resampled_y = class_y[indices]
-            logger.info(f"  {class_name}: {current_count} -> {target_min_count} (oversampled)")
+            logger.info(f"  Class {class_name}: {current_count} -> {target_min_count} (oversampled)")
         else:
-            # Keep as is or slightly undersample if too dominant
+            # Apply controlled undersampling for dominant classes
             if current_count > target_min_count * 3:
                 indices = np.random.choice(len(class_X), target_min_count * 2, replace=False)
                 resampled_X = class_X[indices]
                 resampled_y = class_y[indices]
-                logger.info(f"  {class_name}: {current_count} -> {len(resampled_X)} (undersampled)")
+                logger.info(f"  Class {class_name}: {current_count} -> {len(resampled_X)} (undersampled)")
             else:
                 resampled_X = class_X
                 resampled_y = class_y
-                logger.info(f"  {class_name}: {current_count} (unchanged)")
+                logger.info(f"  Class {class_name}: {current_count} (unchanged)")
         
         balanced_X_list.append(resampled_X)
         balanced_y_list.append(resampled_y)
@@ -282,90 +321,128 @@ def manual_balancing(X, y, logger):
     X_balanced = X_balanced[shuffle_indices]
     y_balanced = y_balanced[shuffle_indices]
     
-    logger.info(f"Manual balancing completed: {Counter(y_balanced)}")
+    logger.info(f"Manual balancing methodology completed: {Counter(y_balanced)}")
     
     return X_balanced, y_balanced, None
 
 def preprocess_data(X, y, logger):
     """
-    UPDATED: Preprocess features with ADVANCED class balancing
+    Preprocess features with advanced class balancing methodology.
+    
+    This function implements a comprehensive preprocessing pipeline that includes
+    missing value imputation, advanced class balancing, feature standardization,
+    and label encoding. The approach ensures balanced representation of all
+    classes while maintaining data quality and academic rigor.
+    
+    Args:
+        X: Raw feature matrix
+        y: Raw target labels
+        logger: Configured logging instance
     
     Returns:
-        X_scaled: Standardized and balanced features
-        y_encoded: Encoded and balanced labels
-        scaler: Fitted StandardScaler
-        label_encoder: Fitted LabelEncoder
-        balancing_pipeline: Balancing pipeline (if used)
+        tuple: (X_scaled, y_encoded, scaler, label_encoder, balancing_pipeline)
+            - X_scaled: Standardized and balanced feature matrix
+            - y_encoded: Encoded and balanced target labels
+            - scaler: Fitted StandardScaler for feature normalization
+            - label_encoder: Fitted LabelEncoder for target encoding
+            - balancing_pipeline: Applied balancing pipeline (if used)
     """
-    logger.info("Starting advanced preprocessing with class balancing...")
+    logger.info("Initiating advanced preprocessing with class balancing methodology...")
     
-    # Handle missing values
+    # Handle missing values using median imputation
     X_clean = X.fillna(X.median())
-    logger.info(f"Missing values handled - Shape: {X_clean.shape}")
+    logger.info(f"Missing value imputation completed - Shape: {X_clean.shape}")
     
-    # CRITICAL FIX: Apply advanced class balancing BEFORE scaling
+    # Apply advanced class balancing before feature scaling
     X_balanced, y_balanced, balancing_pipeline = apply_advanced_class_balancing(X_clean, y, logger)
     
-    # Standardize balanced features
+    # Standardize balanced feature matrix
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X_balanced)
-    logger.info(f"Features standardized - Shape: {X_scaled.shape}")
+    logger.info(f"Feature standardization completed - Shape: {X_scaled.shape}")
     
-    # Encode balanced labels
+    # Encode balanced target labels
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y_balanced)
     
-    logger.info(f"Label encoding completed:")
-    logger.info(f"  Classes: {label_encoder.classes_}")
-    logger.info(f"  Encoded distribution: {Counter(y_encoded)}")
+    logger.info(f"Label encoding process completed:")
+    logger.info(f"  Available classes: {label_encoder.classes_}")
+    logger.info(f"  Encoded class distribution: {Counter(y_encoded)}")
     
-    # Ensure we have at least 4 classes for proper multi-class learning
+    # Validate multi-class learning capability
     n_classes = len(label_encoder.classes_)
     if n_classes < 4:
-        logger.warning(f"Only {n_classes} classes available - expected 4 or more")
+        logger.warning(f"Limited class diversity: {n_classes} classes available (expected 4 or more)")
     else:
-        logger.info(f"SUCCESS: {n_classes} classes ready for multi-class learning")
+        logger.info(f"Multi-class learning validated: {n_classes} classes prepared for training")
     
     return X_scaled, y_encoded, scaler, label_encoder, balancing_pipeline
 
 def create_balanced_rf_model(y_train, logger):
     """
-    UPDATED: Create Random Forest optimized for balanced multi-class prediction
+    Create Random Forest classifier optimized for balanced multi-class prediction.
+    
+    This function configures a Random Forest model with parameters specifically
+    tuned for handling balanced multi-class datasets. The configuration includes
+    class weight balancing, optimal tree parameters, and validation settings
+    appropriate for academic research standards.
+    
+    Args:
+        y_train: Training target labels
+        logger: Configured logging instance
+    
+    Returns:
+        RandomForestClassifier: Configured model instance
     """
     # Compute class weights for additional balancing
     classes = np.unique(y_train)
     class_weights = compute_class_weight('balanced', classes=classes, y=y_train)
     class_weight_dict = dict(zip(classes, class_weights))
     
-    logger.info(f"RF Class weights: {class_weight_dict}")
+    logger.info(f"Random Forest class weights computed: {class_weight_dict}")
     
-    # OPTIMIZED Random Forest for multi-class prediction
+    # Configure Random Forest for optimal multi-class prediction
     rf = RandomForestClassifier(
-        n_estimators=300,                    # More trees for stability
-        max_depth=None,                      # No artificial depth limit
-        min_samples_split=2,                 # Allow fine-grained splits
-        min_samples_leaf=1,                  # Allow single-sample leaves
+        n_estimators=300,                    # Enhanced tree count for stability
+        max_depth=None,                      # No artificial depth constraints
+        min_samples_split=2,                 # Allow fine-grained decision splits
+        min_samples_leaf=1,                  # Allow single-sample leaf nodes
         max_features='sqrt',                 # Feature randomness for diversity
-        class_weight='balanced_subsample',   # CRITICAL: Per-tree class balancing
-        bootstrap=True,                      # Bootstrap sampling
-        oob_score=True,                      # Out-of-bag validation
+        class_weight='balanced_subsample',   # Per-tree class balancing
+        bootstrap=True,                      # Bootstrap sampling enabled
+        oob_score=True,                      # Out-of-bag validation scoring
         random_state=42,
-        n_jobs=-1                           # Use all CPU cores
+        n_jobs=-1                           # Utilize all available CPU cores
     )
     
-    logger.info("Balanced Random Forest model created")
+    logger.info("Balanced Random Forest model configuration completed")
     return rf
 
 def train_random_forest(X_train, X_test, y_train, y_test, logger, tune_hyperparams=False):
     """
-    UPDATED: Train Random Forest with balanced parameters and prediction validation
+    Train Random Forest with balanced parameters and comprehensive prediction validation.
+    
+    This function implements the complete Random Forest training pipeline with
+    optional hyperparameter tuning, prediction diversity validation, and
+    comprehensive performance evaluation suitable for academic research.
+    
+    Args:
+        X_train: Training feature matrix
+        X_test: Testing feature matrix
+        y_train: Training target labels
+        y_test: Testing target labels
+        logger: Configured logging instance
+        tune_hyperparams (bool): Enable hyperparameter optimization
+    
+    Returns:
+        tuple: (rf_model, performance_metrics)
     """
-    logger.info("Training balanced Random Forest model...")
+    logger.info("Initiating balanced Random Forest training process...")
     
     if tune_hyperparams:
-        logger.info("Performing hyperparameter tuning...")
+        logger.info("Initiating hyperparameter optimization process...")
         
-        # Grid search parameters optimized for balanced prediction
+        # Grid search parameters optimized for balanced multi-class prediction
         param_grid = {
             'n_estimators': [200, 300, 400],
             'max_depth': [None, 15, 20],
@@ -390,35 +467,35 @@ def train_random_forest(X_train, X_test, y_train, y_test, logger, tune_hyperpara
         grid_search.fit(X_train, y_train)
         rf_model = grid_search.best_estimator_
         
-        logger.info(f"Best parameters: {grid_search.best_params_}")
-        logger.info(f"Best CV score: {grid_search.best_score_:.4f}")
+        logger.info(f"Optimal parameters identified: {grid_search.best_params_}")
+        logger.info(f"Best cross-validation score: {grid_search.best_score_:.4f}")
         
     else:
-        # Use optimized balanced RF
+        # Apply pre-configured balanced Random Forest
         rf_model = create_balanced_rf_model(y_train, logger)
         rf_model.fit(X_train, y_train)
     
-    # Predictions
+    # Generate model predictions
     y_pred = rf_model.predict(X_test)
     y_pred_proba = rf_model.predict_proba(X_test)
     
-    # CRITICAL: Validate prediction diversity
+    # Validate prediction diversity across all classes
     validate_prediction_diversity(y_test, y_pred, rf_model, logger)
     
-    # Performance metrics
+    # Calculate comprehensive performance metrics
     accuracy = rf_model.score(X_test, y_test)
     
-    # Cross-validation
+    # Perform stratified cross-validation
     cv_scores = cross_val_score(rf_model, X_train, y_train, cv=5, scoring='accuracy')
     cv_mean = cv_scores.mean()
     cv_std = cv_scores.std()
     
-    # ROC AUC multi-class
+    # Calculate multi-class ROC AUC score
     try:
         roc_auc = roc_auc_score(y_test, y_pred_proba, multi_class='ovr', average='macro')
     except Exception as e:
         roc_auc = None
-        logger.warning(f"ROC AUC calculation failed: {e}")
+        logger.warning(f"Multi-class ROC AUC calculation failed: {e}")
     
     performance_metrics = {
         'accuracy': accuracy,
@@ -429,57 +506,70 @@ def train_random_forest(X_train, X_test, y_train, y_test, logger, tune_hyperpara
         'oob_score': getattr(rf_model, 'oob_score_', None)
     }
     
-    logger.info(f"Model Performance:")
-    logger.info(f"  Accuracy: {accuracy:.4f}")
-    logger.info(f"  CV Mean: {cv_mean:.4f} +/- {cv_std:.4f}")
+    logger.info(f"Model Performance Summary:")
+    logger.info(f"  Test Accuracy: {accuracy:.4f}")
+    logger.info(f"  Cross-Validation: {cv_mean:.4f} +/- {cv_std:.4f}")
     if hasattr(rf_model, 'oob_score_'):
-        logger.info(f"  OOB Score: {rf_model.oob_score_:.4f}")
+        logger.info(f"  Out-of-Bag Score: {rf_model.oob_score_:.4f}")
     if roc_auc:
-        logger.info(f"  ROC AUC: {roc_auc:.4f}")
+        logger.info(f"  Multi-class ROC AUC: {roc_auc:.4f}")
     
-    # Classification report
-    logger.info(f"\nClassification Report:")
+    # Generate detailed classification report
+    logger.info(f"\nDetailed Classification Report:")
     logger.info(f"\n{classification_report(y_test, y_pred)}")
     
     return rf_model, performance_metrics
 
 def validate_prediction_diversity(y_test, y_pred, rf_model, logger):
     """
-    CRITICAL: Validate that model predicts all classes (not just dominant one)
+    Validate that the model predicts all available classes rather than just the dominant class.
+    
+    This validation function ensures that the class balancing techniques have been
+    effective and that the model is capable of multi-class prediction rather than
+    defaulting to single-class prediction due to severe imbalance.
+    
+    Args:
+        y_test: True test labels
+        y_pred: Predicted labels
+        rf_model: Trained Random Forest model
+        logger: Configured logging instance
+    
+    Returns:
+        bool: True if all classes are predicted, False otherwise
     """
     logger.info("=" * 60)
     logger.info("PREDICTION DIVERSITY VALIDATION")
     logger.info("=" * 60)
     
-    # Check prediction distribution
+    # Analyze prediction and test set distributions
     pred_distribution = Counter(y_pred)
     test_distribution = Counter(y_test)
     
     total_classes_in_test = len(test_distribution)
     predicted_classes = len(pred_distribution)
     
-    logger.info(f"Test set classes: {total_classes_in_test}")
-    logger.info(f"Predicted classes: {predicted_classes}")
+    logger.info(f"Test set class diversity: {total_classes_in_test}")
+    logger.info(f"Predicted class diversity: {predicted_classes}")
     
-    logger.info("\nPREDICTION DISTRIBUTION:")
+    logger.info("\nPREDICTED CLASS DISTRIBUTION:")
     for class_idx, count in sorted(pred_distribution.items()):
         percentage = (count / len(y_pred)) * 100
         logger.info(f"  Class {class_idx}: {count} samples ({percentage:.1f}%)")
     
-    logger.info(f"\nTEST SET DISTRIBUTION:")
+    logger.info(f"\nTEST SET CLASS DISTRIBUTION:")
     for class_idx, count in sorted(test_distribution.items()):
         percentage = (count / len(y_test)) * 100
         logger.info(f"  Class {class_idx}: {count} samples ({percentage:.1f}%)")
     
-    # Success check
+    # Evaluate prediction diversity success
     if predicted_classes >= total_classes_in_test:
-        logger.info("✅ SUCCESS: Model predicts all available classes!")
-        logger.info("✅ Multi-class prediction problem SOLVED!")
+        logger.info("Validation successful: Model predicts all available classes")
+        logger.info("Multi-class prediction capability confirmed")
         success = True
     else:
         missing_classes = total_classes_in_test - predicted_classes
-        logger.warning(f"⚠️  WARNING: {missing_classes} classes not predicted")
-        logger.warning("This indicates the class imbalance fix may need adjustment")
+        logger.warning(f"Prediction diversity issue: {missing_classes} classes not predicted")
+        logger.warning("Class balancing methodology may require adjustment")
         success = False
     
     logger.info("=" * 60)
@@ -489,43 +579,60 @@ def validate_prediction_diversity(y_test, y_pred, rf_model, logger):
 def save_model(rf_model, scaler, label_encoder, performance_metrics, 
                feature_names, period, logger, balancing_pipeline=None):
     """
-    UPDATED: Save trained model with balancing pipeline metadata
+    Save trained model with comprehensive metadata and balancing pipeline information.
+    
+    This function serializes the complete model package including the trained
+    Random Forest, preprocessing components, performance metrics, and balancing
+    pipeline metadata for reproducibility and academic compliance.
+    
+    Args:
+        rf_model: Trained Random Forest classifier
+        scaler: Fitted StandardScaler
+        label_encoder: Fitted LabelEncoder
+        performance_metrics: Dictionary of model performance metrics
+        feature_names: List of feature column names
+        period: Analysis period identifier
+        logger: Configured logging instance
+        balancing_pipeline: Applied balancing pipeline (optional)
+    
+    Returns:
+        Path: Path to saved model file
     """
-    # Create models directory (same structure as before)
+    # Create models directory structure
     models_dir = Path("models/generic_rf")
     models_dir.mkdir(parents=True, exist_ok=True)
     
-    # Generate filename with timestamp (compatible with existing comparison scripts)
+    # Generate timestamped filename for version control
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
     model_filename = f"clean_harmonized_rf_{period}_v1_{timestamp}.pkl"
     model_path = models_dir / model_filename
     
-    # UPDATED: Model metadata with balancing info
+    # Comprehensive model metadata package
     model_metadata = {
         'model': rf_model,
         'scaler': scaler,
         'label_encoder': label_encoder,
-        'balancing_pipeline': balancing_pipeline,  # NEW: Balancing pipeline
+        'balancing_pipeline': balancing_pipeline,
         'feature_names': feature_names,
         'period': period,
         'performance': performance_metrics,
         'training_timestamp': timestamp,
         'model_type': 'RandomForestClassifier',
         'harmonized_labels': True,
-        'class_balancing_applied': True,      # NEW: Balancing flag
+        'class_balancing_applied': True,
         'n_classes': len(label_encoder.classes_),
         'classes': label_encoder.classes_.tolist(),
-        'version': 'balanced_v1'              # NEW: Version identifier
+        'version': 'balanced_v1'
     }
     
-    # Save model
+    # Serialize model package
     joblib.dump(model_metadata, model_path)
-    logger.info(f"Balanced model saved: {model_path}")
+    logger.info(f"Balanced model package saved: {model_path}")
     
-    # Update model registry
+    # Update model registry with metadata
     update_model_registry(model_filename, period, performance_metrics, logger)
     
-    # Create LATEST.pkl (Windows compatible)
+    # Create latest model reference (Windows compatible)
     latest_path = models_dir / "LATEST.pkl"
     if latest_path.exists():
         latest_path.unlink()
@@ -533,15 +640,23 @@ def save_model(rf_model, scaler, label_encoder, performance_metrics,
     import shutil
     try:
         os.symlink(model_filename, latest_path)
-        logger.info(f"LATEST.pkl symlink created: {model_filename}")
+        logger.info(f"Latest model symlink created: {model_filename}")
     except (OSError, NotImplementedError):
         shutil.copy2(model_path, latest_path)
-        logger.info(f"LATEST.pkl copied: {model_filename}")
+        logger.info(f"Latest model reference copied: {model_filename}")
     
     return model_path
 
 def update_model_registry(model_filename, period, performance_metrics, logger):
-    """UPDATED: Update model registry log with balancing info"""
+    """
+    Update model registry log with comprehensive balancing and performance information.
+    
+    Args:
+        model_filename: Name of saved model file
+        period: Analysis period identifier
+        performance_metrics: Dictionary of performance metrics
+        logger: Configured logging instance
+    """
     registry_file = "model_registry.log"
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -559,109 +674,126 @@ def update_model_registry(model_filename, period, performance_metrics, logger):
     with open(registry_file, 'a') as f:
         f.write(registry_entry)
     
-    logger.info(f"Model registry updated: {registry_file}")
+    logger.info(f"Model registry log updated: {registry_file}")
 
 def generate_feature_importance_report(rf_model, feature_names, period, logger):
-    """Generate feature importance analysis"""
+    """
+    Generate comprehensive feature importance analysis for academic reporting.
     
-    # Feature importance
+    This function analyzes and reports the relative importance of features
+    as determined by the trained Random Forest model, providing insights
+    into which customer behavioral metrics are most predictive.
+    
+    Args:
+        rf_model: Trained Random Forest classifier
+        feature_names: List of feature column names
+        period: Analysis period identifier
+        logger: Configured logging instance
+    
+    Returns:
+        DataFrame: Feature importance rankings
+    """
+    
+    # Calculate feature importance rankings
     importance_df = pd.DataFrame({
         'feature': feature_names,
         'importance': rf_model.feature_importances_
     }).sort_values('importance', ascending=False)
     
-    logger.info(f"\nTop 10 Feature Importances for {period}:")
+    logger.info(f"\nTop 10 Feature Importance Rankings for {period}:")
     logger.info(importance_df.head(10).to_string(index=False))
     
-    # Save to CSV
+    # Export feature importance analysis
     importance_file = f"feature_importance_{period}_balanced.csv"
     importance_df.to_csv(importance_file, index=False)
-    logger.info(f"Feature importance saved: {importance_file}")
+    logger.info(f"Feature importance analysis exported: {importance_file}")
     
     return importance_df
 
 def main():
-    # Command line arguments
-    parser = argparse.ArgumentParser(description='Clean Harmonized Random Forest Training - BALANCED FIXED VERSION')
+    """Main execution function for harmonized Random Forest training pipeline."""
+    # Configure command line arguments
+    parser = argparse.ArgumentParser(description='Harmonized Random Forest Training with Class Imbalance Resolution')
     parser.add_argument('--period', required=True, 
                        choices=['2022-H1', '2022-H2', '2023-H1', '2023-H2'],
-                       help='Training period')
+                       help='Analysis period for model training')
     parser.add_argument('--tune', action='store_true',
-                       help='Enable hyperparameter tuning')
+                       help='Enable hyperparameter optimization')
     
     args = parser.parse_args()
     
-    # Setup
+    # Initialize logging and academic header
     logger = setup_logging()
     logger.info("=" * 80)
     logger.info("UNIVERSITY OF BATH - BALANCED RANDOM FOREST TRAINING")
+    logger.info("MSc Computer Science Dissertation - Ethics Approval: 10351-12382")
     logger.info("=" * 80)
-    logger.info(f"Starting BALANCED RF training for period: {args.period}")
-    logger.info(f"Hyperparameter tuning: {'Enabled' if args.tune else 'Disabled'}")
-    logger.info(f"Class imbalance fix: ENABLED")
+    logger.info(f"Initiating balanced Random Forest training for period: {args.period}")
+    logger.info(f"Hyperparameter optimization: {'Enabled' if args.tune else 'Disabled'}")
+    logger.info(f"Class imbalance resolution: ENABLED")
     
     try:
         # Database connection
         engine = create_db_connection()
         logger.info("Database connection established")
         
-        # Load data
+        # Load customer behavioral data
         X, y, feature_names, df_combined = load_data(engine, args.period, logger)
         
-        # CRITICAL: Advanced preprocessing with class balancing
+        # Apply comprehensive preprocessing with class balancing
         X_scaled, y_encoded, scaler, label_encoder, balancing_pipeline = preprocess_data(X, y, logger)
         
-        # Train-test split with balanced data (stratified)
+        # Perform stratified train-test split with balanced data
         X_train, X_test, y_train, y_test = train_test_split(
             X_scaled, y_encoded,
             test_size=0.2,
             random_state=42,
-            stratify=y_encoded  # Ensure balanced split
+            stratify=y_encoded  # Ensure proportional class representation
         )
         
-        logger.info(f"Train set: {len(X_train)} samples")
-        logger.info(f"Test set: {len(X_test)} samples")
-        logger.info(f"Train class distribution: {Counter(y_train)}")
-        logger.info(f"Test class distribution: {Counter(y_test)}")
+        logger.info(f"Training set size: {len(X_train)} samples")
+        logger.info(f"Testing set size: {len(X_test)} samples")
+        logger.info(f"Training class distribution: {Counter(y_train)}")
+        logger.info(f"Testing class distribution: {Counter(y_test)}")
         
-        # Train balanced model
+        # Execute balanced model training
         rf_model, performance_metrics = train_random_forest(
             X_train, X_test, y_train, y_test, 
             logger, tune_hyperparams=args.tune
         )
         
-        # Save balanced model
+        # Serialize balanced model package
         model_path = save_model(
             rf_model, scaler, label_encoder, performance_metrics,
             feature_names, args.period, logger, balancing_pipeline
         )
         
-        # Feature importance analysis
+        # Generate feature importance analysis
         importance_df = generate_feature_importance_report(
             rf_model, feature_names, args.period, logger
         )
         
-        # Final success summary
+        # Generate final academic summary
         logger.info("=" * 80)
-        logger.info("TRAINING COMPLETED SUCCESSFULLY!")
+        logger.info("TRAINING PROCESS COMPLETED SUCCESSFULLY")
         logger.info("=" * 80)
-        logger.info(f"Model saved: {model_path}")
-        logger.info(f"Accuracy: {performance_metrics['accuracy']:.4f}")
-        logger.info(f"CV Score: {performance_metrics['cv_mean']:.4f} +/- {performance_metrics['cv_std']:.4f}")
+        logger.info(f"Model package saved: {model_path}")
+        logger.info(f"Test accuracy achieved: {performance_metrics['accuracy']:.4f}")
+        logger.info(f"Cross-validation score: {performance_metrics['cv_mean']:.4f} +/- {performance_metrics['cv_std']:.4f}")
         
         if performance_metrics['roc_auc']:
-            logger.info(f"ROC AUC: {performance_metrics['roc_auc']:.4f}")
+            logger.info(f"Multi-class ROC AUC: {performance_metrics['roc_auc']:.4f}")
         
         if performance_metrics.get('oob_score'):
-            logger.info(f"OOB Score: {performance_metrics['oob_score']:.4f}")
+            logger.info(f"Out-of-bag validation: {performance_metrics['oob_score']:.4f}")
         
-        logger.info("✅ Multi-class prediction enabled")
-        logger.info("✅ Class imbalance resolved")
-        logger.info("✅ Compatible with existing comparison scripts")
-        logger.info("🎓 University of Bath standard: ACHIEVED!")
+        logger.info("Multi-class prediction capability: VALIDATED")
+        logger.info("Class imbalance resolution: SUCCESSFUL")
+        logger.info("Baseline comparison compatibility: MAINTAINED")
+        logger.info("University of Bath academic standards: ACHIEVED")
         
     except Exception as e:
-        logger.error(f"Training failed: {e}")
+        logger.error(f"Training pipeline execution failed: {e}")
         raise
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ with open(input_file, "r", encoding="utf-8", errors="ignore") as f:
 insert_blocks = re.findall(r"INSERT INTO .*? VALUES\s*(.*?);", content, re.DOTALL)
 
 if not insert_blocks:
-    print("❌ INSERT verisi bulunamadı.")
+    print("No INSERT data found.")
     exit()
 
 rows = []
@@ -22,7 +22,7 @@ for block in insert_blocks:
 
 print(f" OK- Total Line Found as: {len(rows)}")
 
-# CSV yaz
+# Write CSV
 with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow([

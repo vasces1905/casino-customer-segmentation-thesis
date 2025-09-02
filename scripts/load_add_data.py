@@ -1,16 +1,16 @@
-# game sessions couldn't take to DB. 
-# Will be provided by this script  - 03.07.2025
-# Muhammed Yavuzhan Canli
+# Player Sessions Data Loader
+# University of Bath - MSc Computer Science
+# Student: Muhammed Yavuzhan Canli
 
 
 import pandas as pd
 import psycopg2
 from src.config.db_config import get_db_config
 
-# Read from csv
+# Load player sessions data from CSV
 df = pd.read_csv('data/player_sessions_2022.csv')
 
-# Write to DB
+# Insert data into PostgreSQL database
 conn = psycopg2.connect(**get_db_config())
 cursor = conn.cursor()
 

@@ -1,0 +1,50 @@
+# Large data files
+*.pkl
+*.csv
+features.txt
+python_tree.txt
+git.txt
+
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Development files
+.git/
+.gitignore
+delete/
+exports/
+notebooks/
+thesis_outputs/
+Dissertation/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Large visualization files
+*.png
+*.jpg
+*.jpeg
+
+# Academic compliance docs (keep separate)
+academic_compliance/
+
+# Test files
+tests/
+
+# Model registry (can be regenerated)
+model_registry.json
+
+# Large text outputs
+*.txt
+
+# Backup and temporary files
+*.bak
+*.backup
+*~

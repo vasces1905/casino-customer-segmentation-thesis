@@ -1,0 +1,34 @@
+                          List of relations
+   Schema    |               Name                | Type  |   Owner    
+-------------+-----------------------------------+-------+------------
+ casino_data | analysis_periods                  | table | researcher
+ casino_data | customer_behavior_profiles        | table | researcher
+ casino_data | customer_demographics             | table | researcher
+ casino_data | customer_features                 | table | researcher
+ casino_data | customer_features_backup_20250817 | table | researcher
+ casino_data | customer_game_preferences         | table | researcher
+ casino_data | customer_temporal_features        | table | researcher
+ casino_data | customer_temporal_features_backup | table | researcher
+ casino_data | daily_session_plan                | table | researcher
+ casino_data | game_events                       | table | researcher
+ casino_data | kmeans_segment_metadata           | table | researcher
+ casino_data | kmeans_segments                   | table | researcher
+ casino_data | kmeans_segments_backup            | table | researcher
+ casino_data | kmeans_segments_emergency_backup  | table | researcher
+ casino_data | kmeans_segments_v2                | table | researcher
+ casino_data | multi_algorithm_segments          | table | researcher
+ casino_data | optimized_session_plan            | table | researcher
+ casino_data | player_dim                        | table | researcher
+ casino_data | promo_label                       | table | researcher
+ casino_data | promo_label_backup                | table | researcher
+ casino_data | promo_label_v2                    | table | researcher
+ casino_data | slot_game_catalog                 | table | researcher
+ casino_data | temp_valid_game_events            | table | researcher
+ casino_data | temp_valid_game_events_backup     | table | researcher
+ casino_data | temporal_promo_evolution          | table | researcher
+ casino_data | temporal_promo_evolution_backup   | table | researcher
+ casino_data | temporal_promo_evolution_v2       | table | researcher
+ casino_data | temporal_segments                 | table | researcher
+ casino_data | ultra_high_rollers_analysis       | table | researcher
+(29 rows)
+

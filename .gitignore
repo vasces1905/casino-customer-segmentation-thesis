@@ -10,11 +10,18 @@ src/data/**/*.csv
 src/data/**/*.sql
 src/models/models/
 **/zz_delete/
+src/models/Output
+
+# Virtual environment
+venv/
+.env/
+.venv/
 
 # Python cache
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 # IDE
 .vscode/

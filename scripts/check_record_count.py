@@ -17,7 +17,7 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 cur.execute("SELECT COUNT(*) FROM casino_data.customer_demographics")
 count = cur.fetchone()[0]
-print(f"✅ Total customer records in DB: {count}")
+print(f"Total customer records in DB: {count}")
 
 cur.close()
 conn.close()

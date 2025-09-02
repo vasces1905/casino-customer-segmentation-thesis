@@ -173,7 +173,7 @@ SELECT
     'VIEW_VALIDATION' as check_type,
     view_name,
     customer_count,
-    'READY ✅' as status
+    'READY' as status
 FROM (
     SELECT 'kmeans_export_2022_h1' as view_name, COUNT(*) as customer_count FROM casino_data.kmeans_export_2022_h1
     UNION ALL

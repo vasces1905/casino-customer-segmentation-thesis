@@ -1,0 +1,61 @@
+# Academic Evaluation Docker Compose
+# University of Bath - MSc Computer Science
+# Student: Muhammed Yavuzhan CANLI
+# Ethics Approval: 10351-12382
+# 
+# This setup is designed for academic evaluation and thesis review
+# Provides complete working environment in under 5 minutes
+
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: casino_postgres_academic
+    environment:
+      POSTGRES_DB: casino_research
+      POSTGRES_USER: researcher
+      POSTGRES_PASSWORD: academic_password_2024
+      # Academic metadata
+      ACADEMIC_INSTITUTION: "University of Bath"
+      ACADEMIC_STUDENT: "Muhammed Yavuzhan CANLI"
+      ETHICS_APPROVAL: "10351-12382"
+    volumes:
+      # Auto-execute SQL schemas on startup
+      - ./schema:/docker-entrypoint-initdb.d:ro
+      # Persistent data storage
+      - pgdata_academic:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researcher -d casino_research"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  casino-demo:
+    build: 
+      context: .
+      dockerfile: Dockerfile.academic
+    container_name: casino_demo_academic
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://researcher:academic_password_2024@postgres:5432/casino_research
+      - PYTHONPATH=/app
+      - ACADEMIC_MODE=true
+      - ETHICS_REF=10351-12382
+    volumes:
+      # Mount source for live editing during evaluation
+      - ./src:/app/src:ro
+      - ./data:/app/data
+      - ./models:/app/models
+    working_dir: /app
+    command: python academic-demo.py
+    restart: "no"  # Run once for demo
+
+volumes:
+  pgdata_academic:
+    driver: local

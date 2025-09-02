@@ -8,7 +8,7 @@ from sqlalchemy import create_engine, text
 from datetime import datetime
 
 
-# 🎲 Initialize Faker and seed
+# Initialize Faker and seed for reproducible data generation
 fake = Faker()
 random.seed(42)
 Faker.seed(42)
@@ -16,9 +16,9 @@ Faker.seed(42)
 # PostgreSQL connection
 engine = create_engine("postgresql://researcher:academic_password_2024@localhost:5432/casino_research")
 
-print("🔌 Connecting to database and fetching distinct player_ids...")
+print("Connecting to database and fetching distinct player_ids...")
 
-# 🎯 1. Get all valid player_ids from game_events
+# Step 1: Get all valid player_ids from game_events
 with engine.connect() as conn:
     result = conn.execute(text("""
         SELECT DISTINCT player_id 
@@ -27,9 +27,9 @@ with engine.connect() as conn:
     """))
     player_ids = [row[0] for row in result]
 
-print(f"✅ Total unique player_ids found: {len(player_ids)}")
+print(f"Total unique player_ids found: {len(player_ids)}")
 
-# 🎯 2. Define fake demographic generator
+# Step 2: Define demographic data generator
 def generate_fake_customer(player_id):
     age_ranges = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
     genders = ["Male", "Female"]
@@ -52,22 +52,22 @@ def generate_fake_customer(player_id):
         "created_at": pd.Timestamp.now()
     }
 
-print("🧪 Generating fake demographic data...")
+print("Generating demographic data...")
 
-# 🎯 3. Create fake demographic records
+# Step 3: Create demographic records
 customers_data = [generate_fake_customer(pid) for pid in player_ids]
 df_customers = pd.DataFrame(customers_data)
 
-print(f"📦 Total rows generated: {len(df_customers)}")
+print(f"Total rows generated: {len(df_customers)}")
 
-# 🎯 4. Truncate old data
-print("🧹 Truncating/Deleting old data in casino_data.customer_demographics...")
+# Step 4: Clear existing data
+print("Clearing existing data in casino_data.customer_demographics...")
 with engine.begin() as conn:
     #conn.execute(text("TRUNCATE TABLE casino_data.customer_demographics;"))
     conn.execute(text("DELETE FROM casino_data.customer_demographics;"))
 
-# 🎯 5. Insert new data
-print("📝 Inserting new demographic data into database...")
+# Step 5: Insert new data
+print("Inserting new demographic data into database...")
 df_customers.to_sql(
     name="customer_demographics",
     schema="casino_data",
@@ -78,4 +78,4 @@ df_customers.to_sql(
     method="multi"
 )
 
-print("✅ DONE: All demographic data successfully written based on game_events.player_id.")
+print("Process completed: All demographic data written based on game_events.player_id.")

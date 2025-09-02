@@ -10,7 +10,7 @@ Ethics Approval: 10351-12382
 
 Hybrid Approach: Combines existing processed data with novel academic features.
 
-Existing Data Sources:
+Existing Data Sources - for 2022 and 2023 for 2 periods for each year / then I used for 2024 at the last phase to cross-check:
 - customer_behavior_profiles (38,319 customers - 100% coverage)
 - customer_game_preferences (38,319 customers)
 - temp_valid_game_events (2.4M+ events)
@@ -20,6 +20,13 @@ Academic Contributions Added:
 - Temporal behavioral pattern analysis
 - Risk assessment metrics
 - Zone diversity calculations
+
+Scope of Code - 19/08/2025
+- Loss chasing score calculation (e.g. tracking consecutive losses, bet/return difference).
+- Session volatility (bet/session duration variance).
+- Temporal metrics (number of games in the last 30 days, trend rate).
+- They're out: insert/update to the customer_features table.
+- This pipeline is directly linked to PostgreSQL and saves to the DB.
 """
 
 import pandas as pd
@@ -484,7 +491,7 @@ class HybridCasinoFeatureEngineer:
 
 # Usage example
 if __name__ == "__main__":
-    print("🎓 UNIVERSITY OF BATH - HYBRID FEATURE ENGINEERING")
+    print("UNIVERSITY OF BATH - HYBRID FEATURE ENGINEERING")
     print("=" * 60)
     print("Student: Muhammed Yavuzhan CANLI")
     print("Ethics: 10351-12382")

@@ -1,0 +1,32 @@
+TEMPORAL EVOLUTION VISUALIZATION SUMMARY
+Bath University Thesis - Statistical Analysis
+==================================================
+
+DATASET OVERVIEW:
+Total records: 27,891
+Unique customers: 27,891
+Analysis periods: 4
+Mean confidence: 0.5970
+Confidence std: 0.1103
+
+PERIOD-WISE ANALYSIS:
+        customer_id confidence        
+              count       mean     std
+period                                
+2022-H1        2329     0.5482  0.1307
+2022-H2        3809     0.6176  0.1214
+2023-H1        6649     0.5817  0.1305
+2023-H2       15104     0.6061  0.0893
+
+PROMOTION DISTRIBUTION:
+NO_PROMOTION: 13,154 (47.2%)
+LOW_ENGAGEMENT: 7,822 (28.0%)
+GROWTH_TARGET: 5,889 (21.1%)
+INTERVENTION_NEEDED: 1,026 (3.7%)
+
+BUSINESS PRIORITY DISTRIBUTION:
+MAINTAIN: 13,154 (47.2%)
+MEDIUM: 7,822 (28.0%)
+HIGH: 3,409 (12.2%)
+LOW: 2,480 (8.9%)
+URGENT: 1,026 (3.7%)

@@ -27,4 +27,4 @@ conn.commit()
 cur.close()
 conn.close()
 
-print("The Data has Loaded Successfully.")
+print("Data loading process completed.")

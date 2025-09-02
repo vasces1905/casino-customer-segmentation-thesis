@@ -1,0 +1,1178 @@
+{
+  "high_risk": [
+    {
+      "file_path": "main_pipeline.py",
+      "file_name": "main_pipeline.py",
+      "risk_level": "HIGH",
+      "risk_score": 6,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 33.55078125
+    },
+    {
+      "file_path": "scripts\\import_casino_batch_data.py",
+      "file_name": "import_casino_batch_data.py",
+      "risk_level": "HIGH",
+      "risk_score": 7,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.6796875
+    },
+    {
+      "file_path": "src\\data_loader.py",
+      "file_name": "data_loader.py",
+      "risk_level": "HIGH",
+      "risk_score": 5,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.1689453125
+    },
+    {
+      "file_path": "src\\data\\db_connector.py",
+      "file_name": "db_connector.py",
+      "risk_level": "HIGH",
+      "risk_score": 5,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 3.181640625
+    },
+    {
+      "file_path": "src\\features\\test_hybrid_feature_engineering.py",
+      "file_name": "test_hybrid_feature_engineering.py",
+      "risk_level": "HIGH",
+      "risk_score": 7,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 12.478515625
+    },
+    {
+      "file_path": "src\\models\\dissert_demographic_validation_control.py",
+      "file_name": "dissert_demographic_validation_control.py",
+      "risk_level": "HIGH",
+      "risk_score": 6,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 8.818359375
+    },
+    {
+      "file_path": "src\\models\\rf_label_harmonize_allPeriods.py",
+      "file_name": "rf_label_harmonize_allPeriods.py",
+      "risk_level": "HIGH",
+      "risk_score": 5,
+      "detected_operations": [
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 20.4892578125
+    },
+    {
+      "file_path": "src\\models\\rf_training.py",
+      "file_name": "rf_training.py",
+      "risk_level": "HIGH",
+      "risk_score": 5,
+      "detected_operations": [
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 25.4716796875
+    },
+    {
+      "file_path": "src\\models\\rf_training_2.py",
+      "file_name": "rf_training_2.py",
+      "risk_level": "HIGH",
+      "risk_score": 5,
+      "detected_operations": [
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 27.5693359375
+    },
+    {
+      "file_path": "src\\models\\temp_rf_class_dist_analysis.py",
+      "file_name": "temp_rf_class_dist_analysis.py",
+      "risk_level": "HIGH",
+      "risk_score": 7,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "feature_tables"
+      ],
+      "file_size_kb": 9.08984375
+    },
+    {
+      "file_path": "src\\models\\temp_rf_find_feature_tables_.py",
+      "file_name": "temp_rf_find_feature_tables_.py",
+      "risk_level": "HIGH",
+      "risk_score": 6,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 11.263671875
+    }
+  ],
+  "medium_risk": [
+    {
+      "file_path": "temp_db_risk_analyzer.py",
+      "file_name": "temp_db_risk_analyzer.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [
+        "ALTER"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 14.9296875
+    },
+    {
+      "file_path": "scripts\\check_record_count.py",
+      "file_name": "check_record_count.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.5810546875
+    },
+    {
+      "file_path": "scripts\\clean_csv_pandas.py",
+      "file_name": "clean_csv_pandas.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.0380859375
+    },
+    {
+      "file_path": "scripts\\convert_sql_to_csv.py",
+      "file_name": "convert_sql_to_csv.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.40234375
+    },
+    {
+      "file_path": "scripts\\extract_insert_lines.py",
+      "file_name": "extract_insert_lines.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.375
+    },
+    {
+      "file_path": "scripts\\fix_customer_ids.py",
+      "file_name": "fix_customer_ids.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.48828125
+    },
+    {
+      "file_path": "scripts\\import_to_postgresql.py",
+      "file_name": "import_to_postgresql.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.2958984375
+    },
+    {
+      "file_path": "scripts\\insert_split.py",
+      "file_name": "insert_split.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.0146484375
+    },
+    {
+      "file_path": "tests\\compatibility_demo.py",
+      "file_name": "compatibility_demo.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.01953125
+    },
+    {
+      "file_path": "src\\data\\anonymizer.py",
+      "file_name": "anonymizer.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "DELETE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 3.822265625
+    },
+    {
+      "file_path": "src\\features\\academic_ml_pipeline.py",
+      "file_name": "academic_ml_pipeline.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 23.1103515625
+    },
+    {
+      "file_path": "src\\features\\feature_engineering.py",
+      "file_name": "feature_engineering.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 7.9130859375
+    },
+    {
+      "file_path": "src\\features\\game_id_simulation_fixed.py",
+      "file_name": "game_id_simulation_fixed.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 15.7587890625
+    },
+    {
+      "file_path": "src\\features\\real_casino_feature_engine.py",
+      "file_name": "real_casino_feature_engine.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 13.5302734375
+    },
+    {
+      "file_path": "src\\models\\dissert_figures_generator.py",
+      "file_name": "dissert_figures_generator.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "UPDATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 19.056640625
+    },
+    {
+      "file_path": "src\\models\\dissert_model_accuracy_comparison.py",
+      "file_name": "dissert_model_accuracy_comparison.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 4,
+      "detected_operations": [
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 17.9873046875
+    },
+    {
+      "file_path": "src\\models\\enhanced_rf_promotion_model.py",
+      "file_name": "enhanced_rf_promotion_model.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 13.6025390625
+    },
+    {
+      "file_path": "src\\models\\promotion_rf.py",
+      "file_name": "promotion_rf.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "UPDATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 8.48828125
+    },
+    {
+      "file_path": "src\\models\\rf_baseline_model_comparison_allPeriods.py",
+      "file_name": "rf_baseline_model_comparison_allPeriods.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 4,
+      "detected_operations": [
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 31.5908203125
+    },
+    {
+      "file_path": "src\\models\\rf_baseline_model_comparison_allPeriods_fixed.py",
+      "file_name": "rf_baseline_model_comparison_allPeriods_fixed.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 4,
+      "detected_operations": [
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 32.8408203125
+    },
+    {
+      "file_path": "src\\models\\robust_rf_training_major_fix.py",
+      "file_name": "robust_rf_training_major_fix.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 10.203125
+    },
+    {
+      "file_path": "src\\models\\temp_rf_model_path_finder.py",
+      "file_name": "temp_rf_model_path_finder.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 2,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 3.451171875
+    },
+    {
+      "file_path": "src\\models\\ultra_robust_rf_trainingDONT.py",
+      "file_name": "ultra_robust_rf_trainingDONT.py",
+      "risk_level": "MEDIUM",
+      "risk_score": 3,
+      "detected_operations": [
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 13.66015625
+    }
+  ],
+  "low_risk": [],
+  "safe": [
+    {
+      "file_path": "safe_backup.py",
+      "file_name": "safe_backup.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 7.8388671875
+    },
+    {
+      "file_path": "safe_backup_DB.py",
+      "file_name": "safe_backup_DB.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.767578125
+    },
+    {
+      "file_path": "Dissertation\\temp_latex.py",
+      "file_name": "temp_latex.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.498046875
+    },
+    {
+      "file_path": "scripts\\bakcup_202x_h1234.py",
+      "file_name": "bakcup_202x_h1234.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.3916015625
+    },
+    {
+      "file_path": "scripts\\create_feature_7701.py",
+      "file_name": "create_feature_7701.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.5234375
+    },
+    {
+      "file_path": "scripts\\debug_db_check.py",
+      "file_name": "debug_db_check.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 10,
+      "detected_operations": [
+        "INSERT",
+        "DELETE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 5.990234375
+    },
+    {
+      "file_path": "scripts\\generate_demographics_from_valid_ids.py",
+      "file_name": "generate_demographics_from_valid_ids.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 10,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.7607421875
+    },
+    {
+      "file_path": "scripts\\import_casino_csv.py",
+      "file_name": "import_casino_csv.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.6748046875
+    },
+    {
+      "file_path": "scripts\\import_game_events.py",
+      "file_name": "import_game_events.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.953125
+    },
+    {
+      "file_path": "scripts\\load_add_data.py",
+      "file_name": "load_add_data.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 8,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.662109375
+    },
+    {
+      "file_path": "scripts\\populate_missing_customers.py",
+      "file_name": "populate_missing_customers.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 10,
+      "detected_operations": [
+        "DELETE",
+        "TRUNCATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 2.7255859375
+    },
+    {
+      "file_path": "scripts\\safe_insert_customer.py",
+      "file_name": "safe_insert_customer.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 0.9345703125
+    },
+    {
+      "file_path": "scripts\\temp_db_risk_analyzer.py",
+      "file_name": "temp_db_risk_analyzer.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 9,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "customer_segments",
+        "model_predictions",
+        "promotion_recommendations",
+        "feature_tables",
+        "clean_data",
+        "segmentation"
+      ],
+      "file_size_kb": 8.294921875
+    },
+    {
+      "file_path": "scripts\\temp_safe_execution_control.py",
+      "file_name": "temp_safe_execution_control.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 15.208984375
+    },
+    {
+      "file_path": "scripts\\test_api.py",
+      "file_name": "test_api.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 1.3330078125
+    },
+    {
+      "file_path": "src\\__init__.py",
+      "file_name": "__init__.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.375
+    },
+    {
+      "file_path": "tests\\debug_database.py",
+      "file_name": "debug_database.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 13,
+      "detected_operations": [
+        "INSERT",
+        "ALTER",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 9.154296875
+    },
+    {
+      "file_path": "tests\\test_db_connection.py",
+      "file_name": "test_db_connection.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 8,
+      "detected_operations": [
+        "INSERT"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 2.9013671875
+    },
+    {
+      "file_path": "tests\\__init__.py",
+      "file_name": "__init__.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.123046875
+    },
+    {
+      "file_path": "src\\analysis\\schema_check_fix.py",
+      "file_name": "schema_check_fix.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 6.578125
+    },
+    {
+      "file_path": "src\\analysis\\temporal_analysis_complete.py",
+      "file_name": "temporal_analysis_complete.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 11,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 15.7314453125
+    },
+    {
+      "file_path": "src\\api\\database.py",
+      "file_name": "database.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.0888671875
+    },
+    {
+      "file_path": "src\\api\\main.py",
+      "file_name": "main.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 6.912109375
+    },
+    {
+      "file_path": "src\\api\\_init_.py",
+      "file_name": "_init_.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.1181640625
+    },
+    {
+      "file_path": "src\\config\\academic_config.py",
+      "file_name": "academic_config.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 1.2119140625
+    },
+    {
+      "file_path": "src\\config\\db_config.py",
+      "file_name": "db_config.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 2.083984375
+    },
+    {
+      "file_path": "src\\config\\__init__.py",
+      "file_name": "__init__.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.220703125
+    },
+    {
+      "file_path": "src\\data\\compatibility.py",
+      "file_name": "compatibility.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 4.576171875
+    },
+    {
+      "file_path": "src\\data\\_init_.py",
+      "file_name": "_init_.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.25
+    },
+    {
+      "file_path": "src\\features\\block_optimization_debug.py",
+      "file_name": "block_optimization_debug.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 11,
+      "detected_operations": [
+        "DELETE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 15.4638671875
+    },
+    {
+      "file_path": "src\\features\\block_optimization_fixed.py",
+      "file_name": "block_optimization_fixed.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 13,
+      "detected_operations": [
+        "DELETE",
+        "ALTER"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 16.4140625
+    },
+    {
+      "file_path": "src\\features\\block_optimization_verification.py",
+      "file_name": "block_optimization_verification.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 7.2548828125
+    },
+    {
+      "file_path": "src\\features\\complete_feature_engineering_v3.py",
+      "file_name": "complete_feature_engineering_v3.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 19.2734375
+    },
+    {
+      "file_path": "src\\features\\educational_hybrid_feature_engineering.py",
+      "file_name": "educational_hybrid_feature_engineering.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 37.0439453125
+    },
+    {
+      "file_path": "src\\features\\temporal_features.py",
+      "file_name": "temporal_features.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 8.19921875
+    },
+    {
+      "file_path": "src\\features\\_init_.py",
+      "file_name": "_init_.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.26953125
+    },
+    {
+      "file_path": "src\\models\\aggressive_outlier_control.py",
+      "file_name": "aggressive_outlier_control.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 13.3037109375
+    },
+    {
+      "file_path": "src\\models\\clean_data_segmentation.py",
+      "file_name": "clean_data_segmentation.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 16,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "clean_data",
+        "segmentation"
+      ],
+      "file_size_kb": 23.513671875
+    },
+    {
+      "file_path": "src\\models\\corrected_diagnosis.py",
+      "file_name": "corrected_diagnosis.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "feature_tables"
+      ],
+      "file_size_kb": 4.51953125
+    },
+    {
+      "file_path": "src\\models\\db_connection_test.py",
+      "file_name": "db_connection_test.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 3.455078125
+    },
+    {
+      "file_path": "src\\models\\deep_db_analysis.py",
+      "file_name": "deep_db_analysis.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 12,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "DELETE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 7.564453125
+    },
+    {
+      "file_path": "src\\models\\dissert_demographic_analysis.py",
+      "file_name": "dissert_demographic_analysis.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 8,
+      "detected_operations": [
+        "UPDATE"
+      ],
+      "high_risk_indicators": [],
+      "file_size_kb": 17.078125
+    },
+    {
+      "file_path": "src\\models\\dissert_segment_promotion_analysis.py",
+      "file_name": "dissert_segment_promotion_analysis.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 11.2568359375
+    },
+    {
+      "file_path": "src\\models\\emergency_feature_test.py",
+      "file_name": "emergency_feature_test.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 3.9111328125
+    },
+    {
+      "file_path": "src\\models\\existing_pipeline_fix.py",
+      "file_name": "existing_pipeline_fix.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 4.7138671875
+    },
+    {
+      "file_path": "src\\models\\fix_all_missing_periods.py",
+      "file_name": "fix_all_missing_periods.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 16,
+      "detected_operations": [
+        "INSERT",
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 7.71484375
+    },
+    {
+      "file_path": "src\\models\\fix_json_error_2023_h2.py",
+      "file_name": "fix_json_error_2023_h2.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 16,
+      "detected_operations": [
+        "INSERT",
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 7.0400390625
+    },
+    {
+      "file_path": "src\\models\\model_registry.py",
+      "file_name": "model_registry.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 3.9794921875
+    },
+    {
+      "file_path": "src\\models\\multi_algorithm_segmentation.py",
+      "file_name": "multi_algorithm_segmentation.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 8,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 12.7626953125
+    },
+    {
+      "file_path": "src\\models\\rf_baseline_model_comparison.py",
+      "file_name": "rf_baseline_model_comparison.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 13.3984375
+    },
+    {
+      "file_path": "src\\models\\rf_check_2022_h1_data_quality.py",
+      "file_name": "rf_check_2022_h1_data_quality.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 5.3896484375
+    },
+    {
+      "file_path": "src\\models\\rf_clean_harmonized_training.py",
+      "file_name": "rf_clean_harmonized_training.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 25.154296875
+    },
+    {
+      "file_path": "src\\models\\rf_ensemble_model.py",
+      "file_name": "rf_ensemble_model.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 10.982421875
+    },
+    {
+      "file_path": "src\\models\\rf_imbalance_fix.py",
+      "file_name": "rf_imbalance_fix.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.865234375
+    },
+    {
+      "file_path": "src\\models\\rf_model_inspector.py",
+      "file_name": "rf_model_inspector.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.1064453125
+    },
+    {
+      "file_path": "src\\models\\rf_multi_period_prediction.py",
+      "file_name": "rf_multi_period_prediction.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 14.08203125
+    },
+    {
+      "file_path": "src\\models\\rf_promo_label_table_creator.py",
+      "file_name": "rf_promo_label_table_creator.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 8,
+      "detected_operations": [
+        "DELETE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 19.6181640625
+    },
+    {
+      "file_path": "src\\models\\rf_robust_training.py",
+      "file_name": "rf_robust_training.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 4.359375
+    },
+    {
+      "file_path": "src\\models\\segmentation.py",
+      "file_name": "segmentation.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 11,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "customer_segments",
+        "segmentation"
+      ],
+      "file_size_kb": 17.90234375
+    },
+    {
+      "file_path": "src\\models\\temporal_promotion_evolution_system.py",
+      "file_name": "temporal_promotion_evolution_system.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 19.2158203125
+    },
+    {
+      "file_path": "src\\models\\temp_pkl_inspector.py",
+      "file_name": "temp_pkl_inspector.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 10.0390625
+    },
+    {
+      "file_path": "src\\models\\temp_rf_direct_working_predict.py",
+      "file_name": "temp_rf_direct_working_predict.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.013671875
+    },
+    {
+      "file_path": "src\\models\\temp_rf_existing_pipeline_diagnose.py",
+      "file_name": "temp_rf_existing_pipeline_diagnose.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 11.240234375
+    },
+    {
+      "file_path": "src\\models\\temp_rf_missing_feature_generator.py",
+      "file_name": "temp_rf_missing_feature_generator.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.044921875
+    },
+    {
+      "file_path": "src\\models\\temp_segment_based_promo_dist_diagram.py",
+      "file_name": "temp_segment_based_promo_dist_diagram.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 1.171875
+    },
+    {
+      "file_path": "src\\models\\temp_simple_direct_prediction.py",
+      "file_name": "temp_simple_direct_prediction.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 10.52734375
+    },
+    {
+      "file_path": "src\\models\\ultra_aggressive_fix.py",
+      "file_name": "ultra_aggressive_fix.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 7.927734375
+    },
+    {
+      "file_path": "src\\models\\ultra_processed_validation.py",
+      "file_name": "ultra_processed_validation.py",
+      "risk_level": "SAFE",
+      "risk_score": 0,
+      "detected_operations": [],
+      "high_risk_indicators": [],
+      "file_size_kb": 9.6513671875
+    },
+    {
+      "file_path": "src\\models\\_init_.py",
+      "file_name": "_init_.py",
+      "risk_level": "SAFE",
+      "risk_score": 1,
+      "detected_operations": [],
+      "high_risk_indicators": [
+        "segmentation"
+      ],
+      "file_size_kb": 0.306640625
+    },
+    {
+      "file_path": "src\\data\\backup\\segmentation1.py",
+      "file_name": "segmentation1.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 14,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "customer_segments",
+        "segmentation"
+      ],
+      "file_size_kb": 9.291015625
+    },
+    {
+      "file_path": "src\\data\\backup\\segmentation_2107.py",
+      "file_name": "segmentation_2107.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 11,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "customer_segments",
+        "segmentation"
+      ],
+      "file_size_kb": 13.5146484375
+    },
+    {
+      "file_path": "src\\data\\backup\\segmentation_done_21072025.py",
+      "file_name": "segmentation_done_21072025.py",
+      "risk_level": "CRITICAL",
+      "risk_score": 11,
+      "detected_operations": [
+        "INSERT",
+        "UPDATE",
+        "REPLACE"
+      ],
+      "high_risk_indicators": [
+        "customer_segments",
+        "segmentation"
+      ],
+      "file_size_kb": 16.484375
+    }
+  ]
+}
